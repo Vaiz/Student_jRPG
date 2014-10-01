@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace XNA_test1
+namespace XNA_test1.Character
 {
     class CharacterMove
     {

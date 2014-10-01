@@ -163,6 +163,24 @@
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\floor\floor1.xnb</Output>
       <Time>2014-10-01T17:24:02.8696336+04:00</Time>
     </Item>
+    <Item>
+      <Source>text_fon\paper1_cr.png</Source>
+      <Name>text_fon\paper1_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\paper1_cr.xnb</Output>
+      <Time>2014-10-01T22:02:37.6719133+04:00</Time>
+    </Item>
+    <Item>
+      <Source>font\character_info.spritefont</Source>
+      <Name>font\character_info</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\character_info.xnb</Output>
+      <Time>2014-10-01T22:52:58.8747493+04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{ACBF012D-25DB-4E17-80D1-E9CECB9D9010}</ContentProjectGUID>
@@ -170,10 +188,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1Content\</RootDirectory>
-      <LoggerRootDirectory>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\</LoggerRootDirectory>
-      <IntermediateDirectory>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1Content\</RootDirectory>
+      <LoggerRootDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

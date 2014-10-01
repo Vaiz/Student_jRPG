@@ -23,7 +23,7 @@ namespace XNA_test1
 
         public Label()
         {
-            
+            color = Color.Black;
         }
        
         public SpriteFont Font
@@ -80,6 +80,15 @@ namespace XNA_test1
         public void Draw(SpriteBatch bath)
         {
             bath.DrawString(font, text, new Vector2(x, y), color);
+        }
+
+        #endregion
+        //==============================================================================================
+        #region Другие функции
+
+        public float GetStringHeigth()
+        {
+            return font.MeasureString(text).Y;
         }
 
         #endregion

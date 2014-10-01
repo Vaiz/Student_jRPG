@@ -16,3 +16,5 @@ Content\button\button3_norm.xnb
 Content\button\button3_pressed.xnb
 Content\character\edward_elric_1.xnb
 Content\floor\floor1.xnb
+Content\text_fon\paper1_cr.xnb
+Content\font\character_info.xnb

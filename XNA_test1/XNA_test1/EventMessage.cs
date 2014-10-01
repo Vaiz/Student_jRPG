@@ -12,12 +12,12 @@ namespace XNA_test1
     {
         #region Переменные
 
-        private SpriteFont font;        // шрифт текста       
-        private Texture2D textureFon;   // текстуры фона
+        //SpriteFont font;        // шрифт текста       
+        Texture2D textureFon;   // текстуры фона
         int windowHeigth;               // высота окна
         int windowWidth;
-        private Button buttonOk;
-        private string text;            // текст сообщения
+        Button buttonOk;
+        Label label;
         
         #endregion
         //==============================================================================================
@@ -26,6 +26,11 @@ namespace XNA_test1
         public EventMessage()
         {
             buttonOk = new Button(new Vector2(0, 0), 0, 0, "Ок");
+            label = new Label();
+
+            label.X = 70;
+            label.Y = 150;
+            label.Color = Color.Green;
         }
 
         public Texture2D Fon
@@ -36,12 +41,10 @@ namespace XNA_test1
 
         public SpriteFont Font
         {
-            get { return font; }
             set
             {
-                font = value;
+                label.Font = value;
                 buttonOk.Font = value;
-                UpdateButtonPosition();
             }
         }
 
@@ -51,7 +54,6 @@ namespace XNA_test1
             set 
             {
                 windowHeigth = value;
-                UpdateButtonPosition();
             }
         }
 
@@ -61,7 +63,6 @@ namespace XNA_test1
             set 
             {
                 windowWidth = value;
-                UpdateButtonPosition();
             }
         }
 
@@ -69,8 +70,7 @@ namespace XNA_test1
         {
             set
             {
-                text = value;
-            //    UpdateButtonPosition();
+                label.Text = value;            
             }
         }
 
@@ -90,7 +90,7 @@ namespace XNA_test1
         public void UpdateButtonPosition()
         {
             buttonOk.X = windowWidth / 2 - 50;
-            buttonOk.Y = 160 + (int)font.MeasureString(text).Y;
+            buttonOk.Y = 160 + (int)label.GetStringHeigth();
             buttonOk.Width = 100;
             buttonOk.Heigth = 40;
         }
@@ -114,7 +114,7 @@ namespace XNA_test1
 
             bath.Draw(textureFon, rectWindFon, Color.White);
 
-            bath.DrawString(font, text, new Vector2(70,150), Color.Green);
+            label.Draw(bath);
             buttonOk.Draw(bath);
         }
 

@@ -73,7 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
-    <Compile Include="CharacterMove.cs" />
+    <Compile Include="Character\CharacterInfo.cs" />
+    <Compile Include="Character\CharacterMove.cs" />
     <Compile Include="EventMessage.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Label.cs" />

@@ -6,6 +6,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using XNA_test1.Character;
+using Microsoft.Xna.Framework.Input;
 
 namespace XNA_test1
 {
@@ -15,7 +17,11 @@ namespace XNA_test1
 
         EventMessage eventMessage;
         CharacterMove player;
+        CharacterInfo characterInfo;
         int stage;  // прогресс игры
+        bool showCharacterInfo;
+        bool keyCDown1;
+        bool keyCDown2;
 
         #endregion
         //==============================================================================================
@@ -28,8 +34,12 @@ namespace XNA_test1
             eventMessage.Text = "Игра началась!";
 
             player = new CharacterMove();
+            characterInfo = new CharacterInfo();
             
             stage = 1;
+            showCharacterInfo = false;
+            keyCDown1 = false;
+            keyCDown2 = false;
         }
 
         public void LoadContent(ContentManager content)
@@ -46,6 +56,8 @@ namespace XNA_test1
             eventMessage.ButtonTexture = buttonTextures;
 
             player.Texture = content.Load<Texture2D>("character\\edward_elric_1");
+            characterInfo.Texture = content.Load<Texture2D>("text_fon\\paper1_cr");
+            characterInfo.Font = content.Load<SpriteFont>("font\\character_info");
         }
 
         public int WindowHeigth
@@ -54,6 +66,7 @@ namespace XNA_test1
             {
                 eventMessage.WindowHeigth = value;
                 player.WindowHeigth = value;
+                eventMessage.UpdateButtonPosition();
             }
         }
 
@@ -63,6 +76,7 @@ namespace XNA_test1
             { 
                 eventMessage.WindowWidth = value;
                 player.WindowWidth = value;
+                eventMessage.UpdateButtonPosition();
             }
         }
 
@@ -72,6 +86,23 @@ namespace XNA_test1
 
         public void Update(GameTime time)
         {
+            if (Keyboard.GetState().IsKeyDown(Keys.C))
+            {
+                keyCDown1 = true;
+            }
+            else
+            {
+                keyCDown1 = false;
+            }
+           
+            if (!keyCDown1 && keyCDown2)
+            {
+                characterInfo.AddExperience(100);
+                showCharacterInfo = !showCharacterInfo;
+            }
+
+            keyCDown2 = keyCDown1;
+
             switch (stage)
             {
                 case 1:
@@ -81,8 +112,7 @@ namespace XNA_test1
                 case 2:
                     player.Update(time);
                     break;
-            }
-            
+            }            
         }
 
         public void Draw(SpriteBatch bath)
@@ -95,6 +125,10 @@ namespace XNA_test1
 
                 case 2:
                     player.Draw(bath);
+                    if(showCharacterInfo)
+                    {
+                        characterInfo.Draw(bath);
+                    }
                     break;
             } 
         }
