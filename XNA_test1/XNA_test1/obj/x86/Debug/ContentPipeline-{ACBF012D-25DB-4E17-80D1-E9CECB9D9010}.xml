@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>fon1_16_9.jpg</Source>
+      <Name>fon1_16_9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_16_9.xnb</Output>
+      <Time>2014-09-06T17:16:51.9033162+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fon1_4_3.jpg</Source>
+      <Name>fon1_4_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_4_3.xnb</Output>
+      <Time>2014-09-06T17:16:51.9033162+04:00</Time>
+    </Item>
+    <Item>
+      <Source>cursor\cursor_sword.png</Source>
+      <Name>cursor\cursor_sword</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\cursor_sword.xnb</Output>
+      <Time>2014-09-27T13:29:40.4784524+04:00</Time>
+    </Item>
+    <Item>
+      <Source>cursor\human_gauntlet.png</Source>
+      <Name>cursor\human_gauntlet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\human_gauntlet.xnb</Output>
+      <Time>2014-09-07T15:32:36.795654+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button1_hover.png</Source>
+      <Name>button\button1_hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_hover.xnb</Output>
+      <Time>2014-09-06T20:05:05.5897732+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button1_norm.png</Source>
+      <Name>button\button1_norm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_norm.xnb</Output>
+      <Time>2014-09-06T20:05:05.6086678+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button1_pressed.png</Source>
+      <Name>button\button1_pressed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_pressed.xnb</Output>
+      <Time>2014-09-06T20:05:05.6106786+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button2_hover.png</Source>
+      <Name>button\button2_hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_hover.xnb</Output>
+      <Time>2014-09-07T15:41:56.8939808+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button2_norm.png</Source>
+      <Name>button\button2_norm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_norm.xnb</Output>
+      <Time>2014-09-07T15:41:56.8969797+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button2_pressed.png</Source>
+      <Name>button\button2_pressed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_pressed.xnb</Output>
+      <Time>2014-09-07T15:41:56.89998+04:00</Time>
+    </Item>
+    <Item>
+      <Source>text_fon\fallout_1920x1080.jpg</Source>
+      <Name>text_fon\fallout_1920x1080</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\fallout_1920x1080.xnb</Output>
+      <Time>2014-09-27T13:42:12.3587192+04:00</Time>
+    </Item>
+    <Item>
+      <Source>font\button_font.spritefont</Source>
+      <Name>font\button_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\button_font.xnb</Output>
+      <Time>2014-09-07T15:43:51.6837709+04:00</Time>
+    </Item>
+    <Item>
+      <Source>font\fallout_font.spritefont</Source>
+      <Name>font\fallout_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\fallout_font.xnb</Output>
+      <Time>2014-09-27T15:57:44.1945701+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button3_hover.png</Source>
+      <Name>button\button3_hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_hover.xnb</Output>
+      <Time>2014-09-27T17:08:03.5484785+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button3_norm.png</Source>
+      <Name>button\button3_norm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_norm.xnb</Output>
+      <Time>2014-09-27T17:08:03.5514803+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button3_pressed.png</Source>
+      <Name>button\button3_pressed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_pressed.xnb</Output>
+      <Time>2014-09-27T17:08:03.5534789+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\edward_elric_1.png</Source>
+      <Name>character\edward_elric_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\edward_elric_1.xnb</Output>
+      <Time>2014-09-27T21:30:31.000949+04:00</Time>
+    </Item>
+    <Item>
+      <Source>floor\floor1.png</Source>
+      <Name>floor\floor1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\floor\floor1.xnb</Output>
+      <Time>2014-09-28T11:20:02.0709913+04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{ACBF012D-25DB-4E17-80D1-E9CECB9D9010}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1Content\</RootDirectory>
+      <LoggerRootDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-09-05T18:47:23.1550965+04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

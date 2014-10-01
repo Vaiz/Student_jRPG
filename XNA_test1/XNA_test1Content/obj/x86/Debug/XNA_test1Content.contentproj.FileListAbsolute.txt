@@ -1,0 +1,2 @@
+c:\users\vaiz\documents\visual studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1Content\obj\x86\Debug\XNA_test1Content.contentprojResolveAssemblyReference.cache
+e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1Content\obj\x86\Debug\XNA_test1Content.contentprojResolveAssemblyReference.cache
