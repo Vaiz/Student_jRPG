@@ -21,8 +21,8 @@ namespace XNA_test1
 
         public Map()
         {
-            sizeX = 94;
-            sizeY = 60;
+            sizeX = 60;
+            sizeY = 100;
             map = new byte[sizeX, sizeY];
 
             for(int i = 0; i < sizeX; i++)

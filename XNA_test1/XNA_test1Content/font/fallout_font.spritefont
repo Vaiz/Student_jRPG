@@ -18,14 +18,17 @@ with.
     -->
     <Style>Regular</Style>
     <CharacterRegions>
+     
       <CharacterRegion>
         <Start>&#32;</Start>
         <End>&#126;</End>
-      </CharacterRegion>
+      </CharacterRegion>  
+
       <CharacterRegion>
         <Start>А</Start>
         <End>я</End>
       </CharacterRegion>
+      
     </CharacterRegions>
   </Asset>
 </XnaContent>

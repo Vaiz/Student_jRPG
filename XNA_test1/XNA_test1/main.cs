@@ -22,6 +22,7 @@ namespace XNA_test1
 
         Menu menu;
         Game game;
+        MapEditor mapEditor;
         Texture2D cursor;               //Спрайт с изображением-курсором
         Rectangle cursorPosition;       //Текущая позиция курсора
 
@@ -67,6 +68,7 @@ namespace XNA_test1
             // TODO: Add your initialization logic here
             menu = new Menu();
             game = new Game();
+            mapEditor = new MapEditor();
             base.Initialize();
         }
 
@@ -82,6 +84,7 @@ namespace XNA_test1
             menu.WindowHeigth = graphics.PreferredBackBufferHeight;
 
             menu.ButtonNewGame_OnClick = ButtonNewGame_OnClick;
+            menu.ButtonMapEditor_OnClick = ButtonMapEditor_OnClick;
             menu.ButtonChangeResolution_OnClick = ButtonChangeResolution_OnClick;
             menu.ButtonFullScreen_OnClick = ButtonFullScreen_OnClick;
             menu.ButtonExit_OnClick = ButtonExit_OnClick;
@@ -89,6 +92,8 @@ namespace XNA_test1
             game.LoadContent(Content);
             game.WindowHeigth = graphics.PreferredBackBufferHeight;
             game.WindowWidth = graphics.PreferredBackBufferWidth;
+
+            mapEditor.LoadContent(Content);
         }
 
         protected override void UnloadContent()
@@ -116,6 +121,10 @@ namespace XNA_test1
                 case 2:
                     game.Update(gameTime);
                     break;
+
+                case 3:
+                    mapEditor.Update(gameTime);
+                    break;
             }
             
             cursorPosition = new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, cursor.Width, cursor.Height);
@@ -139,6 +148,10 @@ namespace XNA_test1
                 case 2:
                     game.Draw(spriteBatch);
                     break;
+
+                case 3:
+                    mapEditor.Draw(spriteBatch);
+                    break;
             }
 
 
@@ -155,6 +168,11 @@ namespace XNA_test1
         private void ButtonNewGame_OnClick(object sender, EventArgs e)
         {
             situation = 2;
+        }
+
+        private void ButtonMapEditor_OnClick(object sender, EventArgs e)
+        {
+            situation = 3;
         }
 
         private void ButtonChangeResolution_OnClick(object sender, EventArgs e)

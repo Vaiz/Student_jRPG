@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_16_9.xnb</Output>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_16_9.xnb</Output>
       <Time>2014-10-01T17:24:02.8796382+04:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>e:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_4_3.xnb</Output>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_4_3.xnb</Output>
       <Time>2014-10-01T17:24:02.8886343+04:00</Time>
     </Item>
     <Item>
@@ -27,15 +27,6 @@
       <Options>None</Options>
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\cursor_sword.xnb</Output>
       <Time>2014-10-01T17:24:02.8536327+04:00</Time>
-    </Item>
-    <Item>
-      <Source>cursor\human_gauntlet.png</Source>
-      <Name>cursor\human_gauntlet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\human_gauntlet.xnb</Output>
-      <Time>2014-10-01T17:24:02.8616329+04:00</Time>
     </Item>
     <Item>
       <Source>button\button1_hover.png</Source>
@@ -63,6 +54,15 @@
       <Options>None</Options>
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_pressed.xnb</Output>
       <Time>2014-10-01T17:24:02.7896294+04:00</Time>
+    </Item>
+    <Item>
+      <Source>cursor\human_gauntlet.png</Source>
+      <Name>cursor\human_gauntlet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\human_gauntlet.xnb</Output>
+      <Time>2014-10-01T17:24:02.8616329+04:00</Time>
     </Item>
     <Item>
       <Source>button\button2_hover.png</Source>
@@ -99,24 +99,6 @@
       <Options>None</Options>
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\fallout_1920x1080.xnb</Output>
       <Time>2014-10-01T17:24:02.913636+04:00</Time>
-    </Item>
-    <Item>
-      <Source>font\button_font.spritefont</Source>
-      <Name>font\button_font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\button_font.xnb</Output>
-      <Time>2014-10-01T17:24:02.8966349+04:00</Time>
-    </Item>
-    <Item>
-      <Source>font\fallout_font.spritefont</Source>
-      <Name>font\fallout_font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\fallout_font.xnb</Output>
-      <Time>2014-10-01T17:24:02.9046356+04:00</Time>
     </Item>
     <Item>
       <Source>button\button3_hover.png</Source>
@@ -173,6 +155,24 @@
       <Time>2014-10-01T22:02:37.6719133+04:00</Time>
     </Item>
     <Item>
+      <Source>font\button_font.spritefont</Source>
+      <Name>font\button_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\button_font.xnb</Output>
+      <Time>2014-10-01T17:24:02.8966349+04:00</Time>
+    </Item>
+    <Item>
+      <Source>font\fallout_font.spritefont</Source>
+      <Name>font\fallout_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\fallout_font.xnb</Output>
+      <Time>2014-10-03T17:08:03.6121681+04:00</Time>
+    </Item>
+    <Item>
       <Source>font\character_info.spritefont</Source>
       <Name>font\character_info</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -180,6 +180,15 @@
       <Options>None</Options>
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\character_info.xnb</Output>
       <Time>2014-10-01T22:52:58.8747493+04:00</Time>
+    </Item>
+    <Item>
+      <Source>wall\wall.png</Source>
+      <Name>wall\wall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\wall\wall.xnb</Output>
+      <Time>2014-10-03T17:26:09.3524174+04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

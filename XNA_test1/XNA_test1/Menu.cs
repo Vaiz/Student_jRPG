@@ -15,6 +15,7 @@ namespace XNA_test1
 
         Texture2D mainMenuFon;          //фоновое изображения для меню
         Button buttonNewGame;
+        Button buttonMapEditor;
         Button buttonChangeResolution;
         Button buttonFullScreen;
         Button buttonExit;
@@ -31,6 +32,9 @@ namespace XNA_test1
             y = 10;
             
             buttonNewGame =             new Button(new Vector2(x, y), 260, 40, "Новая игра");
+            y += 50;
+
+            buttonMapEditor = new Button(new Vector2(x, y), 260, 40, "Редактировать карту");
             y += 50;
             
             buttonChangeResolution =    new Button(new Vector2(x, y), 260, 40, "Изменить разрешение");
@@ -50,6 +54,7 @@ namespace XNA_test1
             mainMenuFon = content.Load<Texture2D>("fon1_16_9"); //загрузка фонового изображения для меню   
 
             buttonNewGame.Font = content.Load<SpriteFont>("font\\button_font");
+            buttonMapEditor.Font = content.Load<SpriteFont>("font\\button_font");
             buttonChangeResolution.Font = content.Load<SpriteFont>("font\\button_font");
             buttonFullScreen.Font = content.Load<SpriteFont>("font\\button_font");
             buttonExit.Font = content.Load<SpriteFont>("font\\button_font"); 
@@ -60,6 +65,7 @@ namespace XNA_test1
             buttonTextures.Add(VisibleState.Pressed, content.Load<Texture2D>("button\\button2_pressed"));
 
             buttonNewGame.Textures = buttonTextures;
+            buttonMapEditor.Textures = buttonTextures;
             buttonChangeResolution.Textures = buttonTextures;
             buttonFullScreen.Textures = buttonTextures;
             buttonExit.Textures = buttonTextures;
@@ -79,6 +85,7 @@ namespace XNA_test1
         public void Update(GameTime time)
         {
             buttonNewGame.Update(time);
+            buttonMapEditor.Update(time);
             buttonChangeResolution.Update(time);
             buttonFullScreen.Update(time);
             buttonExit.Update(time);
@@ -95,6 +102,7 @@ namespace XNA_test1
             bath.Draw(mainMenuFon, rectWindFon, Color.White);            
 
             buttonNewGame.Draw(bath);
+            buttonMapEditor.Draw(bath);
             buttonChangeResolution.Draw(bath);
             buttonFullScreen.Draw(bath);
             buttonExit.Draw(bath);
@@ -107,6 +115,11 @@ namespace XNA_test1
         public EventHandler ButtonNewGame_OnClick
         {
             set { buttonNewGame.MouseClick += value; }
+        }
+
+        public EventHandler ButtonMapEditor_OnClick
+        {
+            set { buttonMapEditor.MouseClick += value; }
         }
 
         public EventHandler ButtonChangeResolution_OnClick
@@ -123,6 +136,7 @@ namespace XNA_test1
         {
             set { buttonExit.MouseClick += value; }
         }
+
         #endregion
     }
 }
