@@ -31,7 +31,7 @@ namespace XNA_test1
         {
             eventMessage = new EventMessage();
             eventMessage.ButtonOk_OnClick = ButtonEventMessageOk_OnClick;
-            eventMessage.Text = "Игра началась!";
+            eventMessage.Text = "Игра началась!\nПервый квест: сдать все лабы В.В.";
 
             player = new CharacterMove();
             characterInfo = new CharacterInfo();

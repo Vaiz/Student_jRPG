@@ -16,12 +16,20 @@ namespace XNA_test1.Character
         int level;
         int experience;
         const int maxLevel = 9;
-        int[] levelExperience = new int[] {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
+        int[] levelExperience = new int[] {100, 200, 300, 400, 500, 600, 700, 800, 900, 0};
+        int mana;
+        int hp;
+        int atackMin, atackMax;
+        int defense;
 
         Label labelInfo;
         Label labelNickName1, labelNickName2;
         Label labelLevel1, labelLevel2;
         Label labelExperience1, labelExperience2;
+        Label labelHP1, labelHP2;
+        Label labelMana1, labelMana2;
+        Label labelAtack1, labelAtack2;
+        Label labelDefense1, labelDefense2;
         
         #endregion
         //==============================================================================================
@@ -29,8 +37,19 @@ namespace XNA_test1.Character
 
         public CharacterInfo()
         {
+            int x1, x2;
+            int y, dy;
+
+            x1 = 100; x2 = 260;
+            y = 115; dy = 55;
+
             level = 0;
             experience = 0;
+            mana = 200;
+            hp = 100;
+            atackMin = 5;
+            atackMax = 10;
+            defense = 5;
 
             labelInfo = new Label();
             labelInfo.Text = "Информация о персонаже";
@@ -39,33 +58,85 @@ namespace XNA_test1.Character
 
             labelNickName1 = new Label();
             labelNickName1.Text = "Имя:";
-            labelNickName1.X = 100;
-            labelNickName1.Y = 115;
+            labelNickName1.X = x1;
+            labelNickName1.Y = y;
 
             labelNickName2 = new Label();
             labelNickName2.Text = "Студент";
-            labelNickName2.X = 260;
-            labelNickName2.Y = 115;
+            labelNickName2.X = x2;
+            labelNickName2.Y = y;
+
+            y += dy;
 
             labelLevel1 = new Label();
             labelLevel1.Text = "Уровень:";
-            labelLevel1.X = 100;
-            labelLevel1.Y = 170;
+            labelLevel1.X = x1;
+            labelLevel1.Y = y;
 
             labelLevel2 = new Label();
             labelLevel2.Text = "" + (level + 1);
-            labelLevel2.X = 260;
-            labelLevel2.Y = 170;
+            labelLevel2.X = x2;
+            labelLevel2.Y = y;
+
+            y += dy;
 
             labelExperience1 = new Label();
             labelExperience1.Text = "Опыт:";
-            labelExperience1.X = 100;
-            labelExperience1.Y = 225;
+            labelExperience1.X = x1;
+            labelExperience1.Y = y;
 
             labelExperience2 = new Label();
             labelExperience2.Text = experience + " / " + levelExperience[level];
-            labelExperience2.X = 260;
-            labelExperience2.Y = 225;
+            labelExperience2.X = x2;
+            labelExperience2.Y = y;
+
+            y += dy;
+
+            labelHP1 = new Label();
+            labelHP1.Text = "Здоровье:";
+            labelHP1.X = x1;
+            labelHP1.Y = y;
+
+            labelHP2 = new Label();
+            labelHP2.Text = "" + hp;
+            labelHP2.X = x2;
+            labelHP2.Y = y;
+
+            y += dy;
+
+            labelMana1 = new Label();
+            labelMana1.Text = "Мана:";
+            labelMana1.X = x1;
+            labelMana1.Y = y;
+
+            labelMana2 = new Label();
+            labelMana2.Text = "" + mana;
+            labelMana2.X = x2;
+            labelMana2.Y = y;
+
+            y += dy;
+
+            labelAtack1 = new Label();
+            labelAtack1.Text = "Урон:";
+            labelAtack1.X = x1;
+            labelAtack1.Y = y;
+
+            labelAtack2 = new Label();
+            labelAtack2.Text = "" + atackMin + "-" + atackMax;
+            labelAtack2.X = x2;
+            labelAtack2.Y = y;
+
+            y += dy;
+
+            labelDefense1 = new Label();
+            labelDefense1.Text = "Защита:";
+            labelDefense1.X = x1;
+            labelDefense1.Y = y;
+
+            labelDefense2 = new Label();
+            labelDefense2.Text = " " + defense;
+            labelDefense2.X = x2;
+            labelDefense2.Y = y;
                 
         }        
 
@@ -89,6 +160,14 @@ namespace XNA_test1.Character
                 labelLevel2.Font = value;
                 labelExperience1.Font = value;
                 labelExperience2.Font = value;
+                labelHP1.Font = value;
+                labelHP2.Font = value;
+                labelMana1.Font = value;
+                labelMana2.Font = value;
+                labelAtack1.Font = value; 
+                labelAtack2.Font = value;
+                labelDefense1.Font = value; 
+                labelDefense2.Font = value;
             }
         }
 
@@ -113,23 +192,41 @@ namespace XNA_test1.Character
             labelLevel2.Draw(bath);
             labelExperience1.Draw(bath);
             labelExperience2.Draw(bath);
+            labelHP1.Draw(bath);
+            labelHP2.Draw(bath);
+            labelMana1.Draw(bath);
+            labelMana2.Draw(bath);
+            labelAtack1.Draw(bath);
+            labelAtack2.Draw(bath);
+            labelDefense1.Draw(bath);
+            labelDefense2.Draw(bath);
         }
 
         #endregion
-
+        //==============================================================================================
         #region Другие функции
 
         public void AddExperience(int exp)
         {
             experience += exp;
-            while (experience > levelExperience[level] && level < maxLevel)
+            while (experience >= levelExperience[level] && level < maxLevel)
             {
                 experience %= levelExperience[level];
-                level++;              
+                level++;
+                hp += 10;
+                mana += 15;
+                atackMin += 3;
+                atackMax += 4;
+                defense += 2;
             }
 
             labelLevel2.Text = "" + (level + 1);
             labelExperience2.Text = experience + " / " + levelExperience[level];
+
+            labelHP2.Text = "" + hp;
+            labelMana2.Text = "" + mana;
+            labelAtack2.Text = "" + atackMin + "-" + atackMax;
+            labelDefense2.Text = " " + defense;
         }
 
         #endregion
