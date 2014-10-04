@@ -64,7 +64,7 @@ namespace XNA_test1.Character
         public void UpdateBox()
         {
             box = new Rectangle(windowWidth / 2 - texture.Width / 8,
-                                windowHeigth / 2 - texture.Height / 8,
+                                windowHeigth / 2 - texture.Height / 8 - 16,
                                 texture.Width / 4, texture.Height / 4);
         }
 

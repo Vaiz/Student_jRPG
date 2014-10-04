@@ -18,6 +18,7 @@ namespace XNA_test1
         EventMessage eventMessage;
         CharacterMove player;
         CharacterInfo characterInfo;
+        Map map;
         int stage;  // прогресс игры
         bool showCharacterInfo;
         bool keyCDown1;
@@ -35,6 +36,7 @@ namespace XNA_test1
 
             player = new CharacterMove();
             characterInfo = new CharacterInfo();
+            map = new Map();
             
             stage = 1;
             showCharacterInfo = false;
@@ -58,6 +60,8 @@ namespace XNA_test1
             player.Texture = content.Load<Texture2D>("character\\edward_elric_1");
             characterInfo.Texture = content.Load<Texture2D>("text_fon\\paper1_cr");
             characterInfo.Font = content.Load<SpriteFont>("font\\character_info");
+
+            map.LoadContent(content);
         }
 
         public int WindowHeigth
@@ -66,6 +70,7 @@ namespace XNA_test1
             {
                 eventMessage.WindowHeigth = value;
                 player.WindowHeigth = value;
+                map.WindowHeigth = value;
                 eventMessage.UpdateButtonPosition();
             }
         }
@@ -76,6 +81,7 @@ namespace XNA_test1
             { 
                 eventMessage.WindowWidth = value;
                 player.WindowWidth = value;
+                map.WindowWidth = value;
                 eventMessage.UpdateButtonPosition();
             }
         }
@@ -110,6 +116,7 @@ namespace XNA_test1
                     break;
 
                 case 2:
+                    map.Update(time);
                     player.Update(time);
                     break;
             }            
@@ -124,6 +131,7 @@ namespace XNA_test1
                     break;
 
                 case 2:
+                    map.Draw(bath);
                     player.Draw(bath);
                     if(showCharacterInfo)
                     {

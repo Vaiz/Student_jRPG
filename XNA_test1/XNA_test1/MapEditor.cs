@@ -25,6 +25,7 @@ namespace XNA_test1
         MouseState currentMouseState;   // текущее состояние мышки
         MouseState previousMouseState;  // предыдущее состояние мышки
         Label labelPoint;
+        int startX, startY;
         
         #endregion
         //==============================================================================================
@@ -138,6 +139,56 @@ namespace XNA_test1
                 }
             }
 
+            if (currentMouseState.RightButton == ButtonState.Pressed)
+            {
+                if (previousMouseState.RightButton != ButtonState.Pressed)
+                {
+                    startX = currentMouseState.X;
+                    startY = currentMouseState.Y;
+                }
+            }
+
+            if (currentMouseState.RightButton != ButtonState.Pressed)
+            {
+                if (previousMouseState.RightButton == ButtonState.Pressed)
+                {
+                    if(new Rectangle(0, 0, 480, 800).Contains(currentMouseState.X, currentMouseState.Y) &&
+                        new Rectangle(0, 0, 480, 800).Contains(startX, startY))
+                    {
+                        int x1, x2, y1, y2;
+
+                        if(currentMouseState.X < startX)
+                        {
+                            x1 = currentMouseState.X;
+                            x2 = startX;
+                        }
+                        else
+                        {
+                            x1 = startX;
+                            x2 = currentMouseState.X;
+                        }
+
+                        if (currentMouseState.Y < startY)
+                        {
+                            y1 = currentMouseState.Y;
+                            y2 = startY;
+                        }
+                        else
+                        {
+                            y1 = startY;
+                            y2 = currentMouseState.Y;
+                        }
+
+                        for(int i = y1 / 8; i <= y2 / 8; i++)
+                        {
+                            for(int j = x1 / 8; j <= x2 / 8; j++)
+                            {
+                                map[i * sizeX + j] |= currentType;
+                            }
+                        }
+                    }
+                }
+            }
 
             buttonSave.Update(time);
             labelPoint.Update(time);

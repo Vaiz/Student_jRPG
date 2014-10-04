@@ -112,6 +112,11 @@ namespace XNA_test1
                 this.Exit();
 
             // TODO: Add your update logic here
+            if(Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                situation = 1;
+            }
+
             switch (situation)
             {
                 case 1:
