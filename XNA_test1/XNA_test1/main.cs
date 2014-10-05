@@ -148,6 +148,7 @@ namespace XNA_test1
             { 
                 case 1:
                     menu.Draw(spriteBatch);
+                    MediaPlayer.Stop();
                     break;
 
                 case 2:
@@ -156,6 +157,7 @@ namespace XNA_test1
 
                 case 3:
                     mapEditor.Draw(spriteBatch);
+                    MediaPlayer.Stop();
                     break;
             }
 
@@ -173,6 +175,7 @@ namespace XNA_test1
         private void ButtonNewGame_OnClick(object sender, EventArgs e)
         {
             situation = 2;
+            menu.GameStarted = true;
         }
 
         private void ButtonMapEditor_OnClick(object sender, EventArgs e)

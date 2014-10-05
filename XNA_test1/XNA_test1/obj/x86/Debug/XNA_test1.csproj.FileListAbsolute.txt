@@ -31,3 +31,7 @@ E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fl
 E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\paper1_cr.xnb
 E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\character_info.xnb
 E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\wall\wall.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).wma
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.wma

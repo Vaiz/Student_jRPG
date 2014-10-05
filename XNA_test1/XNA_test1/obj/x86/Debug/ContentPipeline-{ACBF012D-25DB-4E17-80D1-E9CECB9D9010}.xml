@@ -190,6 +190,26 @@
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\wall\wall.xnb</Output>
       <Time>2014-10-03T17:26:09.3524174+04:00</Time>
     </Item>
+    <Item>
+      <Source>music\02 Play The Game (feat. Amber Moon).mp3</Source>
+      <Name>music\02 Play The Game (feat. Amber Moon)</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).xnb</Output>
+      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).wma</Extra>
+      <Time>2014-10-04T20:38:03.2046443+04:00</Time>
+    </Item>
+    <Item>
+      <Source>music\Tetris.mp3</Source>
+      <Name>music\Tetris</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.xnb</Output>
+      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.wma</Extra>
+      <Time>2014-10-04T21:14:03.8216109+04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{ACBF012D-25DB-4E17-80D1-E9CECB9D9010}</ContentProjectGUID>

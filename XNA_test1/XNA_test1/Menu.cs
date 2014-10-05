@@ -78,6 +78,21 @@ namespace XNA_test1
             set { windowHeigth = value; }
         }
 
+        public bool GameStarted
+        {
+            set
+            {
+                if(value)
+                {
+                    buttonNewGame.Text = "Продолжить игру";
+                }
+                else
+                {
+                    buttonNewGame.Text = "Новая игра";
+                }
+            }
+        }
+
         #endregion
         //==============================================================================================
         #region Основные потоки

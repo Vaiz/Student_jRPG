@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using XNA_test1.Character;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace XNA_test1
 {
@@ -19,10 +20,12 @@ namespace XNA_test1
         CharacterMove player;
         CharacterInfo characterInfo;
         Map map;
+        Song song;
         int stage;  // прогресс игры
+        bool showQuest;
         bool showCharacterInfo;
-        bool keyCDown1;
-        bool keyCDown2;
+        bool keyCDown1, keyCDown2;
+        bool keyQDown1, keyQDown2;
 
         #endregion
         //==============================================================================================
@@ -39,9 +42,12 @@ namespace XNA_test1
             map = new Map();
             
             stage = 1;
+            showQuest = true;
             showCharacterInfo = false;
             keyCDown1 = false;
             keyCDown2 = false;
+            keyQDown1 = false;
+            keyQDown2 = false;
         }
 
         public void LoadContent(ContentManager content)
@@ -62,6 +68,7 @@ namespace XNA_test1
             characterInfo.Font = content.Load<SpriteFont>("font\\character_info");
 
             map.LoadContent(content);
+            song = content.Load<Song>("music\\Tetris");
         }
 
         public int WindowHeigth
@@ -92,6 +99,8 @@ namespace XNA_test1
 
         public void Update(GameTime time)
         {
+            #region Нажатие C
+
             if (Keyboard.GetState().IsKeyDown(Keys.C))
             {
                 keyCDown1 = true;
@@ -109,16 +118,56 @@ namespace XNA_test1
 
             keyCDown2 = keyCDown1;
 
+            #endregion
+
+            #region Нажатие Q
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Q))
+            {
+                keyQDown1 = true;
+            }
+            else
+            {
+                keyQDown1 = false;
+            }
+
+            if (!keyQDown1 && keyQDown2)
+            {
+                showQuest = !showQuest;
+            }
+
+            keyQDown2 = keyQDown1;
+
+            #endregion
+
             switch (stage)
             {
                 case 1:
-                    eventMessage.Update(time);
+                    if (showQuest)
+                    {
+                        eventMessage.Update(time);
+                        MediaPlayer.Stop();
+                    }
+                    else
+                    {
+                        map.Update(time);
+                        player.Update(time);
+
+                        if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
+                        {
+                            MediaPlayer.Play(song);
+                        }
+                    }
                     break;
 
                 case 2:
-                    map.Update(time);
-                    player.Update(time);
+                    
                     break;
+
+                default:
+                    MediaPlayer.Stop();
+                    break;
+
             }            
         }
 
@@ -127,16 +176,23 @@ namespace XNA_test1
             switch (stage)
             {
                 case 1:
-                    eventMessage.Draw(bath);
-                    break;
+                    if (showQuest)
+                    {
+                        eventMessage.Draw(bath);
+                    }
+                    else
+                    {
+                        map.Draw(bath);
+                        player.Draw(bath);
+                        if (showCharacterInfo)
+                        {
+                            characterInfo.Draw(bath);
+                        }
+                    }
+                    break;              
 
                 case 2:
-                    map.Draw(bath);
-                    player.Draw(bath);
-                    if(showCharacterInfo)
-                    {
-                        characterInfo.Draw(bath);
-                    }
+                    
                     break;
             } 
         }
@@ -147,7 +203,7 @@ namespace XNA_test1
 
         private void ButtonEventMessageOk_OnClick(object sender, EventArgs e)
         {
-            stage = 2;
+            showQuest = false;
         }
 
         #endregion

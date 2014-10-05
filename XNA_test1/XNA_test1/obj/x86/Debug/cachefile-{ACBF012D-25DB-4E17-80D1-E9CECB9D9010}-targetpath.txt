@@ -19,3 +19,7 @@ Content\font\button_font.xnb
 Content\font\fallout_font.xnb
 Content\font\character_info.xnb
 Content\wall\wall.xnb
+Content\music\02 Play The Game (feat. Amber Moon).xnb
+Content\music\02 Play The Game (feat. Amber Moon).wma
+Content\music\Tetris.xnb
+Content\music\Tetris.wma

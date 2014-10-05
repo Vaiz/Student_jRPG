@@ -110,6 +110,15 @@ namespace XNA_test1
                 imageRectangle.Y + (imageRectangle.Height - font.MeasureString(buttonText).Y) / 2);
         }
 
+        public string Text
+        {
+            set 
+            {
+                buttonText = value;
+                UpdateTextPosition();
+            }
+        }
+
         #endregion
         //==============================================================================================
         #region Events
