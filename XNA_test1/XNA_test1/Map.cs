@@ -13,8 +13,8 @@ namespace XNA_test1
     struct NPC
     {
         public Vector2 position;   // позиция моба на карте
-        int questNumber;    // номер квеста, когда NPC активен
-        bool questActive;
+        public int questNumber;    // номер квеста, когда NPC активен
+        public bool questActive;
         public Texture2D texture;  // текстура моба
 
         public NPC(int x, int y, int questNumber, Texture2D texture)
@@ -32,10 +32,11 @@ namespace XNA_test1
 
         byte[] map;
         int sizeX, sizeY;
-        Texture2D floor;
-        Texture2D wall;
+        Texture2D textureFloor;
+        Texture2D textureWall;
+        Texture2D textureQuest;
         Vector2 position;   // центр карты в координатах карты
-        List<NPC> listNPC;
+        List<NPC> listQuestNPC;
         int windowWidth;
         int windowHeigth;
         int x0, y0;         // точка начала отрисовки центральной плитки карты в пикселях
@@ -57,15 +58,16 @@ namespace XNA_test1
             map = File.ReadAllBytes("map.bin");
 
             position = new Vector2(48, 94);
-            listNPC = new List<NPC>();
+            listQuestNPC = new List<NPC>();
             
             speed = 100;
         }
 
         public void LoadContent(ContentManager content)
         {
-            floor = content.Load<Texture2D>("floor\\floor1");
-            wall = content.Load<Texture2D>("wall\\wall");
+            textureFloor = content.Load<Texture2D>("floor\\floor1");
+            textureWall = content.Load<Texture2D>("wall\\wall");
+            textureQuest = content.Load<Texture2D>("quest\\quest_icon_blue");
         }
 
         public int WindowHeigth
@@ -90,7 +92,15 @@ namespace XNA_test1
 
         public void AddNPC(int x, int y, int questNumber, Texture2D texture)
         {
-            listNPC.Add(new NPC(x, y, questNumber, texture));
+            listQuestNPC.Add(new NPC(x, y, questNumber, texture));
+        }
+
+        public int QuestNumber
+        {
+            set
+            {
+                questNumber = value;
+            }
         }
 
         #endregion
@@ -163,37 +173,44 @@ namespace XNA_test1
                         {
                             rect.X = x0 + j * 32;
                             rect.Y = y0 + i * 32;
-                            bath.Draw(floor, rect, new Rectangle(96, 0, 32, 32), Color.White);
+                            bath.Draw(textureFloor, rect, new Rectangle(96, 0, 32, 32), Color.White);
                             if ((map[k] & (1 << 4)) != 0)
                             {
-                                bath.Draw(wall, rect, new Rectangle(32, 0, 32, 32), Color.White);
+                                bath.Draw(textureWall, rect, new Rectangle(32, 0, 32, 32), Color.White);
                             }
                             if ((map[k] & (1 << 5)) != 0)
                             {
-                                bath.Draw(wall, rect, new Rectangle(64, 0, 32, 32), Color.White);
+                                bath.Draw(textureWall, rect, new Rectangle(64, 0, 32, 32), Color.White);
                             }
                             if ((map[k] & (1 << 6)) != 0)
                             {
-                                bath.Draw(wall, rect, new Rectangle(96, 0, 32, 32), Color.White);
+                                bath.Draw(textureWall, rect, new Rectangle(96, 0, 32, 32), Color.White);
                             }
                             if ((map[k] & (1 << 7)) != 0)
                             {
-                                bath.Draw(wall, rect, new Rectangle(128, 0, 32, 32), Color.White);
+                                bath.Draw(textureWall, rect, new Rectangle(128, 0, 32, 32), Color.White);
                             }
                         }
                     }
                 }
             }
 
-            rect = new Rectangle(0, 0, 32, 48);
-            for(int i = 0; i < listNPC.Count; i++)
+            for(int i = 0; i < listQuestNPC.Count; i++)
             {
-                if (listNPC[i].position.X >= position.X - x && listNPC[i].position.X <= position.X + x &&
-                    listNPC[i].position.Y >= position.Y - y && listNPC[i].position.Y <= position.Y + y)
+                if (listQuestNPC[i].position.X >= position.X - x && listQuestNPC[i].position.X <= position.X + x &&
+                    listQuestNPC[i].position.Y >= position.Y - y && listQuestNPC[i].position.Y <= position.Y + y)
                 {
-                    rect.X = x0 + (int)(listNPC[i].position.X - position.X) * 32;
-                    rect.Y = y0 + (int)(listNPC[i].position.Y - position.Y) * 32 - 24;
-                    bath.Draw(listNPC[i].texture, rect, new Rectangle(0, 0, 32, 48), Color.White);
+                    rect.X = x0 + (int)(listQuestNPC[i].position.X - position.X) * 32;
+                    rect.Y = y0 + (int)(listQuestNPC[i].position.Y - position.Y) * 32 - 24;
+                    rect.Width = 32;
+                    rect.Height = 48;
+                    bath.Draw(listQuestNPC[i].texture, rect, new Rectangle(0, 0, 32, 48), Color.White);
+                    if(listQuestNPC[i].questNumber == questNumber)
+                    {
+                        rect.Y -= 32;
+                        rect.Height = 32;
+                        bath.Draw(textureQuest, rect, Color.White);
+                    }
                 }
             }
         }
@@ -202,7 +219,20 @@ namespace XNA_test1
         //==============================================================================================
         #region Другие функции
 
-
+        public bool QuestNPC()
+        {
+            for(int i = 0; i < listQuestNPC.Count; i++)
+            {
+                if(listQuestNPC[i].questNumber == questNumber)
+                {
+                    if((listQuestNPC[i].position - position).LengthSquared() <= 2)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
         #endregion
     }

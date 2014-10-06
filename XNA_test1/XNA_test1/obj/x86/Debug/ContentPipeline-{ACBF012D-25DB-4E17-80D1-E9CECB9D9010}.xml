@@ -237,6 +237,15 @@
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\VV.xnb</Output>
       <Time>2014-10-06T10:31:16.631789+04:00</Time>
     </Item>
+    <Item>
+      <Source>quest\quest_icon_blue.png</Source>
+      <Name>quest\quest_icon_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest_icon_blue.xnb</Output>
+      <Time>2014-10-06T20:05:56.3742758+04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{ACBF012D-25DB-4E17-80D1-E9CECB9D9010}</ContentProjectGUID>

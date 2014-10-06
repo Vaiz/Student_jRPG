@@ -45,6 +45,7 @@ namespace XNA_test1
             map = new Map();
             
             stage = 1;
+            map.QuestNumber = stage;
             showQuest = true;
             showCharacterInfo = false;
             keyCDown1 = false;
@@ -144,12 +145,19 @@ namespace XNA_test1
             {
                 showQuest = !showQuest;
             }
+            else if (showQuest)
+            {
+                if(Keyboard.GetState().IsKeyDown(Keys.Space) || Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    showQuest = false;
+                }
+            }
 
             keyQDown2 = keyQDown1;
 
             #endregion
 
-            switch (stage)
+       /*     switch (stage)
             {
                 case 1:
                     if (showQuest)
@@ -177,12 +185,39 @@ namespace XNA_test1
                     MediaPlayer.Stop();
                     break;
 
-            }            
+            }   */
+
+            if (showQuest)
+            {
+                eventMessage.Update(time);
+                MediaPlayer.Stop();
+            }
+            else
+            {
+                map.Update(time);
+                player.Update(time);
+
+                if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
+                {
+                    MediaPlayer.Play(song);
+                }
+            }
+
+            if(map.QuestNPC())
+            {
+                stage++;
+                map.QuestNumber = stage;
+                
+                eventMessage.Text = quest[stage - 1];
+                eventMessage.UpdateButtonPosition();
+                
+                showQuest = true;
+            }
         }
 
         public void Draw(SpriteBatch bath)
         {
-            switch (stage)
+            /*switch (stage)
             {
                 case 1:
                     if (showQuest)
@@ -203,7 +238,21 @@ namespace XNA_test1
                 case 2:
                     
                     break;
-            } 
+            }
+            */
+            if (showQuest)
+            {
+                eventMessage.Draw(bath);
+            }
+            else
+            {
+                map.Draw(bath);
+                player.Draw(bath);
+                if (showCharacterInfo)
+                {
+                    characterInfo.Draw(bath);
+                }
+            }
         }
 
         #endregion

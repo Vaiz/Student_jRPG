@@ -26,3 +26,4 @@ Content\music\Tetris.wma
 Content\quest\quest1.xnb
 Content\quest\quest2.xnb
 Content\character\VV.xnb
+Content\quest\quest_icon_blue.xnb
