@@ -30,7 +30,7 @@ namespace XNA_test1
 
             label.X = 70;
             label.Y = 150;
-            label.Color = Color.Green;
+            label.Color = Color.Yellow;
         }
 
         public Texture2D Fon

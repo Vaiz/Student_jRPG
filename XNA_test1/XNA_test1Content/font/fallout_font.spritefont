@@ -8,7 +8,7 @@ with.
 <XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics">
   <Asset Type="Graphics:FontDescription">
     <FontName>B52</FontName>
-    <Size>14</Size>
+    <Size>16</Size>
     <Spacing>0</Spacing>
     <UseKerning>true</UseKerning>
 

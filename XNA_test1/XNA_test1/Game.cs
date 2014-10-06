@@ -27,6 +27,8 @@ namespace XNA_test1
         bool keyCDown1, keyCDown2;
         bool keyQDown1, keyQDown2;
 
+        string[] quest;
+
         #endregion
         //==============================================================================================
         #region Инициализация
@@ -35,7 +37,8 @@ namespace XNA_test1
         {
             eventMessage = new EventMessage();
             eventMessage.ButtonOk_OnClick = ButtonEventMessageOk_OnClick;
-            eventMessage.Text = "Игра началась!\nПервый квест: сдать все лабы В.В.";
+            //eventMessage.Text = "Игра началась!\nПервый квест: сдать все лабы В.В.";
+            quest = new string[10];
 
             player = new CharacterMove();
             characterInfo = new CharacterInfo();
@@ -54,8 +57,12 @@ namespace XNA_test1
         {
             Dictionary<VisibleState, Texture2D> buttonTextures;
 
+            quest[0] = content.Load<string>("quest\\quest1");
+            quest[1] = content.Load<string>("quest\\quest2");
+            
             eventMessage.Fon = content.Load<Texture2D>("text_fon\\fallout_1920x1080");
             eventMessage.Font = content.Load<SpriteFont>("font\\fallout_font");
+            eventMessage.Text = quest[0];
 
             buttonTextures = new Dictionary<VisibleState, Texture2D>();
             buttonTextures.Add(VisibleState.Normal, content.Load<Texture2D>("button\\button3_norm"));
@@ -68,6 +75,8 @@ namespace XNA_test1
             characterInfo.Font = content.Load<SpriteFont>("font\\character_info");
 
             map.LoadContent(content);
+            map.AddNPC(52, 88, 1, content.Load<Texture2D>("character\\VV"));
+
             song = content.Load<Song>("music\\Tetris");
         }
 

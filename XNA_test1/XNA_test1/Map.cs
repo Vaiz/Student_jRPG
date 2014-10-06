@@ -10,6 +10,22 @@ using System.Text;
 
 namespace XNA_test1
 {
+    struct NPC
+    {
+        public Vector2 position;   // позиция моба на карте
+        int questNumber;    // номер квеста, когда NPC активен
+        bool questActive;
+        public Texture2D texture;  // текстура моба
+
+        public NPC(int x, int y, int questNumber, Texture2D texture)
+        {
+            position = new Vector2(x, y);
+            questActive = false;
+            this.questNumber = questNumber;
+            this.texture = texture;
+        }      
+    };
+
     class Map
     {
         #region Переменные
@@ -19,13 +35,14 @@ namespace XNA_test1
         Texture2D floor;
         Texture2D wall;
         Vector2 position;   // центр карты в координатах карты
-        //Vector2 resolution;
+        List<NPC> listNPC;
         int windowWidth;
         int windowHeigth;
-        int x0, y0;         // точка начала отрисовки центральной плитки карты
+        int x0, y0;         // точка начала отрисовки центральной плитки карты в пикселях
         int x, y;           // количество отрисовываемых плиток
         int speed;          // количество миллисекунд для смены кадра на новый
         int timeFromLastFrame;    // время, которое прошло с момента смены последнего кадра в милиссекундах
+        int questNumber;    // номер текущего квеста
 
         #endregion
         //==============================================================================================
@@ -40,6 +57,8 @@ namespace XNA_test1
             map = File.ReadAllBytes("map.bin");
 
             position = new Vector2(48, 94);
+            listNPC = new List<NPC>();
+            
             speed = 100;
         }
 
@@ -69,6 +88,10 @@ namespace XNA_test1
             }
         }
 
+        public void AddNPC(int x, int y, int questNumber, Texture2D texture)
+        {
+            listNPC.Add(new NPC(x, y, questNumber, texture));
+        }
 
         #endregion
         //==============================================================================================
@@ -159,6 +182,18 @@ namespace XNA_test1
                             }
                         }
                     }
+                }
+            }
+
+            rect = new Rectangle(0, 0, 32, 48);
+            for(int i = 0; i < listNPC.Count; i++)
+            {
+                if (listNPC[i].position.X >= position.X - x && listNPC[i].position.X <= position.X + x &&
+                    listNPC[i].position.Y >= position.Y - y && listNPC[i].position.Y <= position.Y + y)
+                {
+                    rect.X = x0 + (int)(listNPC[i].position.X - position.X) * 32;
+                    rect.Y = y0 + (int)(listNPC[i].position.Y - position.Y) * 32 - 24;
+                    bath.Draw(listNPC[i].texture, rect, new Rectangle(0, 0, 32, 48), Color.White);
                 }
             }
         }
