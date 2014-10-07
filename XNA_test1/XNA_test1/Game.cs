@@ -77,6 +77,21 @@ namespace XNA_test1
 
             map.LoadContent(content);
             map.AddNPC(52, 88, 1, content.Load<Texture2D>("character\\VV"));
+            map.AddNPC(42, 85, 0, content.Load<Texture2D>("character\\Gud1"));
+            map.AddNPC(45, 85, 0, content.Load<Texture2D>("character\\Gud2"));
+            map.AddNPC(42, 87, 0, content.Load<Texture2D>("character\\Bojd"));
+            map.AddNPC(54, 73, 0, content.Load<Texture2D>("character\\Bur"));
+            map.AddNPC(54, 76, 0, content.Load<Texture2D>("character\\Bersh"));
+
+            map.AddMob(44, 64, content.Load<Texture2D>("character\\mob1"));
+            map.AddMob(13, 81, content.Load<Texture2D>("character\\mob2"));
+            map.AddMob(48, 60, content.Load<Texture2D>("character\\mob3"));
+            map.AddMob(48, 42, content.Load<Texture2D>("character\\mob4"));
+            map.AddMob(48, 14, content.Load<Texture2D>("character\\mob5"));
+            map.AddMob(11, 53, content.Load<Texture2D>("character\\mob6"));
+            map.AddMob(10, 69, content.Load<Texture2D>("character\\mob1"));
+            map.AddMob(25, 69, content.Load<Texture2D>("character\\mob2"));
+            map.AddMob(43, 70, content.Load<Texture2D>("character\\mob3"));
 
             song = content.Load<Song>("music\\Tetris");
         }

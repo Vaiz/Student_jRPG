@@ -226,7 +226,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest2.xnb</Output>
-      <Time>2014-10-05T21:52:17.6480602+04:00</Time>
+      <Time>2014-10-07T20:15:09.5923132+04:00</Time>
     </Item>
     <Item>
       <Source>character\VV.png</Source>
@@ -245,6 +245,105 @@
       <Options>None</Options>
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest_icon_blue.xnb</Output>
       <Time>2014-10-06T20:05:56.3742758+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\Bersh.png</Source>
+      <Name>character\Bersh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bersh.xnb</Output>
+      <Time>2014-10-06T20:31:34.8354411+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\Bojd.png</Source>
+      <Name>character\Bojd</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bojd.xnb</Output>
+      <Time>2014-10-06T20:31:34.8514468+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\Bur.png</Source>
+      <Name>character\Bur</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bur.xnb</Output>
+      <Time>2014-10-06T20:31:34.8544466+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\Gud1.png</Source>
+      <Name>character\Gud1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud1.xnb</Output>
+      <Time>2014-10-06T20:31:34.857447+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\Gud2.png</Source>
+      <Name>character\Gud2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud2.xnb</Output>
+      <Time>2014-10-06T20:31:34.8614402+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\mob1.png</Source>
+      <Name>character\mob1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob1.xnb</Output>
+      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\mob2.png</Source>
+      <Name>character\mob2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob2.xnb</Output>
+      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\mob3.png</Source>
+      <Name>character\mob3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob3.xnb</Output>
+      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\mob4.png</Source>
+      <Name>character\mob4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob4.xnb</Output>
+      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\mob5.png</Source>
+      <Name>character\mob5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob5.xnb</Output>
+      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+    </Item>
+    <Item>
+      <Source>character\mob6.png</Source>
+      <Name>character\mob6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob6.xnb</Output>
+      <Time>2014-10-07T20:39:40.4257354+04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

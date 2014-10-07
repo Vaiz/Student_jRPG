@@ -39,3 +39,14 @@ E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\qu
 E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest2.xnb
 E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\VV.xnb
 E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest_icon_blue.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bersh.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bojd.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bur.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud1.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud2.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob1.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob2.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob3.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob4.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob5.xnb
+E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob6.xnb

@@ -23,8 +23,31 @@ namespace XNA_test1
             questActive = false;
             this.questNumber = questNumber;
             this.texture = texture;
-        }      
+        }              
     };
+
+    struct Mob
+    {
+        public Vector2 position;    // позиция моба на карте
+        public Texture2D texture;   // текстура моба
+        public Rectangle rect;      // прямоугольник текстуры
+        public bool active;         // активен или нет
+        public Vector2 vectorMove;  // вектор направления движения
+
+        public Mob(int x, int y, Texture2D texture)
+        {
+            position = new Vector2(x, y);
+            this.texture = texture;
+            rect = new Rectangle(0, 0, 32, 48);
+            active = true;
+            vectorMove = new Vector2(0, 1);
+        }
+
+        public Vector2 VectorMove
+        {
+            set { vectorMove = value; }
+        }
+    }
 
     class Map
     {
@@ -37,12 +60,15 @@ namespace XNA_test1
         Texture2D textureQuest;
         Vector2 position;   // центр карты в координатах карты
         List<NPC> listQuestNPC;
+        List<NPC> listNPC;
+        List<Mob> listMobs;
         int windowWidth;
         int windowHeigth;
         int x0, y0;         // точка начала отрисовки центральной плитки карты в пикселях
         int x, y;           // количество отрисовываемых плиток
         int speed;          // количество миллисекунд для смены кадра на новый
         int timeFromLastFrame;    // время, которое прошло с момента смены последнего кадра в милиссекундах
+        int timeFromLastMobsMove;    // время, которое прошло с момента последнего передвижения ботов
         int questNumber;    // номер текущего квеста
 
         #endregion
@@ -59,7 +85,11 @@ namespace XNA_test1
 
             position = new Vector2(48, 94);
             listQuestNPC = new List<NPC>();
-            
+            listNPC = new List<NPC>();
+            listMobs = new List<Mob>();
+
+            timeFromLastMobsMove = 0;
+
             speed = 100;
         }
 
@@ -92,7 +122,19 @@ namespace XNA_test1
 
         public void AddNPC(int x, int y, int questNumber, Texture2D texture)
         {
-            listQuestNPC.Add(new NPC(x, y, questNumber, texture));
+            if (questNumber > 0)
+            {
+                listQuestNPC.Add(new NPC(x, y, questNumber, texture));
+            }
+            else
+            {
+                listNPC.Add(new NPC(x, y, questNumber, texture));
+            }
+        }
+
+        public void AddMob(int x, int y, Texture2D texture)
+        {
+            listMobs.Add(new Mob(x, y, texture));
         }
 
         public int QuestNumber
@@ -113,6 +155,7 @@ namespace XNA_test1
             Vector2 vectorMove = new Vector2(0,0);
             int k;
 
+            #region Движение карты
             move = false;
             k = (int)position.Y * sizeX + (int)position.X;
 
@@ -149,6 +192,98 @@ namespace XNA_test1
             else
             {
                 timeFromLastFrame = 0;
+            }
+            #endregion
+
+            Mob tmpMob;
+
+            timeFromLastMobsMove += time.ElapsedGameTime.Milliseconds;
+            if (timeFromLastMobsMove > speed * 2)
+            {
+                timeFromLastMobsMove = 0;
+                for (int i = 0; i < listMobs.Count; i++)
+                {
+                    if (listMobs[i].active)
+                    {
+                        k = (int)listMobs[i].position.Y * sizeX + (int)listMobs[i].position.X;
+
+                        tmpMob = listMobs[i];
+
+                        if ((int)(new Random().Next(4)) == 0)
+                        {
+                            switch ((int)(new Random().Next(4)))
+                            {
+                                case 0:
+                                    tmpMob.VectorMove = new Vector2(1, 0);
+                                    tmpMob.rect.Y = 48 * 2;
+                                    break;
+
+                                case 1:
+                                    tmpMob.VectorMove = new Vector2(-1, 0);
+                                    tmpMob.rect.Y = 48 * 1;
+                                    break;
+
+                                case 2:
+                                    tmpMob.VectorMove = new Vector2(0, 1);
+                                    tmpMob.rect.Y = 48 * 0;
+                                    break;
+
+                                case 3:
+                                    tmpMob.VectorMove = new Vector2(0, -1);
+                                    tmpMob.rect.Y = 48 * 3;
+                                    break;
+                            }
+                        }
+
+                        while (true)
+                        {
+                            if (tmpMob.vectorMove.X == 1 && (map[k] & (1 << 4)) == 0)
+                            {
+                                break;
+                            }
+                            if (tmpMob.vectorMove.X == -1 && (map[k] & (1 << 5)) == 0)
+                            {
+                                break;
+                            }
+                            if (tmpMob.vectorMove.Y == 1 && (map[k] & (1 << 6)) == 0)
+                            {
+                                break;
+                            }
+                            if (tmpMob.vectorMove.Y == -1 && (map[k] & (1 << 7)) == 0)
+                            {
+                                break;
+                            }
+
+                            switch ((int)(new Random().Next(4)))
+                            {
+                                case 0:
+                                    tmpMob.VectorMove = new Vector2(1, 0);
+                                    tmpMob.rect.Y = 48 * 2;
+                                    break;
+
+                                case 1:
+                                    tmpMob.VectorMove = new Vector2(-1, 0);
+                                    tmpMob.rect.Y = 48 * 1;
+                                    break;
+
+                                case 2:
+                                    tmpMob.VectorMove = new Vector2(0, 1);
+                                    tmpMob.rect.Y = 48 * 0;
+                                    break;
+
+                                case 3:
+                                    tmpMob.VectorMove = new Vector2(0, -1);
+                                    tmpMob.rect.Y = 48 * 3;
+                                    break;
+                            }
+                        }
+
+                        tmpMob.position += tmpMob.vectorMove;
+                        tmpMob.rect.X += 32;
+                        tmpMob.rect.X %= 128;
+                        listMobs[i] = tmpMob;
+                    }
+                }
             }
         }
 
@@ -211,6 +346,32 @@ namespace XNA_test1
                         rect.Height = 32;
                         bath.Draw(textureQuest, rect, Color.White);
                     }
+                }
+            }
+
+            for (int i = 0; i < listNPC.Count; i++)
+            {
+                if (listNPC[i].position.X >= position.X - x && listNPC[i].position.X <= position.X + x &&
+                    listNPC[i].position.Y >= position.Y - y && listNPC[i].position.Y <= position.Y + y)
+                {
+                    rect.X = x0 + (int)(listNPC[i].position.X - position.X) * 32;
+                    rect.Y = y0 + (int)(listNPC[i].position.Y - position.Y) * 32 - 24;
+                    rect.Width = 32;
+                    rect.Height = 48;
+                    bath.Draw(listNPC[i].texture, rect, new Rectangle(0, 0, 32, 48), Color.White);
+                }
+            }
+
+            for (int i = 0; i < listMobs.Count; i++)
+            {
+                if (listMobs[i].position.X >= position.X - x && listMobs[i].position.X <= position.X + x &&
+                    listMobs[i].position.Y >= position.Y - y && listMobs[i].position.Y <= position.Y + y)
+                {
+                    rect.X = x0 + (int)(listMobs[i].position.X - position.X) * 32;
+                    rect.Y = y0 + (int)(listMobs[i].position.Y - position.Y) * 32 - 24;
+                    rect.Width = 32;
+                    rect.Height = 48;
+                    bath.Draw(listMobs[i].texture, rect, listMobs[i].rect, Color.White);
                 }
             }
         }
