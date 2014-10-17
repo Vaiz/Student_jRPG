@@ -92,7 +92,7 @@ namespace XNA_test1
             buttonOk.X = windowWidth / 2 - 50;
             buttonOk.Y = 160 + (int)label.GetStringHeigth();
             buttonOk.Width = 100;
-            buttonOk.Heigth = 40;
+            buttonOk.Height = 40;
         }
 
         #endregion

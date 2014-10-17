@@ -13,15 +13,15 @@ namespace XNA_test1
     struct NPC
     {
         public Vector2 position;   // позиция моба на карте
-        public int questNumber;    // номер квеста, когда NPC активен
+        public List<int> questList;    // номер квеста, когда NPC активен
         public bool questActive;
         public Texture2D texture;  // текстура моба
 
-        public NPC(int x, int y, int questNumber, Texture2D texture)
+        public NPC(int x, int y, List<int> questList, Texture2D texture)
         {
             position = new Vector2(x, y);
             questActive = false;
-            this.questNumber = questNumber;
+            this.questList = questList;
             this.texture = texture;
         }              
     };
@@ -33,11 +33,15 @@ namespace XNA_test1
         public Rectangle rect;      // прямоугольник текстуры
         public bool active;         // активен или нет
         public Vector2 vectorMove;  // вектор направления движения
+        public int exp;             // опыт за моба
+        public Character.CharacterIndex mobIndex;
 
-        public Mob(int x, int y, Texture2D texture)
+        public Mob(int x, int y, int exp, Texture2D texture, Character.CharacterIndex mobIndex)
         {
             position = new Vector2(x, y);
+            this.exp = exp;
             this.texture = texture;
+            this.mobIndex = mobIndex;
             rect = new Rectangle(0, 0, 32, 48);
             active = true;
             vectorMove = new Vector2(0, 1);
@@ -90,7 +94,7 @@ namespace XNA_test1
 
             timeFromLastMobsMove = 0;
 
-            speed = 100;
+            speed = 200;
         }
 
         public void LoadContent(ContentManager content)
@@ -120,21 +124,21 @@ namespace XNA_test1
             }
         }
 
-        public void AddNPC(int x, int y, int questNumber, Texture2D texture)
+        public void AddNPC(int x, int y, List<int> questList, Texture2D texture)
         {
-            if (questNumber > 0)
+            if (questList.Count > 0)
             {
-                listQuestNPC.Add(new NPC(x, y, questNumber, texture));
+                listQuestNPC.Add(new NPC(x, y, questList, texture));
             }
             else
             {
-                listNPC.Add(new NPC(x, y, questNumber, texture));
+                listNPC.Add(new NPC(x, y, questList, texture));
             }
         }
 
-        public void AddMob(int x, int y, Texture2D texture)
+        public void AddMob(int x, int y, int exp, Texture2D texture, Character.CharacterIndex mobIndex)
         {
-            listMobs.Add(new Mob(x, y, texture));
+            listMobs.Add(new Mob(x, y, exp, texture, mobIndex));
         }
 
         public int QuestNumber
@@ -156,6 +160,7 @@ namespace XNA_test1
             int k;
 
             #region Движение карты
+
             move = false;
             k = (int)position.Y * sizeX + (int)position.X;
 
@@ -195,10 +200,12 @@ namespace XNA_test1
             }
             #endregion
 
+            #region Движение мобов
+
             Mob tmpMob;
 
             timeFromLastMobsMove += time.ElapsedGameTime.Milliseconds;
-            if (timeFromLastMobsMove > speed * 2)
+            if (timeFromLastMobsMove > speed)
             {
                 timeFromLastMobsMove = 0;
                 for (int i = 0; i < listMobs.Count; i++)
@@ -209,7 +216,7 @@ namespace XNA_test1
 
                         tmpMob = listMobs[i];
 
-                        if ((int)(new Random().Next(4)) == 0)
+                        if ((int)(new Random().Next(4)) == 0 && listMobs[i].position.X == (int)listMobs[i].position.X && listMobs[i].position.Y == (int)listMobs[i].position.Y)
                         {
                             switch ((int)(new Random().Next(4)))
                             {
@@ -278,13 +285,15 @@ namespace XNA_test1
                             }
                         }
 
-                        tmpMob.position += tmpMob.vectorMove;
+                        tmpMob.position += tmpMob.vectorMove / 4;
                         tmpMob.rect.X += 32;
                         tmpMob.rect.X %= 128;
                         listMobs[i] = tmpMob;
                     }
                 }
             }
+
+            #endregion
         }
 
         public void Draw(SpriteBatch bath)
@@ -340,7 +349,7 @@ namespace XNA_test1
                     rect.Width = 32;
                     rect.Height = 48;
                     bath.Draw(listQuestNPC[i].texture, rect, new Rectangle(0, 0, 32, 48), Color.White);
-                    if(listQuestNPC[i].questNumber == questNumber)
+                    if(listQuestNPC[i].questList.Contains(questNumber))
                     {
                         rect.Y -= 32;
                         rect.Height = 32;
@@ -367,8 +376,8 @@ namespace XNA_test1
                 if (listMobs[i].position.X >= position.X - x && listMobs[i].position.X <= position.X + x &&
                     listMobs[i].position.Y >= position.Y - y && listMobs[i].position.Y <= position.Y + y)
                 {
-                    rect.X = x0 + (int)(listMobs[i].position.X - position.X) * 32;
-                    rect.Y = y0 + (int)(listMobs[i].position.Y - position.Y) * 32 - 24;
+                    rect.X = x0 + (int)((listMobs[i].position.X - position.X) * 32);
+                    rect.Y = y0 + (int)((listMobs[i].position.Y - position.Y) * 32) - 24;
                     rect.Width = 32;
                     rect.Height = 48;
                     bath.Draw(listMobs[i].texture, rect, listMobs[i].rect, Color.White);
@@ -380,11 +389,11 @@ namespace XNA_test1
         //==============================================================================================
         #region Другие функции
 
-        public bool QuestNPC()
+        public bool QuestNPC()      // столкнулся с квестовым неписем
         {
             for(int i = 0; i < listQuestNPC.Count; i++)
             {
-                if(listQuestNPC[i].questNumber == questNumber)
+                if(listQuestNPC[i].questList.Contains(questNumber))
                 {
                     if((listQuestNPC[i].position - position).LengthSquared() <= 2)
                     {
@@ -393,6 +402,45 @@ namespace XNA_test1
                 }
             }
             return false;
+        }
+
+        public void OpenMap()   // Открыть выход с кафедры
+        {
+            map[72 * sizeX + 48] = 1;
+            map[71 * sizeX + 48] = 1;
+        }
+
+        public int MobConnected()   // столкнулся с мобом
+        {
+            for (int i = 0; i < listMobs.Count; i++)
+            {
+                if (listMobs[i].active)
+                {
+                    if ((listMobs[i].position - position).LengthSquared() <= 0.5)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+        
+        public int MobCnt
+        {
+            get { return listMobs.Count; }
+        }
+
+        public Character.CharacterIndex GetMobIndex(int i)
+        {
+            return listMobs[i].mobIndex;
+        }
+
+        public int KickMob(int i)  // убить моба
+        {
+            int exp;
+            exp = listMobs[i].exp;
+            listMobs.RemoveAt(i);
+            return exp;
         }
 
         #endregion

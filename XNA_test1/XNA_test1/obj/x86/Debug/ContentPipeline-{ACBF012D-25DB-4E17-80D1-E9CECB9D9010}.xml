@@ -345,6 +345,190 @@
       <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob6.xnb</Output>
       <Time>2014-10-07T20:39:40.4257354+04:00</Time>
     </Item>
+    <Item>
+      <Source>character\zombie2.png</Source>
+      <Name>character\zombie2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\zombie2.xnb</Output>
+      <Time>2014-10-08T16:16:56.4466935+04:00</Time>
+    </Item>
+    <Item>
+      <Source>background\pripyat-50_cr.jpg</Source>
+      <Name>background\pripyat-50_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\background\pripyat-50_cr.xnb</Output>
+      <Time>2014-10-16T12:21:22.4045486+04:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest3.xml</Source>
+      <Name>quest\quest3</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest3.xnb</Output>
+      <Time>2014-10-16T12:30:51.4505645+04:00</Time>
+    </Item>
+    <Item>
+      <Source>background\Thenewkid.png</Source>
+      <Name>background\Thenewkid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\background\Thenewkid.xnb</Output>
+      <Time>2014-10-16T13:25:20.5800189+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button_chiken_leg.png</Source>
+      <Name>button\button_chiken_leg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_chiken_leg.xnb</Output>
+      <Time>2014-10-16T18:16:44.3528886+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button_heal.png</Source>
+      <Name>button\button_heal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_heal.xnb</Output>
+      <Time>2014-10-16T18:16:44.360901+04:00</Time>
+    </Item>
+    <Item>
+      <Source>button\button_shield.png</Source>
+      <Name>button\button_shield</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_shield.xnb</Output>
+      <Time>2014-10-16T18:16:44.3629006+04:00</Time>
+    </Item>
+    <Item>
+      <Source>text_fon\black_glass_rect.png</Source>
+      <Name>text_fon\black_glass_rect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\black_glass_rect.xnb</Output>
+      <Time>2014-10-17T17:27:23.207719+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\edward_elric_figth1.png</Source>
+      <Name>fight\edward_elric_figth1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_figth1.xnb</Output>
+      <Time>2014-10-16T13:41:00.1936932+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\zomb_1_cr.png</Source>
+      <Name>fight\zomb_1_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zomb_1_cr.xnb</Output>
+      <Time>2014-10-16T14:36:48.976098+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\zomb_2_cr.png</Source>
+      <Name>fight\zomb_2_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zomb_2_cr.xnb</Output>
+      <Time>2014-10-16T14:22:20.9102261+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\edward_elric_leg_attack.png</Source>
+      <Name>fight\edward_elric_leg_attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_leg_attack.xnb</Output>
+      <Time>2014-10-17T19:55:21.8109504+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\zombie_attack.png</Source>
+      <Name>fight\zombie_attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zombie_attack.xnb</Output>
+      <Time>2014-10-17T21:10:04.3687338+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\edward_dead.png</Source>
+      <Name>fight\edward_dead</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_dead.xnb</Output>
+      <Time>2014-10-17T21:35:29.2570238+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\game_over.png</Source>
+      <Name>fight\game_over</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\game_over.xnb</Output>
+      <Time>2014-10-17T21:39:19.7230891+04:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest4.xml</Source>
+      <Name>quest\quest4</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest4.xnb</Output>
+      <Time>2014-10-17T22:58:45.0737308+04:00</Time>
+    </Item>
+    <Item>
+      <Source>music\pvz_brainzzz.mp3</Source>
+      <Name>music\pvz_brainzzz</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\pvz_brainzzz.xnb</Output>
+      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\pvz_brainzzz.wma</Extra>
+      <Time>2014-10-17T23:36:52.103827+04:00</Time>
+    </Item>
+    <Item>
+      <Source>music\attack.mp3</Source>
+      <Name>music\attack</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack.xnb</Output>
+      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack.wma</Extra>
+      <Time>2014-10-17T23:52:45.1594913+04:00</Time>
+    </Item>
+    <Item>
+      <Source>music\attack2.mp3</Source>
+      <Name>music\attack2</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack2.xnb</Output>
+      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack2.wma</Extra>
+      <Time>2014-10-17T23:57:02.522785+04:00</Time>
+    </Item>
+    <Item>
+      <Source>music\marsh.mp3</Source>
+      <Name>music\marsh</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\marsh.xnb</Output>
+      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\marsh.wma</Extra>
+      <Time>2014-10-18T00:05:52.2221347+04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{ACBF012D-25DB-4E17-80D1-E9CECB9D9010}</ContentProjectGUID>

@@ -7,6 +7,15 @@ using System.Text;
 
 namespace XNA_test1.Character
 {
+
+    struct CharacterIndex
+    {
+        public int mana;
+        public int hp;
+        public int atackMin, atackMax;
+        public int defense;
+    };
+
     class CharacterInfo
     {
         #region Переменные
@@ -17,10 +26,7 @@ namespace XNA_test1.Character
         int experience;
         const int maxLevel = 9;
         int[] levelExperience = new int[] {100, 200, 300, 400, 500, 600, 700, 800, 900, 0};
-        int mana;
-        int hp;
-        int atackMin, atackMax;
-        int defense;
+        public CharacterIndex characterIndex;
 
         Label labelInfo;
         Label labelNickName1, labelNickName2;
@@ -45,11 +51,11 @@ namespace XNA_test1.Character
 
             level = 0;
             experience = 0;
-            mana = 200;
-            hp = 100;
-            atackMin = 5;
-            atackMax = 10;
-            defense = 5;
+            characterIndex.mana = 200;
+            characterIndex.hp = 100;
+            characterIndex.atackMin = 17;
+            characterIndex.atackMax = 20;
+            characterIndex.defense = 6;
 
             labelInfo = new Label();
             labelInfo.Text = "Информация о персонаже";
@@ -98,7 +104,7 @@ namespace XNA_test1.Character
             labelHP1.Y = y;
 
             labelHP2 = new Label();
-            labelHP2.Text = "" + hp;
+            labelHP2.Text = "" + characterIndex.hp;
             labelHP2.X = x2;
             labelHP2.Y = y;
 
@@ -110,7 +116,7 @@ namespace XNA_test1.Character
             labelMana1.Y = y;
 
             labelMana2 = new Label();
-            labelMana2.Text = "" + mana;
+            labelMana2.Text = "" + characterIndex.mana;
             labelMana2.X = x2;
             labelMana2.Y = y;
 
@@ -122,7 +128,7 @@ namespace XNA_test1.Character
             labelAtack1.Y = y;
 
             labelAtack2 = new Label();
-            labelAtack2.Text = "" + atackMin + "-" + atackMax;
+            labelAtack2.Text = "" + characterIndex.atackMin + "-" + characterIndex.atackMax;
             labelAtack2.X = x2;
             labelAtack2.Y = y;
 
@@ -134,7 +140,7 @@ namespace XNA_test1.Character
             labelDefense1.Y = y;
 
             labelDefense2 = new Label();
-            labelDefense2.Text = " " + defense;
+            labelDefense2.Text = " " + characterIndex.defense;
             labelDefense2.X = x2;
             labelDefense2.Y = y;
                 
@@ -213,20 +219,20 @@ namespace XNA_test1.Character
             {
                 experience %= levelExperience[level];
                 level++;
-                hp += 10;
-                mana += 15;
-                atackMin += 3;
-                atackMax += 4;
-                defense += 2;
+                characterIndex.hp += 10;
+                characterIndex.mana += 15;
+                characterIndex.atackMin += 3;
+                characterIndex.atackMax += 4;
+                characterIndex.defense += 2;
             }
 
             labelLevel2.Text = "" + (level + 1);
             labelExperience2.Text = experience + " / " + levelExperience[level];
 
-            labelHP2.Text = "" + hp;
-            labelMana2.Text = "" + mana;
-            labelAtack2.Text = "" + atackMin + "-" + atackMax;
-            labelDefense2.Text = " " + defense;
+            labelHP2.Text = "" + characterIndex.hp;
+            labelMana2.Text = "" + characterIndex.mana;
+            labelAtack2.Text = "" + characterIndex.atackMin + "-" + characterIndex.atackMax;
+            labelDefense2.Text = " " + characterIndex.defense;
         }
 
         #endregion

@@ -17,17 +17,26 @@ namespace XNA_test1
     {
         #region Переменные
 
-        private Vector2 textPosition;       // позиция кнопки
+        private bool enabled;
         private Rectangle imageRectangle;    // позиция кнопки        
-        private string buttonText;      // текст на кнопке
+        private Dictionary<VisibleState, Texture2D> textures;   // текстуры кнопки
+
         private SpriteFont font;        // шрифт текста        
+        public  Color textColor;
+        private Vector2 textPosition;       // позиция текста
+        private string buttonText;      // текст на кнопке
+        private bool showHint;
+        private string hintText;
+        private Vector2 hintPosition;
+        public Texture2D hintTexture;
+        private Rectangle hintTexturePosition;
+
         private VisibleState currentState;  // текущее состояние кнопки
         private VisibleState previousState; // предыдущее состояние кнопки
-        private Dictionary<VisibleState, Texture2D> textures;   // текстуры кнопки
         private MouseState currentMouseState;   // текущее состояние мышки
         private MouseState previousMouseState;  // предыдущее состояние мышки
-        bool enabled;
-
+        
+        
         #endregion
         //==============================================================================================
         #region Инициализация
@@ -37,9 +46,11 @@ namespace XNA_test1
             this.buttonText = buttonText;
             this.imageRectangle = new Rectangle((int)position.X, (int)position.Y, width, height);
 
+            textColor = Color.White;
             currentState = VisibleState.Normal;
             previousState = VisibleState.Normal;
             enabled = true;
+            showHint = false;
         }
 
         public SpriteFont Font
@@ -48,7 +59,7 @@ namespace XNA_test1
             set 
             { 
                 font = value;
-                UpdateTextPosition();
+                UpdatePosition();
             }
         }
 
@@ -70,7 +81,7 @@ namespace XNA_test1
             set
             { 
                 imageRectangle.X = value;
-                UpdateTextPosition();
+                UpdatePosition();
             }
         }
 
@@ -80,17 +91,17 @@ namespace XNA_test1
             set 
             { 
                 imageRectangle.Y = value;
-                UpdateTextPosition();
+                UpdatePosition();
             }
         }
 
-        public int Heigth
+        public int Height
         {
             get { return imageRectangle.Height; }
             set             
             { 
                 imageRectangle.Height = value;
-                UpdateTextPosition();
+                UpdatePosition();
             }
         }
 
@@ -100,14 +111,24 @@ namespace XNA_test1
             set
             { 
                 imageRectangle.Width = value;
-                UpdateTextPosition();
+                UpdatePosition();
             }
         }
         
-        public void UpdateTextPosition()
+        public void UpdatePosition()
         {
             textPosition = new Vector2(imageRectangle.X + (imageRectangle.Width - font.MeasureString(buttonText).X) / 2, 
                 imageRectangle.Y + (imageRectangle.Height - font.MeasureString(buttonText).Y) / 2);
+
+            if(hintText != null)
+            {
+                hintPosition = new Vector2(imageRectangle.X + imageRectangle.Width / 2 - font.MeasureString(hintText).X / 2, imageRectangle.Y - font.MeasureString(hintText).Y);
+                hintTexturePosition.X = (int)hintPosition.X - 5;
+                hintTexturePosition.Y = (int)hintPosition.Y - 5;
+                hintTexturePosition.Width = (int)font.MeasureString(hintText).X + 10;
+                hintTexturePosition.Height = (int)font.MeasureString(hintText).Y + 10;
+
+            }
         }
 
         public string Text
@@ -115,7 +136,15 @@ namespace XNA_test1
             set 
             {
                 buttonText = value;
-                UpdateTextPosition();
+                UpdatePosition();
+            }
+        }
+
+        public string Hint
+        {
+            set
+            {
+                hintText = value;               
             }
         }
 
@@ -176,7 +205,7 @@ namespace XNA_test1
                         }
                         else if (currentState != VisibleState.Pressed)
                         {
-                            currentState = VisibleState.Hover;
+                            currentState = VisibleState.Hover;                            
                         }
                     }
                     else
@@ -186,6 +215,7 @@ namespace XNA_test1
                             OnMouseClick(EventArgs.Empty);
                         }
                         currentState = VisibleState.Hover;
+                        
                     }
                 }
                 else
@@ -202,6 +232,21 @@ namespace XNA_test1
                 {
                     OnMouseUp(EventArgs.Empty);
                 }
+
+                if(currentState == VisibleState.Hover)
+                {
+                    if (hintText != null)
+                    {
+                        showHint = true;
+                    }
+                }
+                else
+                {
+                    if (hintText != null)
+                    {
+                        showHint = false;
+                    }
+                }
             }
         }
 
@@ -210,7 +255,13 @@ namespace XNA_test1
             if (enabled)
             {
                 bath.Draw(textures[currentState], imageRectangle, Color.White);
-                bath.DrawString(font, buttonText, textPosition, Color.White);
+                bath.DrawString(font, buttonText, textPosition, textColor);
+
+                if(showHint)
+                {
+                    bath.Draw(hintTexture, hintTexturePosition, Color.White);
+                    bath.DrawString(font, hintText, hintPosition, textColor);
+                }
             }
         }
 

@@ -20,9 +20,11 @@ namespace XNA_test1
         CharacterMove player;
         CharacterInfo characterInfo;
         Map map;
+        Fight fight;
         Song song;
         int stage;  // прогресс игры
-        bool showQuest;
+        int situation;  // текущая ситуация в игре
+        int mobNumber;
         bool showCharacterInfo;
         bool keyCDown1, keyCDown2;
         bool keyQDown1, keyQDown2;
@@ -43,15 +45,18 @@ namespace XNA_test1
             player = new CharacterMove();
             characterInfo = new CharacterInfo();
             map = new Map();
+            fight = new Fight();
             
             stage = 1;
+            situation = 0;
             map.QuestNumber = stage;
-            showQuest = true;
             showCharacterInfo = false;
             keyCDown1 = false;
             keyCDown2 = false;
             keyQDown1 = false;
             keyQDown2 = false;
+
+            
         }
 
         public void LoadContent(ContentManager content)
@@ -60,6 +65,8 @@ namespace XNA_test1
 
             quest[0] = content.Load<string>("quest\\quest1");
             quest[1] = content.Load<string>("quest\\quest2");
+            quest[2] = content.Load<string>("quest\\quest3");
+            quest[3] = content.Load<string>("quest\\quest4");
             
             eventMessage.Fon = content.Load<Texture2D>("text_fon\\fallout_1920x1080");
             eventMessage.Font = content.Load<SpriteFont>("font\\fallout_font");
@@ -76,22 +83,36 @@ namespace XNA_test1
             characterInfo.Font = content.Load<SpriteFont>("font\\character_info");
 
             map.LoadContent(content);
-            map.AddNPC(52, 88, 1, content.Load<Texture2D>("character\\VV"));
-            map.AddNPC(42, 85, 0, content.Load<Texture2D>("character\\Gud1"));
-            map.AddNPC(45, 85, 0, content.Load<Texture2D>("character\\Gud2"));
-            map.AddNPC(42, 87, 0, content.Load<Texture2D>("character\\Bojd"));
-            map.AddNPC(54, 73, 0, content.Load<Texture2D>("character\\Bur"));
-            map.AddNPC(54, 76, 0, content.Load<Texture2D>("character\\Bersh"));
 
-            map.AddMob(44, 64, content.Load<Texture2D>("character\\mob1"));
-            map.AddMob(13, 81, content.Load<Texture2D>("character\\mob2"));
-            map.AddMob(48, 60, content.Load<Texture2D>("character\\mob3"));
-            map.AddMob(48, 42, content.Load<Texture2D>("character\\mob4"));
-            map.AddMob(48, 14, content.Load<Texture2D>("character\\mob5"));
-            map.AddMob(11, 53, content.Load<Texture2D>("character\\mob6"));
-            map.AddMob(10, 69, content.Load<Texture2D>("character\\mob1"));
-            map.AddMob(25, 69, content.Load<Texture2D>("character\\mob2"));
-            map.AddMob(43, 70, content.Load<Texture2D>("character\\mob3"));
+            List<int> questList;
+            questList = new List<int>(); 
+            map.AddNPC(42, 85, questList, content.Load<Texture2D>("character\\Gud1"));
+            map.AddNPC(45, 85, questList, content.Load<Texture2D>("character\\Gud2"));
+            map.AddNPC(42, 87, questList, content.Load<Texture2D>("character\\Bojd"));
+            map.AddNPC(54, 73, questList, content.Load<Texture2D>("character\\Bur"));
+            map.AddNPC(54, 76, questList, content.Load<Texture2D>("character\\Bersh"));
+            questList.Add(1);
+            questList.Add(3);
+            map.AddNPC(52, 88, questList, content.Load<Texture2D>("character\\VV"));
+
+            Character.CharacterIndex mobIndex;
+            mobIndex.hp = 100;
+            mobIndex.mana = 0;
+            mobIndex.atackMin = 20;
+            mobIndex.atackMax = 25;
+            mobIndex.defense = 5;
+
+            map.AddMob(44, 64, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(13, 81, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(48, 60, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(48, 42, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(48, 14, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(11, 53, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(10, 69, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(25, 69, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddMob(43, 70, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+
+            fight.LoadContent(content);
 
             song = content.Load<Song>("music\\Tetris");
         }
@@ -103,6 +124,7 @@ namespace XNA_test1
                 eventMessage.WindowHeigth = value;
                 player.WindowHeigth = value;
                 map.WindowHeigth = value;
+                fight.WindowHeigth = value;
                 eventMessage.UpdateButtonPosition();
             }
         }
@@ -114,6 +136,7 @@ namespace XNA_test1
                 eventMessage.WindowWidth = value;
                 player.WindowWidth = value;
                 map.WindowWidth = value;
+                fight.WindowWidth = value;
                 eventMessage.UpdateButtonPosition();
             }
         }
@@ -137,7 +160,6 @@ namespace XNA_test1
            
             if (!keyCDown1 && keyCDown2)
             {
-                characterInfo.AddExperience(100);
                 showCharacterInfo = !showCharacterInfo;
             }
 
@@ -158,13 +180,14 @@ namespace XNA_test1
 
             if (!keyQDown1 && keyQDown2)
             {
-                showQuest = !showQuest;
+                if (situation == 0) situation = 1;
+                else situation = 0;
             }
-            else if (showQuest)
+            else if (situation == 0)
             {
                 if(Keyboard.GetState().IsKeyDown(Keys.Space) || Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
-                    showQuest = false;
+                    situation = 1;
                 }
             }
 
@@ -172,102 +195,83 @@ namespace XNA_test1
 
             #endregion
 
-       /*     switch (stage)
+            switch (situation)
             {
-                case 1:
-                    if (showQuest)
-                    {
-                        eventMessage.Update(time);
-                        MediaPlayer.Stop();
-                    }
-                    else
-                    {
-                        map.Update(time);
-                        player.Update(time);
+                case 0:
+                    eventMessage.Update(time);
+                    MediaPlayer.Stop();
+                    break;
 
+                case 1:
+                    {
                         if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
                         {
                             MediaPlayer.Play(song);
                         }
+                        
+                        map.Update(time);
+                        player.Update(time);
+
+                        mobNumber = map.MobConnected();
+
+                        if (mobNumber != -1)
+                        {
+                            situation = 2;
+                            MediaPlayer.Stop();
+                            fight.Init(characterInfo.characterIndex, map.GetMobIndex(mobNumber));                           
+                        }                      
                     }
+
+                    if (map.QuestNPC())
+                    {
+                        if(stage == 1)
+                        {
+                            map.OpenMap();
+                        }
+                        StageInc();
+                    }
+
                     break;
 
                 case 2:
+                    fight.Update(time);
+                    if(fight.win)
+                    {
+                        characterInfo.AddExperience(map.KickMob(mobNumber));
+                        situation = 1;
+
+                        if (map.MobCnt == 0)
+                        {
+                            StageInc();
+                        }
+                    }
                     
                     break;
 
-                default:
-                    MediaPlayer.Stop();
-                    break;
-
-            }   */
-
-            if (showQuest)
-            {
-                eventMessage.Update(time);
-                MediaPlayer.Stop();
-            }
-            else
-            {
-                map.Update(time);
-                player.Update(time);
-
-                if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
-                {
-                    MediaPlayer.Play(song);
-                }
-            }
-
-            if(map.QuestNPC())
-            {
-                stage++;
-                map.QuestNumber = stage;
-                
-                eventMessage.Text = quest[stage - 1];
-                eventMessage.UpdateButtonPosition();
-                
-                showQuest = true;
-            }
+            }                  
         }
 
         public void Draw(SpriteBatch bath)
         {
-            /*switch (stage)
+            switch(situation)
             {
+                case 0:
+                    eventMessage.Draw(bath);
+                    break;
+
                 case 1:
-                    if (showQuest)
+                    map.Draw(bath);
+                    player.Draw(bath);
+                    if (showCharacterInfo)
                     {
-                        eventMessage.Draw(bath);
+                        characterInfo.Draw(bath);
                     }
-                    else
-                    {
-                        map.Draw(bath);
-                        player.Draw(bath);
-                        if (showCharacterInfo)
-                        {
-                            characterInfo.Draw(bath);
-                        }
-                    }
-                    break;              
+                    break;
 
                 case 2:
-                    
+                    fight.Draw(bath);
                     break;
-            }
-            */
-            if (showQuest)
-            {
-                eventMessage.Draw(bath);
-            }
-            else
-            {
-                map.Draw(bath);
-                player.Draw(bath);
-                if (showCharacterInfo)
-                {
-                    characterInfo.Draw(bath);
-                }
-            }
+            }           
         }
 
         #endregion
@@ -276,7 +280,22 @@ namespace XNA_test1
 
         private void ButtonEventMessageOk_OnClick(object sender, EventArgs e)
         {
-            showQuest = false;
+            situation = 1;
+        }
+
+        #endregion
+        //==============================================================================================
+        #region Другие функции
+
+        private void StageInc()
+        {
+            stage++;
+            map.QuestNumber = stage;
+
+            eventMessage.Text = quest[stage - 1];
+            eventMessage.UpdateButtonPosition();
+
+            situation = 0;
         }
 
         #endregion

@@ -13,7 +13,7 @@ namespace XNA_test1
     {
         #region Переменные
 
-        Texture2D mainMenuFon;          //фоновое изображения для меню
+        Texture2D textureBackGround;          //фоновое изображения для меню
         Button buttonNewGame;
         Button buttonMapEditor;
         Button buttonChangeResolution;
@@ -51,7 +51,7 @@ namespace XNA_test1
         {
             Dictionary<VisibleState, Texture2D> buttonTextures;
 
-            mainMenuFon = content.Load<Texture2D>("fon1_16_9"); //загрузка фонового изображения для меню   
+            textureBackGround = content.Load<Texture2D>("fon1_16_9"); //загрузка фонового изображения для меню   
 
             buttonNewGame.Font = content.Load<SpriteFont>("font\\button_font");
             buttonMapEditor.Font = content.Load<SpriteFont>("font\\button_font");
@@ -111,10 +111,10 @@ namespace XNA_test1
             Rectangle rectWindFon;  //область экрана для рисования спрайта
             float scaleFone;        // отношение высоты экрана к высоте рисунка.
 
-            scaleFone = (float)windowHeigth / mainMenuFon.Height;
-            rectWindFon = new Rectangle(0, 0, (int)(mainMenuFon.Width * scaleFone), windowHeigth);
+            scaleFone = (float)windowHeigth / textureBackGround.Height;
+            rectWindFon = new Rectangle(0, 0, (int)(textureBackGround.Width * scaleFone), windowHeigth);
 
-            bath.Draw(mainMenuFon, rectWindFon, Color.White);            
+            bath.Draw(textureBackGround, rectWindFon, Color.White);            
 
             buttonNewGame.Draw(bath);
             buttonMapEditor.Draw(bath);
