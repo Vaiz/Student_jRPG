@@ -83,11 +83,13 @@ namespace XNA_test1
             menu.LoadContent(Content);
             menu.WindowHeigth = graphics.PreferredBackBufferHeight;
 
+            menu.ButtonContinue_OnClick = ButtonContinue_OnClick;
             menu.ButtonNewGame_OnClick = ButtonNewGame_OnClick;
             menu.ButtonMapEditor_OnClick = ButtonMapEditor_OnClick;
             menu.ButtonChangeResolution_OnClick = ButtonChangeResolution_OnClick;
             menu.ButtonFullScreen_OnClick = ButtonFullScreen_OnClick;
             menu.ButtonExit_OnClick = ButtonExit_OnClick;
+            menu.GameStarted = false;
 
             game.LoadContent(Content);
             game.WindowHeigth = graphics.PreferredBackBufferHeight;
@@ -172,10 +174,16 @@ namespace XNA_test1
         //==============================================================================================
         #region События кнопок при нажатии
 
+        private void ButtonContinue_OnClick(object sender, EventArgs e)
+        {
+            situation = 2;
+        }
+        
         private void ButtonNewGame_OnClick(object sender, EventArgs e)
         {
             situation = 2;
             menu.GameStarted = true;
+            game.Init();
         }
 
         private void ButtonMapEditor_OnClick(object sender, EventArgs e)

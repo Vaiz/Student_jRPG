@@ -49,14 +49,6 @@ namespace XNA_test1.Character
             x1 = 100; x2 = 260;
             y = 115; dy = 55;
 
-            level = 0;
-            experience = 0;
-            characterIndex.mana = 200;
-            characterIndex.hp = 100;
-            characterIndex.atackMin = 17;
-            characterIndex.atackMax = 20;
-            characterIndex.defense = 6;
-
             labelInfo = new Label();
             labelInfo.Text = "Информация о персонаже";
             labelInfo.X = 140;
@@ -80,7 +72,6 @@ namespace XNA_test1.Character
             labelLevel1.Y = y;
 
             labelLevel2 = new Label();
-            labelLevel2.Text = "" + (level + 1);
             labelLevel2.X = x2;
             labelLevel2.Y = y;
 
@@ -92,7 +83,6 @@ namespace XNA_test1.Character
             labelExperience1.Y = y;
 
             labelExperience2 = new Label();
-            labelExperience2.Text = experience + " / " + levelExperience[level];
             labelExperience2.X = x2;
             labelExperience2.Y = y;
 
@@ -104,7 +94,6 @@ namespace XNA_test1.Character
             labelHP1.Y = y;
 
             labelHP2 = new Label();
-            labelHP2.Text = "" + characterIndex.hp;
             labelHP2.X = x2;
             labelHP2.Y = y;
 
@@ -116,7 +105,6 @@ namespace XNA_test1.Character
             labelMana1.Y = y;
 
             labelMana2 = new Label();
-            labelMana2.Text = "" + characterIndex.mana;
             labelMana2.X = x2;
             labelMana2.Y = y;
 
@@ -128,7 +116,6 @@ namespace XNA_test1.Character
             labelAtack1.Y = y;
 
             labelAtack2 = new Label();
-            labelAtack2.Text = "" + characterIndex.atackMin + "-" + characterIndex.atackMax;
             labelAtack2.X = x2;
             labelAtack2.Y = y;
 
@@ -140,10 +127,10 @@ namespace XNA_test1.Character
             labelDefense1.Y = y;
 
             labelDefense2 = new Label();
-            labelDefense2.Text = " " + characterIndex.defense;
             labelDefense2.X = x2;
             labelDefense2.Y = y;
-                
+
+            Init();    
         }        
 
         public Texture2D Texture
@@ -177,6 +164,18 @@ namespace XNA_test1.Character
             }
         }
 
+        public void Init()
+        {
+            level = 0;
+            experience = 0;
+            characterIndex.mana = 200;
+            characterIndex.hp = 100;
+            characterIndex.atackMin = 17;
+            characterIndex.atackMax = 20;
+            characterIndex.defense = 6;
+
+            UpdateLabel();
+        }
 
         #endregion
         //==============================================================================================
@@ -226,6 +225,11 @@ namespace XNA_test1.Character
                 characterIndex.defense += 2;
             }
 
+            UpdateLabel();
+        }
+
+        void UpdateLabel()
+        {
             labelLevel2.Text = "" + (level + 1);
             labelExperience2.Text = experience + " / " + levelExperience[level];
 

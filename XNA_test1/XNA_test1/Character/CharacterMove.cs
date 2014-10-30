@@ -68,6 +68,12 @@ namespace XNA_test1.Character
                                 texture.Width / 4, texture.Height / 4);
         }
 
+        public void Init()
+        {
+            strNumber = 0;
+            positionNumber = 0;
+        }
+
         #endregion
         //==============================================================================================
         #region Основные потоки

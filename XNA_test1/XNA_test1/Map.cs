@@ -149,6 +149,16 @@ namespace XNA_test1
             }
         }
 
+        public void Init()
+        {
+            map = File.ReadAllBytes("map.bin");
+
+            position = new Vector2(48, 94);
+            timeFromLastMobsMove = 0;
+
+            listMobs.Clear();
+        }
+
         #endregion
         //==============================================================================================
         #region Основные потоки

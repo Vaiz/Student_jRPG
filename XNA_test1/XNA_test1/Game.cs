@@ -28,6 +28,7 @@ namespace XNA_test1
         bool showCharacterInfo;
         bool keyCDown1, keyCDown2;
         bool keyQDown1, keyQDown2;
+        Texture2D textureZombie1;
 
         string[] quest;
 
@@ -39,7 +40,7 @@ namespace XNA_test1
         {
             eventMessage = new EventMessage();
             eventMessage.ButtonOk_OnClick = ButtonEventMessageOk_OnClick;
-            //eventMessage.Text = "Игра началась!\nПервый квест: сдать все лабы В.В.";
+            
             quest = new string[10];
 
             player = new CharacterMove();
@@ -54,9 +55,7 @@ namespace XNA_test1
             keyCDown1 = false;
             keyCDown2 = false;
             keyQDown1 = false;
-            keyQDown2 = false;
-
-            
+            keyQDown2 = false;           
         }
 
         public void LoadContent(ContentManager content)
@@ -93,28 +92,12 @@ namespace XNA_test1
             map.AddNPC(54, 76, questList, content.Load<Texture2D>("character\\Bersh"));
             questList.Add(1);
             questList.Add(3);
-            map.AddNPC(52, 88, questList, content.Load<Texture2D>("character\\VV"));
-
-            Character.CharacterIndex mobIndex;
-            mobIndex.hp = 100;
-            mobIndex.mana = 0;
-            mobIndex.atackMin = 20;
-            mobIndex.atackMax = 25;
-            mobIndex.defense = 5;
-
-            map.AddMob(44, 64, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(13, 81, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(48, 60, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(48, 42, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(48, 14, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(11, 53, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(10, 69, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(25, 69, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
-            map.AddMob(43, 70, 10, content.Load<Texture2D>("character\\zombie2"), mobIndex);
+            map.AddNPC(52, 88, questList, content.Load<Texture2D>("character\\VV"));           
 
             fight.LoadContent(content);
 
             song = content.Load<Song>("music\\Tetris");
+            textureZombie1 = content.Load<Texture2D>("character\\zombie2");
         }
 
         public int WindowHeigth
@@ -139,6 +122,42 @@ namespace XNA_test1
                 fight.WindowWidth = value;
                 eventMessage.UpdateButtonPosition();
             }
+        }
+
+        public void Init()
+        {
+            player.Init();
+            characterInfo.Init();
+            map.Init();
+            
+            stage = 1;
+            situation = 0;
+            map.QuestNumber = stage;
+            showCharacterInfo = false;
+            keyCDown1 = false;
+            keyCDown2 = false;
+            keyQDown1 = false;
+            keyQDown2 = false;
+
+            eventMessage.Text = quest[stage - 1];
+            eventMessage.UpdateButtonPosition();
+
+            Character.CharacterIndex mobIndex;
+            mobIndex.hp = 100;
+            mobIndex.mana = 0;
+            mobIndex.atackMin = 20;
+            mobIndex.atackMax = 25;
+            mobIndex.defense = 5;
+
+            map.AddMob(44, 64, 10, textureZombie1, mobIndex);
+            map.AddMob(13, 81, 10, textureZombie1, mobIndex);
+            map.AddMob(48, 60, 10, textureZombie1, mobIndex);
+            map.AddMob(48, 42, 10, textureZombie1, mobIndex);
+            map.AddMob(48, 14, 10, textureZombie1, mobIndex);
+            map.AddMob(11, 53, 10, textureZombie1, mobIndex);
+            map.AddMob(10, 69, 10, textureZombie1, mobIndex);
+            map.AddMob(25, 69, 10, textureZombie1, mobIndex);
+            map.AddMob(43, 70, 10, textureZombie1, mobIndex);
         }
 
         #endregion
