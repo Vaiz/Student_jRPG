@@ -31,7 +31,7 @@ namespace XNA_test1
         Song songDead;
 
         public Character.CharacterIndex maxCharacterIndex;
-        Character.CharacterIndex currentCharacterIndex;
+        public Character.CharacterIndex currentCharacterIndex;
         public Character.CharacterIndex maxMobIndex;
         Character.CharacterIndex currentMobIndex;
 
@@ -262,10 +262,10 @@ namespace XNA_test1
             }
         }
 
-        public void Init(Character.CharacterIndex characterIndex, Character.CharacterIndex mobIndex)
+        public void Init(Character.CharacterIndex characterIndexFull, Character.CharacterIndex characterIndexCurrent, Character.CharacterIndex mobIndex)
         {
-            maxCharacterIndex = characterIndex;
-            currentCharacterIndex = characterIndex;
+            maxCharacterIndex = characterIndexFull;
+            currentCharacterIndex = characterIndexCurrent;
             maxMobIndex = mobIndex;
             currentMobIndex = mobIndex;
 

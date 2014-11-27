@@ -158,6 +158,18 @@ namespace XNA_test1
             map.AddMob(10, 69, 10, textureZombie1, mobIndex);
             map.AddMob(25, 69, 10, textureZombie1, mobIndex);
             map.AddMob(43, 70, 10, textureZombie1, mobIndex);
+
+            map.AddHealPotion(42, 59);
+            map.AddHealPotion(20, 67);
+            map.AddHealPotion(6, 83);
+            map.AddHealPotion(42, 76);
+            map.AddHealPotion(42, 26);
+
+            map.AddManaPotion(7, 65);
+            map.AddManaPotion(6, 80);
+            map.AddManaPotion(42, 73);
+            map.AddManaPotion(51, 65);
+            map.AddManaPotion(54, 26);
         }
 
         #endregion
@@ -237,7 +249,7 @@ namespace XNA_test1
                         {
                             situation = 2;
                             MediaPlayer.Stop();
-                            fight.Init(characterInfo.characterIndex, map.GetMobIndex(mobNumber));                           
+                            fight.Init(characterInfo.characterIndexFull, characterInfo.characterIndexCurrent, map.GetMobIndex(mobNumber));                           
                         }                      
                     }
 
@@ -250,13 +262,32 @@ namespace XNA_test1
                         StageInc();
                     }
 
+                    if (characterInfo.characterIndexCurrent.hp < characterInfo.characterIndexFull.hp)
+                    {
+                        if(map.HealPotionConnected())
+                        {
+                            characterInfo.RestoreHP();
+                        }
+                    }
+
+                    if (characterInfo.characterIndexCurrent.mana < characterInfo.characterIndexFull.mana)
+                    {
+                        if (map.ManaPotionConnected())
+                        {
+                            characterInfo.RestoreMana();
+                        }
+                    }
+
+
                     break;
 
                 case 2:
                     fight.Update(time);
                     if(fight.win)
                     {
+                        characterInfo.characterIndexCurrent = fight.currentCharacterIndex;
                         characterInfo.AddExperience(map.KickMob(mobNumber));
+
                         situation = 1;
 
                         if (map.MobCnt == 0)

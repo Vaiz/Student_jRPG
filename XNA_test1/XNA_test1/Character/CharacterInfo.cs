@@ -26,7 +26,8 @@ namespace XNA_test1.Character
         int experience;
         const int maxLevel = 9;
         int[] levelExperience = new int[] {100, 200, 300, 400, 500, 600, 700, 800, 900, 0};
-        public CharacterIndex characterIndex;
+        public CharacterIndex characterIndexFull;
+        public CharacterIndex characterIndexCurrent;
 
         Label labelInfo;
         Label labelNickName1, labelNickName2;
@@ -168,11 +169,13 @@ namespace XNA_test1.Character
         {
             level = 0;
             experience = 0;
-            characterIndex.mana = 200;
-            characterIndex.hp = 100;
-            characterIndex.atackMin = 17;
-            characterIndex.atackMax = 20;
-            characterIndex.defense = 6;
+            characterIndexFull.mana = 200;
+            characterIndexFull.hp = 100;
+            characterIndexFull.atackMin = 17;
+            characterIndexFull.atackMax = 20;
+            characterIndexFull.defense = 6;
+
+            characterIndexCurrent = characterIndexFull;
 
             UpdateLabel();
         }
@@ -218,11 +221,13 @@ namespace XNA_test1.Character
             {
                 experience %= levelExperience[level];
                 level++;
-                characterIndex.hp += 10;
-                characterIndex.mana += 15;
-                characterIndex.atackMin += 3;
-                characterIndex.atackMax += 4;
-                characterIndex.defense += 2;
+                characterIndexFull.hp += 10;
+                characterIndexFull.mana += 15;
+                characterIndexFull.atackMin += 3;
+                characterIndexFull.atackMax += 4;
+                characterIndexFull.defense += 2;
+
+                characterIndexCurrent = characterIndexFull;
             }
 
             UpdateLabel();
@@ -233,11 +238,24 @@ namespace XNA_test1.Character
             labelLevel2.Text = "" + (level + 1);
             labelExperience2.Text = experience + " / " + levelExperience[level];
 
-            labelHP2.Text = "" + characterIndex.hp;
-            labelMana2.Text = "" + characterIndex.mana;
-            labelAtack2.Text = "" + characterIndex.atackMin + "-" + characterIndex.atackMax;
-            labelDefense2.Text = " " + characterIndex.defense;
+            labelHP2.Text = "" + characterIndexCurrent.hp + " / " + characterIndexFull.hp;
+            labelMana2.Text = "" + characterIndexCurrent.mana + " / " + characterIndexFull.mana;
+            labelAtack2.Text = "" + characterIndexFull.atackMin + "-" + characterIndexFull.atackMax;
+            labelDefense2.Text = " " + characterIndexFull.defense;
         }
+
+        public void RestoreHP()
+        {
+            characterIndexCurrent.hp = characterIndexFull.hp;
+            UpdateLabel();
+        }
+
+        public void RestoreMana()
+        {
+            characterIndexCurrent.mana = characterIndexFull.mana;
+            UpdateLabel();
+        }
+
 
         #endregion
     }

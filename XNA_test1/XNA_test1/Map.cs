@@ -26,6 +26,16 @@ namespace XNA_test1
         }              
     };
 
+    struct Potion
+    {
+        public Vector2 position;   // позиция моба на карте
+        
+        public Potion(int x, int y)
+        {
+            position = new Vector2(x, y);
+        }
+    };
+
     struct Mob
     {
         public Vector2 position;    // позиция моба на карте
@@ -62,10 +72,14 @@ namespace XNA_test1
         Texture2D textureFloor;
         Texture2D textureWall;
         Texture2D textureQuest;
+        Texture2D textureHealPotion;
+        Texture2D textureManaPotion;
         Vector2 position;   // центр карты в координатах карты
         List<NPC> listQuestNPC;
         List<NPC> listNPC;
         List<Mob> listMobs;
+        List<Potion> listHealPotion;
+        List<Potion> listManaPotion;
         int windowWidth;
         int windowHeigth;
         int x0, y0;         // точка начала отрисовки центральной плитки карты в пикселях
@@ -91,6 +105,8 @@ namespace XNA_test1
             listQuestNPC = new List<NPC>();
             listNPC = new List<NPC>();
             listMobs = new List<Mob>();
+            listHealPotion = new List<Potion>();
+            listManaPotion = new List<Potion>();
 
             timeFromLastMobsMove = 0;
 
@@ -102,6 +118,8 @@ namespace XNA_test1
             textureFloor = content.Load<Texture2D>("floor\\floor1");
             textureWall = content.Load<Texture2D>("wall\\wall");
             textureQuest = content.Load<Texture2D>("quest\\quest_icon_blue");
+            textureHealPotion = content.Load<Texture2D>("floor\\healpotion");
+            textureManaPotion = content.Load<Texture2D>("floor\\manapotion");
         }
 
         public int WindowHeigth
@@ -139,6 +157,16 @@ namespace XNA_test1
         public void AddMob(int x, int y, int exp, Texture2D texture, Character.CharacterIndex mobIndex)
         {
             listMobs.Add(new Mob(x, y, exp, texture, mobIndex));
+        }
+
+        public void AddHealPotion(int x, int y)
+        {
+            listHealPotion.Add(new Potion(x, y));
+        }
+
+        public void AddManaPotion(int x, int y)
+        {
+            listManaPotion.Add(new Potion(x, y));
         }
 
         public int QuestNumber
@@ -197,11 +225,16 @@ namespace XNA_test1
                        
             if (move)
             {
+                if (timeFromLastFrame == 0)
+                {
+                    position += vectorMove;
+                }
+
                 timeFromLastFrame += time.ElapsedGameTime.Milliseconds;
+
                 if (timeFromLastFrame > speed)
                 {
-                    timeFromLastFrame = 0;
-                    position += vectorMove;
+                    timeFromLastFrame = 0;               
                 }
             }
             else
@@ -393,6 +426,32 @@ namespace XNA_test1
                     bath.Draw(listMobs[i].texture, rect, listMobs[i].rect, Color.White);
                 }
             }
+
+            for (int i = 0; i < listHealPotion.Count; i++)
+            {
+                if (listHealPotion[i].position.X >= position.X - x && listHealPotion[i].position.X <= position.X + x &&
+                    listHealPotion[i].position.Y >= position.Y - y && listHealPotion[i].position.Y <= position.Y + y)
+                {
+                    rect.X = x0 + (int)((listHealPotion[i].position.X - position.X) * 32);
+                    rect.Y = y0 + (int)((listHealPotion[i].position.Y - position.Y) * 32);
+                    rect.Width = 32;
+                    rect.Height = 32;
+                    bath.Draw(textureHealPotion, rect, Color.White);
+                }
+            }
+
+            for (int i = 0; i < listManaPotion.Count; i++)
+            {
+                if (listManaPotion[i].position.X >= position.X - x && listManaPotion[i].position.X <= position.X + x &&
+                    listManaPotion[i].position.Y >= position.Y - y && listManaPotion[i].position.Y <= position.Y + y)
+                {
+                    rect.X = x0 + (int)((listManaPotion[i].position.X - position.X) * 32);
+                    rect.Y = y0 + (int)((listManaPotion[i].position.Y - position.Y) * 32);
+                    rect.Width = 32;
+                    rect.Height = 32;
+                    bath.Draw(textureManaPotion, rect, Color.White);
+                }
+            }
         }
 
         #endregion
@@ -452,6 +511,33 @@ namespace XNA_test1
             listMobs.RemoveAt(i);
             return exp;
         }
+
+        public bool HealPotionConnected()   // столкнулся с зельем лечения
+        {
+            for (int i = 0; i < listHealPotion.Count; i++)
+            {
+                if ((listHealPotion[i].position - position).LengthSquared() == 0)
+                {
+                    listHealPotion.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool ManaPotionConnected()   // столкнулся с зельем маны
+        {
+            for (int i = 0; i < listManaPotion.Count; i++)
+            {
+                if ((listManaPotion[i].position - position).LengthSquared() == 0)
+                {
+                    listManaPotion.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+ 
 
         #endregion
     }
