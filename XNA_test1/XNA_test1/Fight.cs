@@ -20,6 +20,7 @@ namespace XNA_test1
         Texture2D textureZombie;
         Texture2D textureZombieAttack;
         Texture2D textureGameOver;
+        Texture2D textureBattleLog;
         Rectangle rectPlayer;
         Rectangle rectPlayerAttack;
         Rectangle rectZombieAttack;
@@ -44,6 +45,8 @@ namespace XNA_test1
         Label labelMobMana1, labelMobMana2;
         Label labelMobAtack1, labelMobAtack2;
         Label labelMobDefense1, labelMobDefense2;
+
+        Label[] labelBattleLog;
 
         int windowHeigth, windowWidth;
         int timeElapsed;
@@ -70,6 +73,16 @@ namespace XNA_test1
 
             int x1, x2;
             int y, dy;
+
+            labelBattleLog = new Label[10];
+            for (int i = 0; i < 10; i++)
+            {
+                labelBattleLog[i] = new Label();
+                labelBattleLog[i].Text = "" + i;
+                labelBattleLog[i].X = 450;
+                labelBattleLog[i].Y = 10 + i * 20;
+            }
+
 
             #region CharLabel
 
@@ -179,6 +192,7 @@ namespace XNA_test1
             textureZombie = content.Load<Texture2D>("fight\\zomb_1_cr");
             textureZombieAttack = content.Load<Texture2D>("fight\\zombie_attack");
             textureGameOver = content.Load<Texture2D>("fight\\game_over");
+            textureBattleLog = content.Load<Texture2D>("text_fon\\black_glass_rect");
             songBrains = content.Load<Song>("music\\pvz_brainzzz");
             songAttack = content.Load<Song>("music\\attack2");
             songDead = content.Load<Song>("music\\marsh");
@@ -240,6 +254,12 @@ namespace XNA_test1
             labelMobAtack2.Color = Color.Red;
             labelMobDefense1.Color = Color.Blue;
             labelMobDefense2.Color = Color.Blue;
+
+            for(int i = 0; i < 10; i++)
+            {
+                labelBattleLog[i].Font = content.Load<SpriteFont>("font\\character_info");
+                labelBattleLog[i].Color = Color.Red;
+            }
         }
 
         public int WindowHeigth
@@ -271,6 +291,11 @@ namespace XNA_test1
 
             UpdateLabel();
 
+            for (int i = 0; i < 10; i++)
+            {
+                labelBattleLog[i].Text = "";
+            }
+
             rectPlayer = new Rectangle(0, 0, 80, 80);
             timeElapsed = 0;
             win = false;
@@ -289,6 +314,15 @@ namespace XNA_test1
             labelMobMana2.Text = "" + currentMobIndex.mana + " / " + maxMobIndex.mana;
             labelMobAtack2.Text = "" + currentMobIndex.atackMin + "-" + currentMobIndex.atackMax;
             labelMobDefense2.Text = "" + currentMobIndex.defense;
+        }
+
+        void AddMessageToLog(string text)
+        {
+            for(int i = 0; i < 9; i++)
+            {
+                labelBattleLog[i].Text = labelBattleLog[i + 1].Text;
+            }
+            labelBattleLog[9].Text = text;
         }
 
         #endregion
@@ -340,11 +374,14 @@ namespace XNA_test1
                         timeElapsed += time.ElapsedGameTime.Milliseconds;
                         if (timeElapsed >= 500)
                         {
+                            int damage;
                             timeElapsed = 0;
                             situation = 3;
                             rectZombieAttack = new Rectangle(0, 0, 400, 260);
-                            currentCharacterIndex.hp -= (new Random()).Next(currentMobIndex.atackMin, currentMobIndex.atackMax) - currentCharacterIndex.defense;
+                            damage = new Random().Next(currentMobIndex.atackMin, currentMobIndex.atackMax);
+                            currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
                             UpdateLabel();
+                            AddMessageToLog("Зомби укусил студента. Урон: " + damage + " - " + currentCharacterIndex.defense);
                             MediaPlayer.Play(songBrains);
                         }
                         break;
@@ -382,7 +419,14 @@ namespace XNA_test1
             scale = (float)windowHeigth / textureBackGround.Height;
             rectSprite = new Rectangle(0, 0, (int)(textureBackGround.Width * scale), windowHeigth);
 
-            bath.Draw(textureBackGround, rectSprite, Color.White);           
+            bath.Draw(textureBackGround, rectSprite, Color.White);
+
+            bath.Draw(textureBattleLog, new Rectangle(420, 0, 500, 240), Color.White);
+
+            for (int i = 0; i < 10; i++)
+            {
+                labelBattleLog[i].Draw(bath);
+            }
 
             scale = (float)windowWidth / 1920f;
             if (currentCharacterIndex.hp <= 0 && situation != 3)
@@ -467,13 +511,16 @@ namespace XNA_test1
         {
             if(playerMove)
             {
+                int damage;
                 situation = 1;
                 MediaPlayer.Play(songAttack);
                 playerMove = false;
                 timeElapsed = 0;
                 rectPlayerAttack = new Rectangle(0, 0, 80, 80);
-                currentMobIndex.hp -= new Random().Next(currentCharacterIndex.atackMin, currentCharacterIndex.atackMax) - currentMobIndex.defense;
+                damage = new Random().Next(currentCharacterIndex.atackMin, currentCharacterIndex.atackMax);
+                currentMobIndex.hp -= damage - currentMobIndex.defense;
                 UpdateLabel();
+                AddMessageToLog("Студент нанес удар ногой. Урон: " + damage + " - " + currentMobIndex.defense);
             }
         }
 
@@ -488,6 +535,7 @@ namespace XNA_test1
                     currentCharacterIndex.hp += 30;
                     if (currentCharacterIndex.hp > maxCharacterIndex.hp) currentCharacterIndex.hp = maxCharacterIndex.hp;
                     UpdateLabel();
+                    AddMessageToLog("Студент восстановил 30 хп.");
                     situation = 2;
                 }
 

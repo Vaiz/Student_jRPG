@@ -55,6 +55,10 @@ namespace XNA_test1
 
         public string Text
         {
+            get
+            {
+                return text;
+            }
             set
             {
                 text = value;
