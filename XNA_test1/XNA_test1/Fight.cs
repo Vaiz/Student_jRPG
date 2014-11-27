@@ -15,6 +15,7 @@ namespace XNA_test1
 
         Texture2D textureBackGround;
         Texture2D texturePlayer;
+        Texture2D texturePlayerAttackHand;
         Texture2D texturePlayerAttackLeg;
         Texture2D texturePlayerAttackSpike;
         Texture2D texturePlayerDead;
@@ -25,6 +26,7 @@ namespace XNA_test1
         Rectangle rectPlayer;
         Rectangle rectPlayerAttack;
         Rectangle rectZombieAttack;
+        Button buttonHandAttack;
         Button buttonLegAttack;
         Button buttonSpikeAttack;
         Button buttonHeal;
@@ -64,6 +66,8 @@ namespace XNA_test1
         public Fight()
         {
             rectPlayer = new Rectangle(0, 0, 80, 80);
+            buttonHandAttack = new Button(new Vector2(0, 0), 64, 64, "");
+            buttonHandAttack.MouseClick += ButtonHandAttack_OnClick;
             buttonLegAttack = new Button(new Vector2(0, 0), 64, 64, "");
             buttonLegAttack.MouseClick += ButtonLegAttack_OnClick;
             buttonSpikeAttack = new Button(new Vector2(0, 0), 64, 64, "");
@@ -191,6 +195,7 @@ namespace XNA_test1
         {
             textureBackGround = content.Load<Texture2D>("background\\Thenewkid");
             texturePlayer = content.Load<Texture2D>("fight\\edward_elric_figth1");
+            texturePlayerAttackHand = content.Load<Texture2D>("fight\\edward_elric_hand_atack");
             texturePlayerAttackLeg = content.Load<Texture2D>("fight\\edward_elric_leg_attack");
             texturePlayerAttackSpike = content.Load<Texture2D>("fight\\edward_elric_spike_atack1");
             texturePlayerDead = content.Load<Texture2D>("fight\\edward_dead");
@@ -209,9 +214,21 @@ namespace XNA_test1
             buttonTextures.Add(VisibleState.Pressed, content.Load<Texture2D>("button\\button_chiken_leg"));
             buttonLegAttack.Textures = buttonTextures;
             buttonLegAttack.Font = content.Load<SpriteFont>("font\\character_info");
-            buttonLegAttack.Hint = "Удар ногой";
+            buttonLegAttack.Hint = "Удар ногой. Шанс 30% оглушить\nврага на один ход.";
             buttonLegAttack.hintTexture = content.Load<Texture2D>("text_fon\\black_glass_rect");
             buttonLegAttack.textColor = Color.Aqua;
+            buttonLegAttack.Enabled = false;
+
+            buttonTextures = null;
+            buttonTextures = new Dictionary<VisibleState, Texture2D>();
+            buttonTextures.Add(VisibleState.Normal, content.Load<Texture2D>("button\\button_hand"));
+            buttonTextures.Add(VisibleState.Hover, content.Load<Texture2D>("button\\button_hand"));
+            buttonTextures.Add(VisibleState.Pressed, content.Load<Texture2D>("button\\button_hand"));
+            buttonHandAttack.Textures = buttonTextures;
+            buttonHandAttack.Font = content.Load<SpriteFont>("font\\character_info");
+            buttonHandAttack.Hint = "Удар рукой.\nОткрывает удар ногой.";
+            buttonHandAttack.hintTexture = content.Load<Texture2D>("text_fon\\black_glass_rect");
+            buttonHandAttack.textColor = Color.Aqua;
 
             buttonTextures = null;
             buttonTextures = new Dictionary<VisibleState, Texture2D>();
@@ -291,6 +308,8 @@ namespace XNA_test1
             set 
             {
                 windowWidth = value;
+                buttonHandAttack.X = (int)(500 * ((float)value / 1920f) + 120);
+                buttonHandAttack.Y = (int)(800 * ((float)value / 1920f) - 150);
                 buttonLegAttack.X = (int)(500 * ((float)value / 1920f) + 120);
                 buttonLegAttack.Y = (int)(800 * ((float)value / 1920f) - 150);
                 buttonSpikeAttack.X = (int)(500 * ((float)value / 1920f) + 50);
@@ -370,6 +389,7 @@ namespace XNA_test1
                 switch (situation)
                 {
                     case 0: // Ожидание выбора игрока
+                        buttonHandAttack.Update(time);
                         buttonLegAttack.Update(time);
                         buttonSpikeAttack.Update(time);
                         buttonHeal.Update(time);
@@ -383,7 +403,8 @@ namespace XNA_test1
                             rectPlayerAttack.X += 80;
                             if (rectPlayerAttack.X == 240)
                             {
-                                situation = 2;
+                                if (playerMove) situation = 0;
+                                else situation = 2;
                                 if (currentMobIndex.hp <= 0) win = true;
                             }
                         }
@@ -441,6 +462,19 @@ namespace XNA_test1
                         }
                         break;
 
+                    case 5: // Удар рукой
+                        timeElapsed += time.ElapsedGameTime.Milliseconds;
+                        if (timeElapsed >= 200)
+                        {
+                            timeElapsed = 0;
+                            rectPlayerAttack.X += 80;
+                            if (rectPlayerAttack.X == 240)
+                            {
+                                situation = 2;
+                                if (currentMobIndex.hp <= 0) win = true;
+                            }
+                        }
+                        break;
                 }
             }
         }
@@ -484,6 +518,12 @@ namespace XNA_test1
 
                         rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
                         bath.Draw(textureZombie, rectSprite, Color.White);
+
+                        buttonSpikeAttack.Draw(bath);
+                        buttonHeal.Draw(bath);
+                        buttonHandAttack.Draw(bath);
+                        buttonLegAttack.Draw(bath);
+                        
                         break;
 
                     case 1:
@@ -517,13 +557,15 @@ namespace XNA_test1
                         rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
                         bath.Draw(textureZombie, rectSprite, Color.White);
                         break;
-                }
 
-                if (playerMove)
-                {
-                    buttonLegAttack.Draw(bath);
-                    buttonSpikeAttack.Draw(bath);
-                    buttonHeal.Draw(bath);
+                    case 5:
+                        rectSprite = new Rectangle((int)(500 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
+                        bath.Draw(texturePlayerAttackHand, rectSprite, rectPlayerAttack, Color.White);
+
+                        rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
+                        bath.Draw(textureZombie, rectSprite, Color.White);
+                        break;
+
                 }
             }
             labelCharHP1.Draw(bath);
@@ -563,6 +605,35 @@ namespace XNA_test1
                 currentMobIndex.hp -= damage - currentMobIndex.defense;
                 UpdateLabel();
                 AddMessageToLog("Студент нанес удар ногой. Урон: " + damage + " - " + currentMobIndex.defense);
+
+                buttonLegAttack.Enabled = false;
+                buttonHandAttack.Enabled = true;
+
+                if(new Random().Next(0, 99) < 30)
+                {
+                    AddMessageToLog("Зомби пропускает ход");
+                    playerMove = true;
+                }
+            }
+        }
+
+        private void ButtonHandAttack_OnClick(object sender, EventArgs e)
+        {
+            if (playerMove)
+            {
+                int damage;
+                situation = 5;
+                MediaPlayer.Play(songAttack);
+                playerMove = false;
+                timeElapsed = 0;
+                rectPlayerAttack = new Rectangle(0, 0, 80, 80);
+                damage = new Random().Next(currentCharacterIndex.atackMin, currentCharacterIndex.atackMax);
+                currentMobIndex.hp -= damage - currentMobIndex.defense;
+                UpdateLabel();
+                AddMessageToLog("Студент нанес удар рукой. Урон: " + damage + " - " + currentMobIndex.defense);
+
+                buttonLegAttack.Enabled = true;
+                buttonHandAttack.Enabled = false;
             }
         }
 
@@ -581,9 +652,11 @@ namespace XNA_test1
                 currentCharacterIndex.mana -= 20;
                 UpdateLabel();
                 AddMessageToLog("Студент нанес удар шипом. Урон: " + damage);
+
+                buttonLegAttack.Enabled = false;
+                buttonHandAttack.Enabled = true;
             }
         }
-
 
         private void ButtonHeal_OnClick(object sender, EventArgs e)
         {
@@ -598,8 +671,10 @@ namespace XNA_test1
                     UpdateLabel();
                     AddMessageToLog("Студент восстановил 30 хп.");
                     situation = 2;
-                }
 
+                    buttonLegAttack.Enabled = false;
+                    buttonHandAttack.Enabled = true;
+                }
             }
         }
 
