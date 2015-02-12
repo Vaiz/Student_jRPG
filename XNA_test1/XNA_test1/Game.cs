@@ -54,17 +54,21 @@ namespace XNA_test1
             characterInfo = new CharacterInfo();
             listMaps = new List<Map>();
             listMaps.Add(new Map("level1.bin", new Vector2(48, 94)));
-            currentMap = 0;
-            fight = new Fight();
+            listMaps.Add(new Map("level2.bin", new Vector2(36, 43)));
             
-            stage = 1;
-            situation = Situation.EVENT_MESSAGE;
-            listMaps[0].QuestNumber = stage;
-            showCharacterInfo = false;
+            fight = new Fight();
+
+            //currentMap = 0;
+            //stage = 1;
+            //Map.QuestNumber = stage;
+            
+            //situation = Situation.EVENT_MESSAGE;
+            
+            /*showCharacterInfo = false;
             keyCDown1 = false;
             keyCDown2 = false;
             keyQDown1 = false;
-            keyQDown2 = false;           
+            keyQDown2 = false;  */         
         }
 
         public void LoadContent(ContentManager content)
@@ -75,6 +79,9 @@ namespace XNA_test1
             quest[1] = content.Load<string>("quest\\quest2");
             quest[2] = content.Load<string>("quest\\quest3");
             quest[3] = content.Load<string>("quest\\quest4");
+            quest[4] = content.Load<string>("quest\\quest5");
+            quest[5] = content.Load<string>("quest\\quest6");
+            quest[6] = content.Load<string>("quest\\quest7");
             
             eventMessage.Fon = content.Load<Texture2D>("text_fon\\fallout_1920x1080");
             eventMessage.Font = content.Load<SpriteFont>("font\\fallout_font");
@@ -102,7 +109,12 @@ namespace XNA_test1
             List<int> questListVV = new List<int>();
             questListVV.Add(1);
             questListVV.Add(3);
-            listMaps[0].AddNPC(52, 88, questListVV, content.Load<Texture2D>("character\\VV"));           
+            questListVV.Add(6);
+            listMaps[0].AddNPC(52, 88, questListVV, content.Load<Texture2D>("character\\VV"));
+
+            List<int> questListLab = new List<int>();
+            questListLab.Add(5);
+            listMaps[1].AddNPC(29, 17, questListLab, content.Load<Texture2D>("character\\lab"));
 
             fight.LoadContent(content);
 
@@ -116,7 +128,8 @@ namespace XNA_test1
             {
                 eventMessage.WindowHeigth = value;
                 player.WindowHeigth = value;
-                listMaps[currentMap].WindowHeigth = value;
+                for (int i = 0; i < listMaps.Count; i++)
+                    listMaps[i].WindowHeigth = value;
                 fight.WindowHeigth = value;
                 eventMessage.UpdateButtonPosition();
             }
@@ -128,7 +141,8 @@ namespace XNA_test1
             { 
                 eventMessage.WindowWidth = value;
                 player.WindowWidth = value;
-                listMaps[currentMap].WindowWidth = value;
+                for (int i = 0; i < listMaps.Count; i++)
+                    listMaps[i].WindowWidth = value;
                 fight.WindowWidth = value;
                 eventMessage.UpdateButtonPosition();
             }
@@ -138,11 +152,13 @@ namespace XNA_test1
         {
             player.Init();
             characterInfo.Init();
-            listMaps[currentMap].Init("level1.bin", new Vector2(48, 94));
-            
+            listMaps[0].Init("level1.bin", new Vector2(48, 94));
+            listMaps[1].Init("level2.bin", new Vector2(36, 43));
+            currentMap = 0;
+
             stage = 1;
             situation = 0;
-            listMaps[currentMap].QuestNumber = stage;
+            Map.QuestNumber = stage;
             showCharacterInfo = false;
             keyCDown1 = false;
             keyCDown2 = false;
@@ -159,29 +175,41 @@ namespace XNA_test1
             mobIndex.atackMax = 25;
             mobIndex.defense = 5;
 
-            listMaps[currentMap].AddMob(44, 64, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(13, 81, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(48, 60, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(48, 42, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(48, 14, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(11, 53, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(10, 69, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(25, 69, 10, textureZombie1, mobIndex);
-            listMaps[currentMap].AddMob(43, 70, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(44, 64, 10, textureZombie1, mobIndex);
+            /*listMaps[0].AddMob(13, 81, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(48, 60, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(48, 42, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(48, 14, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(11, 53, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(10, 69, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(25, 69, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(43, 70, 10, textureZombie1, mobIndex);*/
 
-            listMaps[currentMap].AddHealPotion(42, 59);
-            listMaps[currentMap].AddHealPotion(20, 67);
-            listMaps[currentMap].AddHealPotion(6, 83);
-            listMaps[currentMap].AddHealPotion(42, 76);
-            listMaps[currentMap].AddHealPotion(42, 26);
+            listMaps[0].AddHealPotion(42, 59);
+            listMaps[0].AddHealPotion(20, 67);
+            listMaps[0].AddHealPotion(6, 83);
+            listMaps[0].AddHealPotion(42, 76);
+            listMaps[0].AddHealPotion(42, 26);
 
-            listMaps[currentMap].AddManaPotion(7, 65);
-            listMaps[currentMap].AddManaPotion(6, 80);
-            listMaps[currentMap].AddManaPotion(42, 73);
-            listMaps[currentMap].AddManaPotion(51, 65);
-            listMaps[currentMap].AddManaPotion(54, 26);
+            listMaps[0].AddManaPotion(7, 65);
+            listMaps[0].AddManaPotion(6, 80);
+            listMaps[0].AddManaPotion(42, 73);
+            listMaps[0].AddManaPotion(51, 65);
+            listMaps[0].AddManaPotion(54, 26);
 
-            listMaps[currentMap].AddPortal(53, 69);
+            listMaps[0].AddPortal(53, 69);
+
+            mobIndex.hp = 150;
+            mobIndex.mana = 150;
+            mobIndex.atackMin = 23;
+            mobIndex.atackMax = 27;
+            mobIndex.defense = 7;
+
+            listMaps[1].AddMob(26, 44, 15, textureZombie1, mobIndex);
+            listMaps[1].AddMob(25, 32, 15, textureZombie1, mobIndex);
+            listMaps[1].AddMob(30, 23, 15, textureZombie1, mobIndex);
+
+            listMaps[1].AddPortal(37, 43);
         }
 
         #endregion
@@ -267,11 +295,7 @@ namespace XNA_test1
 
                     if (listMaps[currentMap].QuestNPC())
                     {
-                        if(stage == 1)
-                        {
-                            listMaps[currentMap].OpenMap();
-                        }
-                        StageInc();
+                        StageInc();                       
                     }
 
                     if (characterInfo.characterIndexCurrent.hp < characterInfo.characterIndexFull.hp)
@@ -290,6 +314,10 @@ namespace XNA_test1
                         }
                     }
 
+                    if (listMaps[currentMap].PortalsConnected())
+                    {
+                        currentMap = (currentMap + 1) % 2;
+                    }
 
                     break;
 
@@ -352,12 +380,30 @@ namespace XNA_test1
         private void StageInc()
         {
             stage++;
-            listMaps[currentMap].QuestNumber = stage;
+            Map.QuestNumber = stage;
 
             eventMessage.Text = quest[stage - 1];
             eventMessage.UpdateButtonPosition();
 
             situation = 0;
+
+            switch (stage)
+            {
+                case 2:
+                    listMaps[0].OpenMap(48, 71);
+                    listMaps[0].OpenMap(48, 72);
+                    break;
+
+                case 4:
+                    listMaps[0].OpenMap(49, 69);
+                    listMaps[0].OpenMap(50, 69);
+                    break;
+
+                case 5:
+                    listMaps[1].OpenMap(29, 19);
+                    listMaps[1].OpenMap(29, 20);
+                    break;
+            }
         }
 
         #endregion

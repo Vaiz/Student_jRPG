@@ -172,7 +172,7 @@ namespace XNA_test1.Character
             characterIndexFull.mana = 200;
             characterIndexFull.hp = 100;
             characterIndexFull.atackMin = 17;
-            characterIndexFull.atackMax = 20;
+            characterIndexFull.atackMax = 9920;
             characterIndexFull.defense = 6;
 
             characterIndexCurrent = characterIndexFull;

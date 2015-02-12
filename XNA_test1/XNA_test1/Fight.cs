@@ -338,6 +338,9 @@ namespace XNA_test1
             win = false;
             playerMove = true;
             situation = 0;
+
+            buttonLegAttack.Enabled = false;
+            buttonHandAttack.Enabled = true;
         }
 
         void UpdateLabel()

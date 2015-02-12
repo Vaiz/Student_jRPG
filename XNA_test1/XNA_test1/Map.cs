@@ -74,6 +74,7 @@ namespace XNA_test1
         Texture2D textureQuest;
         Texture2D textureHealPotion;
         Texture2D textureManaPotion;
+        Texture2D texturePortal;
         Vector2 position;   // центр карты в координатах карты
         List<NPC> listQuestNPC;
         List<NPC> listNPC;
@@ -88,7 +89,7 @@ namespace XNA_test1
         int speed;          // количество миллисекунд для смены кадра на новый
         int timeFromLastFrame;    // время, которое прошло с момента смены последнего кадра в милиссекундах
         int timeFromLastMobsMove;    // время, которое прошло с момента последнего передвижения ботов
-        int questNumber;    // номер текущего квеста
+        static int questNumber;    // номер текущего квеста
 
         #endregion
         //==============================================================================================
@@ -122,6 +123,7 @@ namespace XNA_test1
             textureQuest = content.Load<Texture2D>("quest\\quest_icon_blue");
             textureHealPotion = content.Load<Texture2D>("floor\\healpotion");
             textureManaPotion = content.Load<Texture2D>("floor\\manapotion");
+            texturePortal = content.Load<Texture2D>("floor\\portal_32x32");
         }
 
         public int WindowHeigth
@@ -176,7 +178,7 @@ namespace XNA_test1
             listPortals.Add(new MapObject(x, y));
         }
 
-        public int QuestNumber
+        public static int QuestNumber
         {
             set
             {
@@ -469,7 +471,7 @@ namespace XNA_test1
                     rect.Y = y0 + (int)((listPortals[i].position.Y - position.Y) * 32) + 4;
                     rect.Width = 24;
                     rect.Height = 24;
-                    bath.Draw(textureFloor, rect, new Rectangle(128, 32, 32, 32), Color.White);
+                    bath.Draw(texturePortal, rect, Color.White);
                 }
             }
         }
@@ -493,10 +495,9 @@ namespace XNA_test1
             return false;
         }
 
-        public void OpenMap()   // Открыть выход с кафедры
+        public void OpenMap(int x, int y)   // убрать стену
         {
-            map[72 * sizeX + 48] = 1;
-            map[71 * sizeX + 48] = 1;
+            map[y * sizeX + x] = 1;
         }
 
         public int MobConnected()   // столкнулся с мобом
@@ -564,6 +565,7 @@ namespace XNA_test1
             {
                 if ((listPortals[i].position - position).LengthSquared() == 0)
                 {
+                    position.X--;
                     return true;
                 }
             }
