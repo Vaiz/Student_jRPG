@@ -14,18 +14,25 @@ namespace XNA_test1
 {
     class Game
     {
+        enum Situation
+        {
+            EVENT_MESSAGE,
+            WALK_ON_MAP,
+            FIGTH
+        };
         #region Переменные
 
         EventMessage eventMessage;
         CharacterMove player;
         CharacterInfo characterInfo;
-        Map map;
+        List<Map> listMaps;
+        int currentMap;
         Fight fight;
         Song song;
         int stage;  // прогресс игры
-        int situation;  // текущая ситуация в игре
-        int mobNumber;
-        bool showCharacterInfo;
+        Situation situation;  // текущая ситуация в игре
+        int mobNumber;  // id бота, с которым происходит бой
+        bool showCharacterInfo; 
         bool keyCDown1, keyCDown2;
         bool keyQDown1, keyQDown2;
         Texture2D textureZombie1;
@@ -45,12 +52,14 @@ namespace XNA_test1
 
             player = new CharacterMove();
             characterInfo = new CharacterInfo();
-            map = new Map();
+            listMaps = new List<Map>();
+            listMaps.Add(new Map("level1.bin", new Vector2(48, 94)));
+            currentMap = 0;
             fight = new Fight();
             
             stage = 1;
-            situation = 0;
-            map.QuestNumber = stage;
+            situation = Situation.EVENT_MESSAGE;
+            listMaps[0].QuestNumber = stage;
             showCharacterInfo = false;
             keyCDown1 = false;
             keyCDown2 = false;
@@ -81,18 +90,19 @@ namespace XNA_test1
             characterInfo.Texture = content.Load<Texture2D>("text_fon\\paper1_cr");
             characterInfo.Font = content.Load<SpriteFont>("font\\character_info");
 
-            map.LoadContent(content);
+            for(int i = 0; i < listMaps.Count; i++)
+                listMaps[i].LoadContent(content);
+            
+            listMaps[0].AddNPC(42, 85, new List<int>(), content.Load<Texture2D>("character\\Gud1"));
+            listMaps[0].AddNPC(45, 85, new List<int>(), content.Load<Texture2D>("character\\Gud2"));
+            listMaps[0].AddNPC(42, 87, new List<int>(), content.Load<Texture2D>("character\\Bojd"));
+            listMaps[0].AddNPC(54, 73, new List<int>(), content.Load<Texture2D>("character\\Bur"));
+            listMaps[0].AddNPC(54, 76, new List<int>(), content.Load<Texture2D>("character\\Bersh"));
 
-            List<int> questList;
-            questList = new List<int>(); 
-            map.AddNPC(42, 85, questList, content.Load<Texture2D>("character\\Gud1"));
-            map.AddNPC(45, 85, questList, content.Load<Texture2D>("character\\Gud2"));
-            map.AddNPC(42, 87, questList, content.Load<Texture2D>("character\\Bojd"));
-            map.AddNPC(54, 73, questList, content.Load<Texture2D>("character\\Bur"));
-            map.AddNPC(54, 76, questList, content.Load<Texture2D>("character\\Bersh"));
-            questList.Add(1);
-            questList.Add(3);
-            map.AddNPC(52, 88, questList, content.Load<Texture2D>("character\\VV"));           
+            List<int> questListVV = new List<int>();
+            questListVV.Add(1);
+            questListVV.Add(3);
+            listMaps[0].AddNPC(52, 88, questListVV, content.Load<Texture2D>("character\\VV"));           
 
             fight.LoadContent(content);
 
@@ -106,7 +116,7 @@ namespace XNA_test1
             {
                 eventMessage.WindowHeigth = value;
                 player.WindowHeigth = value;
-                map.WindowHeigth = value;
+                listMaps[currentMap].WindowHeigth = value;
                 fight.WindowHeigth = value;
                 eventMessage.UpdateButtonPosition();
             }
@@ -118,7 +128,7 @@ namespace XNA_test1
             { 
                 eventMessage.WindowWidth = value;
                 player.WindowWidth = value;
-                map.WindowWidth = value;
+                listMaps[currentMap].WindowWidth = value;
                 fight.WindowWidth = value;
                 eventMessage.UpdateButtonPosition();
             }
@@ -128,11 +138,11 @@ namespace XNA_test1
         {
             player.Init();
             characterInfo.Init();
-            map.Init();
+            listMaps[currentMap].Init("level1.bin", new Vector2(48, 94));
             
             stage = 1;
             situation = 0;
-            map.QuestNumber = stage;
+            listMaps[currentMap].QuestNumber = stage;
             showCharacterInfo = false;
             keyCDown1 = false;
             keyCDown2 = false;
@@ -144,32 +154,34 @@ namespace XNA_test1
 
             Character.CharacterIndex mobIndex;
             mobIndex.hp = 100;
-            mobIndex.mana = 0;
+            mobIndex.mana = 100;
             mobIndex.atackMin = 20;
             mobIndex.atackMax = 25;
             mobIndex.defense = 5;
 
-            map.AddMob(44, 64, 10, textureZombie1, mobIndex);
-            map.AddMob(13, 81, 10, textureZombie1, mobIndex);
-            map.AddMob(48, 60, 10, textureZombie1, mobIndex);
-            map.AddMob(48, 42, 10, textureZombie1, mobIndex);
-            map.AddMob(48, 14, 10, textureZombie1, mobIndex);
-            map.AddMob(11, 53, 10, textureZombie1, mobIndex);
-            map.AddMob(10, 69, 10, textureZombie1, mobIndex);
-            map.AddMob(25, 69, 10, textureZombie1, mobIndex);
-            map.AddMob(43, 70, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(44, 64, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(13, 81, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(48, 60, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(48, 42, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(48, 14, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(11, 53, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(10, 69, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(25, 69, 10, textureZombie1, mobIndex);
+            listMaps[currentMap].AddMob(43, 70, 10, textureZombie1, mobIndex);
 
-            map.AddHealPotion(42, 59);
-            map.AddHealPotion(20, 67);
-            map.AddHealPotion(6, 83);
-            map.AddHealPotion(42, 76);
-            map.AddHealPotion(42, 26);
+            listMaps[currentMap].AddHealPotion(42, 59);
+            listMaps[currentMap].AddHealPotion(20, 67);
+            listMaps[currentMap].AddHealPotion(6, 83);
+            listMaps[currentMap].AddHealPotion(42, 76);
+            listMaps[currentMap].AddHealPotion(42, 26);
 
-            map.AddManaPotion(7, 65);
-            map.AddManaPotion(6, 80);
-            map.AddManaPotion(42, 73);
-            map.AddManaPotion(51, 65);
-            map.AddManaPotion(54, 26);
+            listMaps[currentMap].AddManaPotion(7, 65);
+            listMaps[currentMap].AddManaPotion(6, 80);
+            listMaps[currentMap].AddManaPotion(42, 73);
+            listMaps[currentMap].AddManaPotion(51, 65);
+            listMaps[currentMap].AddManaPotion(54, 26);
+
+            listMaps[currentMap].AddPortal(53, 69);
         }
 
         #endregion
@@ -211,14 +223,14 @@ namespace XNA_test1
 
             if (!keyQDown1 && keyQDown2)
             {
-                if (situation == 0) situation = 1;
-                else situation = 0;
+                if (situation == Situation.EVENT_MESSAGE) situation = Situation.WALK_ON_MAP;
+                else situation = Situation.EVENT_MESSAGE;
             }
-            else if (situation == 0)
+            else if (situation == Situation.EVENT_MESSAGE)
             {
                 if(Keyboard.GetState().IsKeyDown(Keys.Space) || Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
-                    situation = 1;
+                    situation = Situation.WALK_ON_MAP;
                 }
             }
 
@@ -228,43 +240,43 @@ namespace XNA_test1
 
             switch (situation)
             {
-                case 0:
+                case Situation.EVENT_MESSAGE:
                     eventMessage.Update(time);
                     MediaPlayer.Stop();
                     break;
 
-                case 1:
+                case Situation.WALK_ON_MAP:
                     {
                         if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
                         {
                             MediaPlayer.Play(song);
                         }
                         
-                        map.Update(time);
+                        listMaps[currentMap].Update(time);
                         player.Update(time);
 
-                        mobNumber = map.MobConnected();
+                        mobNumber = listMaps[currentMap].MobConnected();
 
                         if (mobNumber != -1)
                         {
-                            situation = 2;
+                            situation = Situation.FIGTH;
                             MediaPlayer.Stop();
-                            fight.Init(characterInfo.characterIndexFull, characterInfo.characterIndexCurrent, map.GetMobIndex(mobNumber));                           
+                            fight.Init(characterInfo.characterIndexFull, characterInfo.characterIndexCurrent, listMaps[currentMap].GetMobIndex(mobNumber));                           
                         }                      
                     }
 
-                    if (map.QuestNPC())
+                    if (listMaps[currentMap].QuestNPC())
                     {
                         if(stage == 1)
                         {
-                            map.OpenMap();
+                            listMaps[currentMap].OpenMap();
                         }
                         StageInc();
                     }
 
                     if (characterInfo.characterIndexCurrent.hp < characterInfo.characterIndexFull.hp)
                     {
-                        if(map.HealPotionConnected())
+                        if(listMaps[currentMap].HealPotionConnected())
                         {
                             characterInfo.RestoreHP();
                         }
@@ -272,7 +284,7 @@ namespace XNA_test1
 
                     if (characterInfo.characterIndexCurrent.mana < characterInfo.characterIndexFull.mana)
                     {
-                        if (map.ManaPotionConnected())
+                        if (listMaps[currentMap].ManaPotionConnected())
                         {
                             characterInfo.RestoreMana();
                         }
@@ -281,16 +293,16 @@ namespace XNA_test1
 
                     break;
 
-                case 2:
+                case Situation.FIGTH:
                     fight.Update(time);
                     if(fight.win)
                     {
                         characterInfo.characterIndexCurrent = fight.currentCharacterIndex;
-                        characterInfo.AddExperience(map.KickMob(mobNumber));
+                        characterInfo.AddExperience(listMaps[currentMap].KickMob(mobNumber));
 
-                        situation = 1;
+                        situation = Situation.WALK_ON_MAP;
 
-                        if (map.MobCnt == 0)
+                        if (listMaps[currentMap].MobCnt == 0)
                         {
                             StageInc();
                         }
@@ -305,12 +317,12 @@ namespace XNA_test1
         {
             switch(situation)
             {
-                case 0:
+                case Situation.EVENT_MESSAGE:
                     eventMessage.Draw(bath);
                     break;
 
-                case 1:
-                    map.Draw(bath);
+                case Situation.WALK_ON_MAP:
+                    listMaps[currentMap].Draw(bath);
                     player.Draw(bath);
                     if (showCharacterInfo)
                     {
@@ -318,7 +330,7 @@ namespace XNA_test1
                     }
                     break;
 
-                case 2:
+                case Situation.FIGTH:
                     fight.Draw(bath);
                     break;
             }           
@@ -330,7 +342,7 @@ namespace XNA_test1
 
         private void ButtonEventMessageOk_OnClick(object sender, EventArgs e)
         {
-            situation = 1;
+            situation = Situation.WALK_ON_MAP;
         }
 
         #endregion
@@ -340,7 +352,7 @@ namespace XNA_test1
         private void StageInc()
         {
             stage++;
-            map.QuestNumber = stage;
+            listMaps[currentMap].QuestNumber = stage;
 
             eventMessage.Text = quest[stage - 1];
             eventMessage.UpdateButtonPosition();

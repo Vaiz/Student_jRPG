@@ -87,7 +87,7 @@ namespace XNA_test1
             {
                 labelBattleLog[i] = new Label();
                 labelBattleLog[i].Text = "" + i;
-                labelBattleLog[i].X = 450;
+                labelBattleLog[i].X = 430;
                 labelBattleLog[i].Y = 10 + i * 20;
             }
 
@@ -420,8 +420,20 @@ namespace XNA_test1
                             rectZombieAttack = new Rectangle(0, 0, 400, 260);
                             damage = new Random().Next(currentMobIndex.atackMin, currentMobIndex.atackMax);
                             currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
+
+                            if(currentMobIndex.hp <= maxMobIndex.hp / 2 && currentMobIndex.mana >= 50)
+                            {
+                                currentMobIndex.mana -= 50;
+                                currentMobIndex.hp += damage - currentCharacterIndex.defense;
+                                AddMessageToLog("Зомби похитил у студента  " + (damage - currentCharacterIndex.defense) + " единиц здоровья");
+                            }
+                            else
+                            {
+                                AddMessageToLog("Зомби укусил студента. Урон: " + damage + " - " + currentCharacterIndex.defense);
+                            }
+
                             UpdateLabel();
-                            AddMessageToLog("Зомби укусил студента. Урон: " + damage + " - " + currentCharacterIndex.defense);
+                            
                             MediaPlayer.Play(songBrains);
                         }
                         break;
@@ -489,7 +501,7 @@ namespace XNA_test1
 
             bath.Draw(textureBackGround, rectSprite, Color.White);
 
-            bath.Draw(textureBattleLog, new Rectangle(420, 0, 500, 240), Color.White);
+            bath.Draw(textureBattleLog, new Rectangle(400, 0, 540, 240), Color.White);
 
             for (int i = 0; i < 10; i++)
             {

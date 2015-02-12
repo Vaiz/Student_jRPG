@@ -163,6 +163,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="floor\fight\" />
     <Folder Include="map\" />
   </ItemGroup>
   <ItemGroup>
@@ -296,25 +297,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fight\edward_elric_figth1.png">
-      <Name>edward_elric_figth1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="fight\zomb_1_cr.png">
-      <Name>zomb_1_cr</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="fight\zomb_2_cr.png">
-      <Name>zomb_2_cr</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="button\button_chiken_leg.png">
       <Name>button_chiken_leg</Name>
       <Importer>TextureImporter</Importer>
@@ -334,34 +316,6 @@
   <ItemGroup>
     <Compile Include="text_fon\black_glass_rect.png">
       <Name>black_glass_rect</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="fight\edward_elric_leg_attack.png">
-      <Name>edward_elric_leg_attack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="fight\zombie_attack.png">
-      <Name>zombie_attack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="fight\edward_dead.png">
-      <Name>edward_dead</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="fight\game_over.png">
-      <Name>game_over</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -422,13 +376,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fight\edward_elric_spike_atack1.png">
-      <Name>edward_elric_spike_atack1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="button\button_hand.png">
       <Name>button_hand</Name>
       <Importer>TextureImporter</Importer>
@@ -436,8 +383,64 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fight\edward_dead.png">
+      <Name>edward_dead</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fight\edward_elric_figth1.png">
+      <Name>edward_elric_figth1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="fight\edward_elric_hand_atack.png">
       <Name>edward_elric_hand_atack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fight\edward_elric_leg_attack.png">
+      <Name>edward_elric_leg_attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fight\edward_elric_spike_atack1.png">
+      <Name>edward_elric_spike_atack1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fight\game_over.png">
+      <Name>game_over</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fight\zomb_1_cr.png">
+      <Name>zomb_1_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fight\zomb_2_cr.png">
+      <Name>zomb_2_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fight\zombie_attack.png">
+      <Name>zombie_attack</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

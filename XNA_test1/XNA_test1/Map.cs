@@ -26,11 +26,11 @@ namespace XNA_test1
         }              
     };
 
-    struct Potion
+    struct MapObject
     {
-        public Vector2 position;   // позиция моба на карте
-        
-        public Potion(int x, int y)
+        public Vector2 position;   // позиция объекта на карте
+
+        public MapObject(int x, int y)
         {
             position = new Vector2(x, y);
         }
@@ -78,8 +78,9 @@ namespace XNA_test1
         List<NPC> listQuestNPC;
         List<NPC> listNPC;
         List<Mob> listMobs;
-        List<Potion> listHealPotion;
-        List<Potion> listManaPotion;
+        List<MapObject> listHealPotion;
+        List<MapObject> listManaPotion;
+        List<MapObject> listPortals;
         int windowWidth;
         int windowHeigth;
         int x0, y0;         // точка начала отрисовки центральной плитки карты в пикселях
@@ -93,20 +94,21 @@ namespace XNA_test1
         //==============================================================================================
         #region Инициализация
 
-        public Map()
+        public Map(string mapFile, Vector2 startPosition)
         {
             sizeX = 60;
             sizeY = 100;
 
             map = new byte[sizeX * sizeY];
-            map = File.ReadAllBytes("map.bin");
+            map = File.ReadAllBytes(mapFile);
 
-            position = new Vector2(48, 94);
+            position = startPosition;
             listQuestNPC = new List<NPC>();
             listNPC = new List<NPC>();
             listMobs = new List<Mob>();
-            listHealPotion = new List<Potion>();
-            listManaPotion = new List<Potion>();
+            listHealPotion = new List<MapObject>();
+            listManaPotion = new List<MapObject>();
+            listPortals = new List<MapObject>();
 
             timeFromLastMobsMove = 0;
 
@@ -161,12 +163,17 @@ namespace XNA_test1
 
         public void AddHealPotion(int x, int y)
         {
-            listHealPotion.Add(new Potion(x, y));
+            listHealPotion.Add(new MapObject(x, y));
         }
 
         public void AddManaPotion(int x, int y)
         {
-            listManaPotion.Add(new Potion(x, y));
+            listManaPotion.Add(new MapObject(x, y));
+        }
+
+        public void AddPortal(int x, int y)
+        {
+            listPortals.Add(new MapObject(x, y));
         }
 
         public int QuestNumber
@@ -177,11 +184,11 @@ namespace XNA_test1
             }
         }
 
-        public void Init()
+        public void Init(string mapFile, Vector2 startPosition)
         {
-            map = File.ReadAllBytes("map.bin");
+            map = File.ReadAllBytes(mapFile);
 
-            position = new Vector2(48, 94);
+            position = startPosition;
             timeFromLastMobsMove = 0;
 
             listMobs.Clear();
@@ -432,10 +439,10 @@ namespace XNA_test1
                 if (listHealPotion[i].position.X >= position.X - x && listHealPotion[i].position.X <= position.X + x &&
                     listHealPotion[i].position.Y >= position.Y - y && listHealPotion[i].position.Y <= position.Y + y)
                 {
-                    rect.X = x0 + (int)((listHealPotion[i].position.X - position.X) * 32);
-                    rect.Y = y0 + (int)((listHealPotion[i].position.Y - position.Y) * 32);
-                    rect.Width = 32;
-                    rect.Height = 32;
+                    rect.X = x0 + (int)((listHealPotion[i].position.X - position.X) * 32) + 4;
+                    rect.Y = y0 + (int)((listHealPotion[i].position.Y - position.Y) * 32) + 4;
+                    rect.Width = 24;
+                    rect.Height = 24;
                     bath.Draw(textureHealPotion, rect, Color.White);
                 }
             }
@@ -445,11 +452,24 @@ namespace XNA_test1
                 if (listManaPotion[i].position.X >= position.X - x && listManaPotion[i].position.X <= position.X + x &&
                     listManaPotion[i].position.Y >= position.Y - y && listManaPotion[i].position.Y <= position.Y + y)
                 {
-                    rect.X = x0 + (int)((listManaPotion[i].position.X - position.X) * 32);
-                    rect.Y = y0 + (int)((listManaPotion[i].position.Y - position.Y) * 32);
-                    rect.Width = 32;
-                    rect.Height = 32;
+                    rect.X = x0 + (int)((listManaPotion[i].position.X - position.X) * 32) + 4;
+                    rect.Y = y0 + (int)((listManaPotion[i].position.Y - position.Y) * 32) + 4;
+                    rect.Width = 24;
+                    rect.Height = 24;
                     bath.Draw(textureManaPotion, rect, Color.White);
+                }
+            }
+
+            for (int i = 0; i < listPortals.Count; i++)
+            {
+                if (listPortals[i].position.X >= position.X - x && listPortals[i].position.X <= position.X + x &&
+                    listPortals[i].position.Y >= position.Y - y && listPortals[i].position.Y <= position.Y + y)
+                {
+                    rect.X = x0 + (int)((listPortals[i].position.X - position.X) * 32) + 4;
+                    rect.Y = y0 + (int)((listPortals[i].position.Y - position.Y) * 32) + 4;
+                    rect.Width = 24;
+                    rect.Height = 24;
+                    bath.Draw(textureFloor, rect, new Rectangle(128, 32, 32, 32), Color.White);
                 }
             }
         }
@@ -538,6 +558,17 @@ namespace XNA_test1
             return false;
         }
  
+        public bool PortalsConnected()
+        {
+            for (int i = 0; i < listPortals.Count; i++)
+            {
+                if ((listPortals[i].position - position).LengthSquared() == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         #endregion
     }
