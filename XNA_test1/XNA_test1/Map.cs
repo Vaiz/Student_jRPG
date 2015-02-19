@@ -317,21 +317,29 @@ namespace XNA_test1
                             {
                                 case 0:
                                     tmpMob.VectorMove = new Vector2(1, 0);
+                                    if (tmpMob.position.Y > (int)tmpMob.position.Y)
+                                        tmpMob.position.Y = (int)tmpMob.position.Y + 1;
                                     tmpMob.rect.Y = 48 * 2;
                                     break;
 
                                 case 1:
                                     tmpMob.VectorMove = new Vector2(-1, 0);
+                                    if (tmpMob.position.Y > (int)tmpMob.position.Y)
+                                        tmpMob.position.Y = (int)tmpMob.position.Y + 1;
                                     tmpMob.rect.Y = 48 * 1;
                                     break;
 
                                 case 2:
                                     tmpMob.VectorMove = new Vector2(0, 1);
+                                    if (tmpMob.position.X > (int)tmpMob.position.X)
+                                        tmpMob.position.X = (int)tmpMob.position.X + 1;
                                     tmpMob.rect.Y = 48 * 0;
                                     break;
 
                                 case 3:
                                     tmpMob.VectorMove = new Vector2(0, -1);
+                                    if (tmpMob.position.X > (int)tmpMob.position.X)
+                                        tmpMob.position.X = (int)tmpMob.position.X + 1;
                                     tmpMob.rect.Y = 48 * 3;
                                     break;
                             }
@@ -533,32 +541,40 @@ namespace XNA_test1
             return exp;
         }
 
-        public bool HealPotionConnected()   // столкнулся с зельем лечения
+        public int HealPotionConnected()   // столкнулся с зельем лечения
         {
             for (int i = 0; i < listHealPotion.Count; i++)
             {
                 if ((listHealPotion[i].position - position).LengthSquared() == 0)
-                {
-                    listHealPotion.RemoveAt(i);
-                    return true;
+                {                    
+                    return i;
                 }
             }
-            return false;
+            return -1;
         }
 
-        public bool ManaPotionConnected()   // столкнулся с зельем маны
+        public void RemoveHealPotion(int i)
+        {
+            listHealPotion.RemoveAt(i);
+        }
+
+        public int ManaPotionConnected()   // столкнулся с зельем маны
         {
             for (int i = 0; i < listManaPotion.Count; i++)
             {
                 if ((listManaPotion[i].position - position).LengthSquared() == 0)
                 {
-                    listManaPotion.RemoveAt(i);
-                    return true;
+                    return i;
                 }
             }
-            return false;
+            return -1;
         }
- 
+
+        public void RemoveManaPotion(int i)
+        {
+            listManaPotion.RemoveAt(i);
+        }
+
         public bool PortalsConnected()
         {
             for (int i = 0; i < listPortals.Count; i++)

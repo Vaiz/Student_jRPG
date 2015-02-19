@@ -54,21 +54,9 @@ namespace XNA_test1
             characterInfo = new CharacterInfo();
             listMaps = new List<Map>();
             listMaps.Add(new Map("level1.bin", new Vector2(48, 94)));
-            listMaps.Add(new Map("level2.bin", new Vector2(36, 43)));
+            listMaps.Add(new Map("level2.bin", new Vector2(35, 43)));
             
-            fight = new Fight();
-
-            //currentMap = 0;
-            //stage = 1;
-            //Map.QuestNumber = stage;
-            
-            //situation = Situation.EVENT_MESSAGE;
-            
-            /*showCharacterInfo = false;
-            keyCDown1 = false;
-            keyCDown2 = false;
-            keyQDown1 = false;
-            keyQDown2 = false;  */         
+            fight = new Fight();      
         }
 
         public void LoadContent(ContentManager content)
@@ -153,7 +141,7 @@ namespace XNA_test1
             player.Init();
             characterInfo.Init();
             listMaps[0].Init("level1.bin", new Vector2(48, 94));
-            listMaps[1].Init("level2.bin", new Vector2(36, 43));
+            listMaps[1].Init("level2.bin", new Vector2(35, 43));
             currentMap = 0;
 
             stage = 1;
@@ -175,10 +163,10 @@ namespace XNA_test1
             mobIndex.atackMax = 25;
             mobIndex.defense = 5;
 
-            listMaps[0].AddMob(44, 64, 10, textureZombie1, mobIndex);
-            /*listMaps[0].AddMob(13, 81, 10, textureZombie1, mobIndex);
-            listMaps[0].AddMob(48, 60, 10, textureZombie1, mobIndex);
-            listMaps[0].AddMob(48, 42, 10, textureZombie1, mobIndex);
+            listMaps[0].AddMob(44, 64, 35, textureZombie1, mobIndex);
+            listMaps[0].AddMob(13, 81, 35, textureZombie1, mobIndex);
+            listMaps[0].AddMob(48, 60, 35, textureZombie1, mobIndex);
+            /*listMaps[0].AddMob(48, 42, 10, textureZombie1, mobIndex);
             listMaps[0].AddMob(48, 14, 10, textureZombie1, mobIndex);
             listMaps[0].AddMob(11, 53, 10, textureZombie1, mobIndex);
             listMaps[0].AddMob(10, 69, 10, textureZombie1, mobIndex);
@@ -199,17 +187,23 @@ namespace XNA_test1
 
             listMaps[0].AddPortal(53, 69);
 
-            mobIndex.hp = 150;
+            mobIndex.hp = 120;
             mobIndex.mana = 150;
             mobIndex.atackMin = 23;
             mobIndex.atackMax = 27;
             mobIndex.defense = 7;
 
-            listMaps[1].AddMob(26, 44, 15, textureZombie1, mobIndex);
-            listMaps[1].AddMob(25, 32, 15, textureZombie1, mobIndex);
-            listMaps[1].AddMob(30, 23, 15, textureZombie1, mobIndex);
+            listMaps[1].AddMob(26, 44, 70, textureZombie1, mobIndex);
+            listMaps[1].AddMob(25, 32, 70, textureZombie1, mobIndex);
+            listMaps[1].AddMob(30, 23, 70, textureZombie1, mobIndex);
 
             listMaps[1].AddPortal(37, 43);
+
+            listMaps[1].AddHealPotion(36, 41);
+            listMaps[1].AddHealPotion(36, 45);
+
+            listMaps[1].AddManaPotion(35, 41);
+            listMaps[1].AddManaPotion(35, 45);
         }
 
         #endregion
@@ -300,17 +294,21 @@ namespace XNA_test1
 
                     if (characterInfo.characterIndexCurrent.hp < characterInfo.characterIndexFull.hp)
                     {
-                        if(listMaps[currentMap].HealPotionConnected())
+                        int index = listMaps[currentMap].HealPotionConnected();
+                        if(index != -1)
                         {
                             characterInfo.RestoreHP();
+                            listMaps[currentMap].RemoveHealPotion(index);
                         }
                     }
 
                     if (characterInfo.characterIndexCurrent.mana < characterInfo.characterIndexFull.mana)
                     {
-                        if (listMaps[currentMap].ManaPotionConnected())
+                        int index = listMaps[currentMap].ManaPotionConnected();
+                        if (index != -1)
                         {
                             characterInfo.RestoreMana();
+                            listMaps[currentMap].RemoveManaPotion(index);
                         }
                     }
 
@@ -397,6 +395,7 @@ namespace XNA_test1
                 case 4:
                     listMaps[0].OpenMap(49, 69);
                     listMaps[0].OpenMap(50, 69);
+                    characterInfo.AddExperience(500);
                     break;
 
                 case 5:

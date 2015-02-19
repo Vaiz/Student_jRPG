@@ -172,7 +172,7 @@ namespace XNA_test1.Character
             characterIndexFull.mana = 200;
             characterIndexFull.hp = 100;
             characterIndexFull.atackMin = 17;
-            characterIndexFull.atackMax = 9920;
+            characterIndexFull.atackMax = 20;
             characterIndexFull.defense = 6;
 
             characterIndexCurrent = characterIndexFull;
@@ -219,10 +219,10 @@ namespace XNA_test1.Character
             experience += exp;
             while (experience >= levelExperience[level] && level < maxLevel)
             {
-                experience %= levelExperience[level];
+                experience -= levelExperience[level];
                 level++;
                 characterIndexFull.hp += 10;
-                characterIndexFull.mana += 15;
+                characterIndexFull.mana += 20;
                 characterIndexFull.atackMin += 3;
                 characterIndexFull.atackMax += 4;
                 characterIndexFull.defense += 2;
