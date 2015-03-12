@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_16_9.xnb</Output>
-      <Time>2014-10-01T17:24:02.8796382+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_16_9.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>fon1_4_3.jpg</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_4_3.xnb</Output>
-      <Time>2014-10-01T17:24:02.8886343+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fon1_4_3.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>cursor\cursor_sword.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\cursor_sword.xnb</Output>
-      <Time>2014-10-01T17:24:02.8536327+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\cursor_sword.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button1_hover.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_hover.xnb</Output>
-      <Time>2014-10-01T17:24:02.7746244+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_hover.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button1_norm.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_norm.xnb</Output>
-      <Time>2014-10-01T17:24:02.7826285+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_norm.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button1_pressed.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_pressed.xnb</Output>
-      <Time>2014-10-01T17:24:02.7896294+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button1_pressed.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>cursor\human_gauntlet.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\human_gauntlet.xnb</Output>
-      <Time>2014-10-01T17:24:02.8616329+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\cursor\human_gauntlet.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button2_hover.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_hover.xnb</Output>
-      <Time>2014-10-01T17:24:02.7976291+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_hover.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button2_norm.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_norm.xnb</Output>
-      <Time>2014-10-01T17:24:02.8056297+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_norm.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button2_pressed.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_pressed.xnb</Output>
-      <Time>2014-10-01T17:24:02.8136304+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button2_pressed.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>text_fon\fallout_1920x1080.jpg</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\fallout_1920x1080.xnb</Output>
-      <Time>2014-10-01T17:24:02.913636+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\fallout_1920x1080.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button3_hover.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_hover.xnb</Output>
-      <Time>2014-10-01T17:24:02.8216306+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_hover.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button3_norm.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_norm.xnb</Output>
-      <Time>2014-10-01T17:24:02.8296312+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_norm.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>button\button3_pressed.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_pressed.xnb</Output>
-      <Time>2014-10-01T17:24:02.8386317+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button3_pressed.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>character\edward_elric_1.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\edward_elric_1.xnb</Output>
-      <Time>2014-10-01T17:24:02.8456321+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\edward_elric_1.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>floor\floor1.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\floor\floor1.xnb</Output>
-      <Time>2014-10-01T17:24:02.8696336+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\floor\floor1.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
     </Item>
     <Item>
       <Source>text_fon\paper1_cr.png</Source>
@@ -151,35 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\paper1_cr.xnb</Output>
-      <Time>2014-10-01T22:02:37.6719133+04:00</Time>
-    </Item>
-    <Item>
-      <Source>font\button_font.spritefont</Source>
-      <Name>font\button_font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\button_font.xnb</Output>
-      <Time>2014-10-01T17:24:02.8966349+04:00</Time>
-    </Item>
-    <Item>
-      <Source>font\fallout_font.spritefont</Source>
-      <Name>font\fallout_font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\fallout_font.xnb</Output>
-      <Time>2014-10-05T21:40:32.0497581+04:00</Time>
-    </Item>
-    <Item>
-      <Source>font\character_info.spritefont</Source>
-      <Name>font\character_info</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\character_info.xnb</Output>
-      <Time>2014-10-01T22:52:58.8747493+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\paper1_cr.xnb</Output>
+      <Time>2014-10-01T22:02:37+04:00</Time>
     </Item>
     <Item>
       <Source>wall\wall.png</Source>
@@ -187,46 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\wall\wall.xnb</Output>
-      <Time>2014-10-03T17:26:09.3524174+04:00</Time>
-    </Item>
-    <Item>
-      <Source>music\02 Play The Game (feat. Amber Moon).mp3</Source>
-      <Name>music\02 Play The Game (feat. Amber Moon)</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).xnb</Output>
-      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).wma</Extra>
-      <Time>2014-10-04T20:38:03.2046443+04:00</Time>
-    </Item>
-    <Item>
-      <Source>music\Tetris.mp3</Source>
-      <Name>music\Tetris</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.xnb</Output>
-      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.wma</Extra>
-      <Time>2014-10-04T21:14:03.8216109+04:00</Time>
-    </Item>
-    <Item>
-      <Source>quest\quest1.xml</Source>
-      <Name>quest\quest1</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest1.xnb</Output>
-      <Time>2014-10-05T21:42:49.5335151+04:00</Time>
-    </Item>
-    <Item>
-      <Source>quest\quest2.xml</Source>
-      <Name>quest\quest2</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest2.xnb</Output>
-      <Time>2014-10-07T20:15:09.5923132+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\wall\wall.xnb</Output>
+      <Time>2014-10-03T17:26:09+04:00</Time>
     </Item>
     <Item>
       <Source>character\VV.png</Source>
@@ -234,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\VV.xnb</Output>
-      <Time>2014-10-06T10:31:16.631789+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\VV.xnb</Output>
+      <Time>2014-10-06T10:31:16+04:00</Time>
     </Item>
     <Item>
       <Source>quest\quest_icon_blue.png</Source>
@@ -243,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest_icon_blue.xnb</Output>
-      <Time>2014-10-06T20:05:56.3742758+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest_icon_blue.xnb</Output>
+      <Time>2014-10-06T20:05:56+04:00</Time>
     </Item>
     <Item>
       <Source>character\Bersh.png</Source>
@@ -252,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bersh.xnb</Output>
-      <Time>2014-10-06T20:31:34.8354411+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bersh.xnb</Output>
+      <Time>2014-10-06T20:31:34+04:00</Time>
     </Item>
     <Item>
       <Source>character\Bojd.png</Source>
@@ -261,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bojd.xnb</Output>
-      <Time>2014-10-06T20:31:34.8514468+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bojd.xnb</Output>
+      <Time>2014-10-06T20:31:34+04:00</Time>
     </Item>
     <Item>
       <Source>character\Bur.png</Source>
@@ -270,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bur.xnb</Output>
-      <Time>2014-10-06T20:31:34.8544466+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Bur.xnb</Output>
+      <Time>2014-10-06T20:31:34+04:00</Time>
     </Item>
     <Item>
       <Source>character\Gud1.png</Source>
@@ -279,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud1.xnb</Output>
-      <Time>2014-10-06T20:31:34.857447+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud1.xnb</Output>
+      <Time>2014-10-06T20:31:34+04:00</Time>
     </Item>
     <Item>
       <Source>character\Gud2.png</Source>
@@ -288,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud2.xnb</Output>
-      <Time>2014-10-06T20:31:34.8614402+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\Gud2.xnb</Output>
+      <Time>2014-10-06T20:31:34+04:00</Time>
     </Item>
     <Item>
       <Source>character\mob1.png</Source>
@@ -297,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob1.xnb</Output>
-      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob1.xnb</Output>
+      <Time>2014-10-07T20:39:40+04:00</Time>
     </Item>
     <Item>
       <Source>character\mob2.png</Source>
@@ -306,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob2.xnb</Output>
-      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob2.xnb</Output>
+      <Time>2014-10-07T20:39:40+04:00</Time>
     </Item>
     <Item>
       <Source>character\mob3.png</Source>
@@ -315,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob3.xnb</Output>
-      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob3.xnb</Output>
+      <Time>2014-10-07T20:39:40+04:00</Time>
     </Item>
     <Item>
       <Source>character\mob4.png</Source>
@@ -324,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob4.xnb</Output>
-      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob4.xnb</Output>
+      <Time>2014-10-07T20:39:40+04:00</Time>
     </Item>
     <Item>
       <Source>character\mob5.png</Source>
@@ -333,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob5.xnb</Output>
-      <Time>2014-10-07T20:39:40.3788603+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob5.xnb</Output>
+      <Time>2014-10-07T20:39:40+04:00</Time>
     </Item>
     <Item>
       <Source>character\mob6.png</Source>
@@ -342,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob6.xnb</Output>
-      <Time>2014-10-07T20:39:40.4257354+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\mob6.xnb</Output>
+      <Time>2014-10-07T20:39:40+04:00</Time>
     </Item>
     <Item>
       <Source>character\zombie2.png</Source>
@@ -351,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\zombie2.xnb</Output>
-      <Time>2014-10-08T16:16:56.4466935+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\zombie2.xnb</Output>
+      <Time>2014-10-08T16:16:56+04:00</Time>
     </Item>
     <Item>
       <Source>background\pripyat-50_cr.jpg</Source>
@@ -360,17 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\background\pripyat-50_cr.xnb</Output>
-      <Time>2014-10-16T12:21:22.4045486+04:00</Time>
-    </Item>
-    <Item>
-      <Source>quest\quest3.xml</Source>
-      <Name>quest\quest3</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest3.xnb</Output>
-      <Time>2014-10-16T12:30:51.4505645+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\background\pripyat-50_cr.xnb</Output>
+      <Time>2014-10-16T12:21:22+04:00</Time>
     </Item>
     <Item>
       <Source>background\Thenewkid.png</Source>
@@ -378,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\background\Thenewkid.xnb</Output>
-      <Time>2014-10-16T13:25:20.5800189+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\background\Thenewkid.xnb</Output>
+      <Time>2014-10-16T13:25:20+04:00</Time>
     </Item>
     <Item>
       <Source>button\button_chiken_leg.png</Source>
@@ -387,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_chiken_leg.xnb</Output>
-      <Time>2014-10-16T18:16:44.3528886+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_chiken_leg.xnb</Output>
+      <Time>2014-10-16T18:16:44+04:00</Time>
     </Item>
     <Item>
       <Source>button\button_heal.png</Source>
@@ -396,8 +322,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_heal.xnb</Output>
-      <Time>2014-10-16T18:16:44.360901+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_heal.xnb</Output>
+      <Time>2014-10-16T18:16:44+04:00</Time>
     </Item>
     <Item>
       <Source>button\button_shield.png</Source>
@@ -405,8 +331,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_shield.xnb</Output>
-      <Time>2014-10-16T18:16:44.3629006+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_shield.xnb</Output>
+      <Time>2014-10-16T18:16:44+04:00</Time>
     </Item>
     <Item>
       <Source>text_fon\black_glass_rect.png</Source>
@@ -414,53 +340,44 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\black_glass_rect.xnb</Output>
-      <Time>2014-10-17T17:27:23.207719+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\text_fon\black_glass_rect.xnb</Output>
+      <Time>2014-10-17T17:27:23+04:00</Time>
     </Item>
     <Item>
-      <Source>fight\edward_elric_figth1.png</Source>
-      <Name>fight\edward_elric_figth1</Name>
+      <Source>floor\healpotion.png</Source>
+      <Name>floor\healpotion</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_figth1.xnb</Output>
-      <Time>2014-10-16T13:41:00.1936932+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\floor\healpotion.xnb</Output>
+      <Time>2014-11-27T10:24:26+03:00</Time>
     </Item>
     <Item>
-      <Source>fight\zomb_1_cr.png</Source>
-      <Name>fight\zomb_1_cr</Name>
+      <Source>floor\manapotion.png</Source>
+      <Name>floor\manapotion</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zomb_1_cr.xnb</Output>
-      <Time>2014-10-16T14:36:48.976098+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\floor\manapotion.xnb</Output>
+      <Time>2014-11-27T10:24:26+03:00</Time>
     </Item>
     <Item>
-      <Source>fight\zomb_2_cr.png</Source>
-      <Name>fight\zomb_2_cr</Name>
+      <Source>button\button_spike.png</Source>
+      <Name>button\button_spike</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zomb_2_cr.xnb</Output>
-      <Time>2014-10-16T14:22:20.9102261+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_spike.xnb</Output>
+      <Time>2014-11-27T12:40:20+03:00</Time>
     </Item>
     <Item>
-      <Source>fight\edward_elric_leg_attack.png</Source>
-      <Name>fight\edward_elric_leg_attack</Name>
+      <Source>button\button_hand.png</Source>
+      <Name>button\button_hand</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_leg_attack.xnb</Output>
-      <Time>2014-10-17T19:55:21.8109504+04:00</Time>
-    </Item>
-    <Item>
-      <Source>fight\zombie_attack.png</Source>
-      <Name>fight\zombie_attack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zombie_attack.xnb</Output>
-      <Time>2014-10-17T21:10:04.3687338+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\button\button_hand.xnb</Output>
+      <Time>2014-11-27T17:45:39+03:00</Time>
     </Item>
     <Item>
       <Source>fight\edward_dead.png</Source>
@@ -468,8 +385,44 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_dead.xnb</Output>
-      <Time>2014-10-17T21:35:29.2570238+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_dead.xnb</Output>
+      <Time>2014-10-17T21:35:29+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\edward_elric_figth1.png</Source>
+      <Name>fight\edward_elric_figth1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_figth1.xnb</Output>
+      <Time>2014-10-16T13:41:00+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\edward_elric_hand_atack.png</Source>
+      <Name>fight\edward_elric_hand_atack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_hand_atack.xnb</Output>
+      <Time>2014-11-27T18:16:53+03:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\edward_elric_leg_attack.png</Source>
+      <Name>fight\edward_elric_leg_attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_leg_attack.xnb</Output>
+      <Time>2014-10-17T19:55:21+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\edward_elric_spike_atack1.png</Source>
+      <Name>fight\edward_elric_spike_atack1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\edward_elric_spike_atack1.xnb</Output>
+      <Time>2014-11-27T12:40:33+03:00</Time>
     </Item>
     <Item>
       <Source>fight\game_over.png</Source>
@@ -477,17 +430,100 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\game_over.xnb</Output>
-      <Time>2014-10-17T21:39:19.7230891+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\game_over.xnb</Output>
+      <Time>2014-10-17T21:39:19+04:00</Time>
     </Item>
     <Item>
-      <Source>quest\quest4.xml</Source>
-      <Name>quest\quest4</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
+      <Source>fight\zomb_1_cr.png</Source>
+      <Name>fight\zomb_1_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest4.xnb</Output>
-      <Time>2014-10-17T22:58:45.0737308+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zomb_1_cr.xnb</Output>
+      <Time>2014-10-16T14:36:48+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\zomb_2_cr.png</Source>
+      <Name>fight\zomb_2_cr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zomb_2_cr.xnb</Output>
+      <Time>2014-10-16T14:22:20+04:00</Time>
+    </Item>
+    <Item>
+      <Source>fight\zombie_attack.png</Source>
+      <Name>fight\zombie_attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\fight\zombie_attack.xnb</Output>
+      <Time>2014-10-17T21:10:04+04:00</Time>
+    </Item>
+    <Item>
+      <Source>floor\portal_32x32.png</Source>
+      <Name>floor\portal_32x32</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\floor\portal_32x32.xnb</Output>
+      <Time>2015-02-12T18:40:04.5891431+03:00</Time>
+    </Item>
+    <Item>
+      <Source>character\lab.png</Source>
+      <Name>character\lab</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\character\lab.xnb</Output>
+      <Time>2015-02-12T19:20:32.2302886+03:00</Time>
+    </Item>
+    <Item>
+      <Source>font\button_font.spritefont</Source>
+      <Name>font\button_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\button_font.xnb</Output>
+      <Time>2014-10-01T17:24:02+04:00</Time>
+    </Item>
+    <Item>
+      <Source>font\fallout_font.spritefont</Source>
+      <Name>font\fallout_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\fallout_font.xnb</Output>
+      <Time>2014-10-05T21:40:32+04:00</Time>
+    </Item>
+    <Item>
+      <Source>font\character_info.spritefont</Source>
+      <Name>font\character_info</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\font\character_info.xnb</Output>
+      <Time>2014-10-01T22:52:58+04:00</Time>
+    </Item>
+    <Item>
+      <Source>music\02 Play The Game (feat. Amber Moon).mp3</Source>
+      <Name>music\02 Play The Game (feat. Amber Moon)</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).xnb</Output>
+      <Extra>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\02 Play The Game (feat. Amber Moon).wma</Extra>
+      <Time>2014-10-04T20:38:03+04:00</Time>
+    </Item>
+    <Item>
+      <Source>music\Tetris.mp3</Source>
+      <Name>music\Tetris</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.xnb</Output>
+      <Extra>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\Tetris.wma</Extra>
+      <Time>2014-10-04T21:14:03+04:00</Time>
     </Item>
     <Item>
       <Source>music\pvz_brainzzz.mp3</Source>
@@ -495,9 +531,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\pvz_brainzzz.xnb</Output>
-      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\pvz_brainzzz.wma</Extra>
-      <Time>2014-10-17T23:36:52.103827+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\pvz_brainzzz.xnb</Output>
+      <Extra>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\pvz_brainzzz.wma</Extra>
+      <Time>2014-10-17T23:36:52+04:00</Time>
     </Item>
     <Item>
       <Source>music\attack.mp3</Source>
@@ -505,9 +541,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack.xnb</Output>
-      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack.wma</Extra>
-      <Time>2014-10-17T23:52:45.1594913+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack.xnb</Output>
+      <Extra>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack.wma</Extra>
+      <Time>2014-10-17T23:52:45+04:00</Time>
     </Item>
     <Item>
       <Source>music\attack2.mp3</Source>
@@ -515,9 +551,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack2.xnb</Output>
-      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack2.wma</Extra>
-      <Time>2014-10-17T23:57:02.522785+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack2.xnb</Output>
+      <Extra>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\attack2.wma</Extra>
+      <Time>2014-10-17T23:57:02+04:00</Time>
     </Item>
     <Item>
       <Source>music\marsh.mp3</Source>
@@ -525,9 +561,72 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\marsh.xnb</Output>
-      <Extra>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\marsh.wma</Extra>
-      <Time>2014-10-18T00:05:52.2221347+04:00</Time>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\marsh.xnb</Output>
+      <Extra>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\music\marsh.wma</Extra>
+      <Time>2014-10-18T00:05:52+04:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest1.xml</Source>
+      <Name>quest\quest1</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest1.xnb</Output>
+      <Time>2015-02-12T20:50:07.061353+03:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest2.xml</Source>
+      <Name>quest\quest2</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest2.xnb</Output>
+      <Time>2015-02-19T20:52:47.6160476+03:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest3.xml</Source>
+      <Name>quest\quest3</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest3.xnb</Output>
+      <Time>2014-10-16T12:30:51+04:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest4.xml</Source>
+      <Name>quest\quest4</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest4.xnb</Output>
+      <Time>2015-02-12T20:50:07.0959121+03:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest5.xml</Source>
+      <Name>quest\quest5</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest5.xnb</Output>
+      <Time>2015-02-12T19:27:09.2757518+03:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest6.xml</Source>
+      <Name>quest\quest6</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest6.xnb</Output>
+      <Time>2015-02-12T20:46:39.5019132+03:00</Time>
+    </Item>
+    <Item>
+      <Source>quest\quest7.xml</Source>
+      <Name>quest\quest7</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\quest\quest7.xnb</Output>
+      <Time>2015-02-12T20:50:07.1074318+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -536,39 +635,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1Content\</RootDirectory>
-      <LoggerRootDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\Document\PGU\ТР ПО\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\VM\Documents\Visual Studio 2013\Projects\XNA_test1\XNA_test1\XNA_test1\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2011-09-01T16:22:30+04:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2011-09-01T16:22:30+04:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30+04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2011-09-01T16:22:30+04:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2011-09-01T16:22:30+04:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2011-09-01T16:22:30+04:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2011-09-01T16:22:30+04:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30+04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2014-09-05T18:47:23.1550965+04:00</Value>
+        <Value>2015-02-11T11:10:20.7164333+03:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
