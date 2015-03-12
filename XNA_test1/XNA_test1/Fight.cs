@@ -58,6 +58,9 @@ namespace XNA_test1
 
         public bool win;
         bool playerMove;
+        bool level2;
+        int playerBleeding;
+        int zombieShield;
 
         #endregion
         //==============================================================================================
@@ -337,6 +340,8 @@ namespace XNA_test1
             timeElapsed = 0;
             win = false;
             playerMove = true;
+            playerBleeding = 0;
+            zombieShield = 0;
             situation = 0;
 
             buttonLegAttack.Enabled = false;
@@ -363,6 +368,16 @@ namespace XNA_test1
                 labelBattleLog[i].Text = labelBattleLog[i + 1].Text;
             }
             labelBattleLog[9].Text = text;
+        }
+
+        public void Level2On()
+        {
+            level2 = true;
+        }
+
+        public void Level2Off()
+        {
+            level2 = false;
         }
 
         #endregion
@@ -408,31 +423,66 @@ namespace XNA_test1
                             {
                                 if (playerMove) situation = 0;
                                 else situation = 2;
-                                if (currentMobIndex.hp <= 0) win = true;
+                                if (currentMobIndex.hp <= 0) 
+                                    win = true;
                             }
                         }
                         break;
 
-                    case 2: // Пауза
+                    case 2: // Пауза, удар зомби
                         timeElapsed += time.ElapsedGameTime.Milliseconds;
-                        if (timeElapsed >= 500)
+                        if (timeElapsed >= 500) // Удар зомби
                         {
-                            int damage;
+                            if(zombieShield > 0)
+                            {
+                                zombieShield -= 1;
+                            }
+
                             timeElapsed = 0;
                             situation = 3;
-                            rectZombieAttack = new Rectangle(0, 0, 400, 260);
-                            damage = new Random().Next(currentMobIndex.atackMin, currentMobIndex.atackMax);
-                            currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
+                            rectZombieAttack = new Rectangle(0, 0, 400, 260);                         
 
                             if(currentMobIndex.hp <= maxMobIndex.hp / 2 && currentMobIndex.mana >= 50)
                             {
+                                int damage = new Random().Next(currentMobIndex.atackMin, currentMobIndex.atackMax);
+                                currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
+
                                 currentMobIndex.mana -= 50;
                                 currentMobIndex.hp += damage - currentCharacterIndex.defense;
                                 AddMessageToLog("Зомби похитил у студента  " + (damage - currentCharacterIndex.defense) + " единиц здоровья");
                             }
+                            else if (level2 
+                                && playerBleeding == 0
+                                && currentMobIndex.mana >= 20)
+                            {
+                                int damage = new Random().Next(currentMobIndex.atackMin, currentMobIndex.atackMax);
+                                currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
+
+                                playerBleeding = 3;
+                                currentMobIndex.mana -= 50;
+                                AddMessageToLog("Зомби нанес студенту кровоточащую рану. Урон: " + damage + " - " + currentCharacterIndex.defense);
+                            }
+                            else if(level2
+                                && zombieShield == 0
+                                && currentMobIndex.mana >= 40)
+                            {
+                                zombieShield = 3;
+                                currentMobIndex.mana -= 40;
+                                AddMessageToLog("Зомби воспользовался заклинанием щит.");
+                            }
                             else
                             {
+                                int damage = new Random().Next(currentMobIndex.atackMin, currentMobIndex.atackMax);
+                                currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
+                                
                                 AddMessageToLog("Зомби укусил студента. Урон: " + damage + " - " + currentCharacterIndex.defense);
+                            }
+
+                            if(playerBleeding > 0)
+                            {
+                                playerBleeding--;
+                                AddMessageToLog("Студент теряет 5 едениц здоровья из-за кровотечения.");
+                                currentCharacterIndex.hp -= 5;
                             }
 
                             UpdateLabel();
@@ -441,7 +491,7 @@ namespace XNA_test1
                         }
                         break;
 
-                    case 3: // Удар зомби
+                    case 3: // Удар зомби, анимация
                         timeElapsed += time.ElapsedGameTime.Milliseconds;
                         if (timeElapsed >= 100)
                         {
@@ -616,11 +666,15 @@ namespace XNA_test1
                 playerMove = false;
                 timeElapsed = 0;
                 rectPlayerAttack = new Rectangle(0, 0, 80, 80);
-                damage = new Random().Next(currentCharacterIndex.atackMin, currentCharacterIndex.atackMax);
-                currentMobIndex.hp -= damage - currentMobIndex.defense;
-                UpdateLabel();
-                AddMessageToLog("Студент нанес удар ногой. Урон: " + damage + " - " + currentMobIndex.defense);
 
+                damage = new Random().Next(currentCharacterIndex.atackMin, currentCharacterIndex.atackMax);
+                if (zombieShield > 0)
+                {
+                    damage /= 2;
+                }
+                AddMessageToLog("Студент нанес удар ногой. Урон: " + damage + " - " + currentMobIndex.defense);
+                currentMobIndex.hp -= damage - currentMobIndex.defense;
+                UpdateLabel();                    
                 buttonLegAttack.Enabled = false;
                 buttonHandAttack.Enabled = true;
 
@@ -643,9 +697,16 @@ namespace XNA_test1
                 timeElapsed = 0;
                 rectPlayerAttack = new Rectangle(0, 0, 80, 80);
                 damage = new Random().Next(currentCharacterIndex.atackMin, currentCharacterIndex.atackMax);
-                currentMobIndex.hp -= damage - currentMobIndex.defense;
+                
+
+                if (zombieShield > 0)
+                {
+                    damage /= 2;
+                }
+                
                 UpdateLabel();
                 AddMessageToLog("Студент нанес удар рукой. Урон: " + damage + " - " + currentMobIndex.defense);
+                currentMobIndex.hp -= damage - currentMobIndex.defense;
 
                 buttonLegAttack.Enabled = true;
                 buttonHandAttack.Enabled = false;

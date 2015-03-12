@@ -187,8 +187,8 @@ namespace XNA_test1
 
             listMaps[0].AddPortal(53, 69);
 
-            mobIndex.hp = 120;
-            mobIndex.mana = 150;
+            mobIndex.hp = 100;
+            mobIndex.mana = 240;
             mobIndex.atackMin = 23;
             mobIndex.atackMax = 27;
             mobIndex.defense = 7;
@@ -204,6 +204,8 @@ namespace XNA_test1
 
             listMaps[1].AddManaPotion(35, 41);
             listMaps[1].AddManaPotion(35, 45);
+
+            fight.Level2Off();
         }
 
         #endregion
@@ -268,24 +270,24 @@ namespace XNA_test1
                     break;
 
                 case Situation.WALK_ON_MAP:
+                    
+                    if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
                     {
-                        if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
-                        {
-                            MediaPlayer.Play(song);
-                        }
-                        
-                        listMaps[currentMap].Update(time);
-                        player.Update(time);
-
-                        mobNumber = listMaps[currentMap].MobConnected();
-
-                        if (mobNumber != -1)
-                        {
-                            situation = Situation.FIGTH;
-                            MediaPlayer.Stop();
-                            fight.Init(characterInfo.characterIndexFull, characterInfo.characterIndexCurrent, listMaps[currentMap].GetMobIndex(mobNumber));                           
-                        }                      
+                        MediaPlayer.Play(song);
                     }
+                        
+                    listMaps[currentMap].Update(time);
+                    player.Update(time);
+
+                    mobNumber = listMaps[currentMap].MobConnected();
+
+                    if (mobNumber != -1)
+                    {
+                        situation = Situation.FIGTH;
+                        MediaPlayer.Stop();
+                        fight.Init(characterInfo.characterIndexFull, characterInfo.characterIndexCurrent, listMaps[currentMap].GetMobIndex(mobNumber));   
+                    }                      
+                    
 
                     if (listMaps[currentMap].QuestNPC())
                     {
@@ -396,6 +398,7 @@ namespace XNA_test1
                     listMaps[0].OpenMap(49, 69);
                     listMaps[0].OpenMap(50, 69);
                     characterInfo.AddExperience(500);
+                    fight.Level2On();
                     break;
 
                 case 5:
