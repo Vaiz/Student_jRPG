@@ -158,3 +158,5 @@ $RECYCLE.BIN/
 .DS_Store
 
 XNA_test1/XNA_test1/bin
+/XNA_test1/XNA_test1/XNA_test1.csproj.Debug.cachefile
+/XNA_test1/XNA_test1/XNA_test1.csproj.user
