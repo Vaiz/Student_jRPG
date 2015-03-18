@@ -581,11 +581,42 @@ namespace XNA_test1
             {
                 if ((listPortals[i].position - position).LengthSquared() == 0)
                 {
-                    position.X--;
+                    //position.X--;
                     return true;
                 }
             }
             return false;
+        }
+
+        public void GoGoGo() // отход от портала
+        {
+            bool move = false;
+            Vector2 vectorMove = new Vector2(0,0);
+            int k = (int)position.Y * sizeX + (int)position.X;
+        
+            if (Keyboard.GetState().IsKeyDown(Keys.D) && (map[k] & (1 << 4)) == 0)
+            {
+                move = true;
+                vectorMove.X++;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.A) && (map[k] & (1 << 5)) == 0)
+            {
+                move = true;
+                vectorMove.X--;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.S) && (map[k] & (1 << 6)) == 0)
+            {
+                move = true;
+                vectorMove.Y++;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.W) && (map[k] & (1 << 7)) == 0)
+            {
+                move = true;
+                vectorMove.Y--;
+            }
+
+            if(move)
+                position += vectorMove;
         }
 
         #endregion

@@ -192,8 +192,8 @@ namespace XNA_test1
 
             mobIndex.hp = 150;
             mobIndex.mana = 400;
-            mobIndex.atackMin = 23;
-            mobIndex.atackMax = 27;
+            mobIndex.atackMin = 25;
+            mobIndex.atackMax = 30;
             mobIndex.defense = 10;
 
             listMaps[1].AddMob(26, 44, 70, textureZombie1, mobIndex);
@@ -320,6 +320,7 @@ namespace XNA_test1
                     if (listMaps[currentMap].PortalsConnected())
                     {
                         currentMap = (currentMap + 1) % 2;
+                        listMaps[currentMap].GoGoGo();
                     }
 
                     break;

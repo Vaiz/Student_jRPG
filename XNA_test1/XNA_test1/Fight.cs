@@ -417,8 +417,8 @@ namespace XNA_test1
                             if (playerBleeding > 0)
                             {
                                 playerBleeding--;
-                                AddMessageToLog("Студент теряет 5 хп из-за кровотечения.");
-                                currentCharacterIndex.hp -= 5;
+                                AddMessageToLog("Студент теряет 7 хп из-за кровотечения.");
+                                currentCharacterIndex.hp -= 7;
                             }
                         }
                         break;
@@ -579,14 +579,26 @@ namespace XNA_test1
             }
             else
             {
+                Color playerColor;
+                if (playerBleeding == 0)
+                    playerColor = Color.White;
+                else
+                    playerColor = Color.Red;
+
+                Color zombieColor;
+                if (zombieShield == 0)
+                    zombieColor = Color.White;
+                else
+                    zombieColor = Color.Blue;
+
                 switch (situation)
                 {
-                    case 0:
+                    case 0: // Ожидание выбора игрока
                         rectSprite = new Rectangle((int)(500 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(texturePlayer, rectSprite, rectPlayer, Color.White);
+                        bath.Draw(texturePlayer, rectSprite, rectPlayer, playerColor);
 
                         rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(textureZombie, rectSprite, Color.White);
+                        bath.Draw(textureZombie, rectSprite, zombieColor);
 
                         buttonSpikeAttack.Draw(bath);
                         buttonHeal.Draw(bath);
@@ -597,23 +609,23 @@ namespace XNA_test1
 
                     case 1:
                         rectSprite = new Rectangle((int)(500 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(texturePlayerAttackLeg, rectSprite, rectPlayerAttack, Color.White);
+                        bath.Draw(texturePlayerAttackLeg, rectSprite, rectPlayerAttack, playerColor);
 
                         rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(textureZombie, rectSprite, Color.White);
+                        bath.Draw(textureZombie, rectSprite, zombieColor);
                         break;
 
                     case 2:
                         rectSprite = new Rectangle((int)(500 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(texturePlayer, rectSprite, rectPlayer, Color.White);
+                        bath.Draw(texturePlayer, rectSprite, rectPlayer, playerColor);
 
                         rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(textureZombie, rectSprite, Color.White);
+                        bath.Draw(textureZombie, rectSprite, zombieColor);
                         break;
 
                     case 3:
                         rectSprite = new Rectangle((int)(500 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(texturePlayer, rectSprite, rectPlayer, Color.White);
+                        bath.Draw(texturePlayer, rectSprite, rectPlayer, playerColor);
 
                         rectSprite = new Rectangle(windowWidth / 2 - 200, windowHeigth / 2 - 130, 400, 260);
                         bath.Draw(textureZombieAttack, rectSprite, rectZombieAttack, Color.White);
@@ -621,18 +633,18 @@ namespace XNA_test1
 
                     case 4:
                         rectSprite = new Rectangle((int)(500 * scale) - 160, (int)(800 * scale) - 160, 640, 320);
-                        bath.Draw(texturePlayerAttackSpike, rectSprite, rectPlayerAttack, Color.White);
+                        bath.Draw(texturePlayerAttackSpike, rectSprite, rectPlayerAttack, playerColor);
 
                         rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(textureZombie, rectSprite, Color.White);
+                        bath.Draw(textureZombie, rectSprite, zombieColor);
                         break;
 
                     case 5:
                         rectSprite = new Rectangle((int)(500 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(texturePlayerAttackHand, rectSprite, rectPlayerAttack, Color.White);
+                        bath.Draw(texturePlayerAttackHand, rectSprite, rectPlayerAttack, playerColor);
 
                         rectSprite = new Rectangle((int)(1300 * scale) - 160, (int)(800 * scale) - 160, 320, 320);
-                        bath.Draw(textureZombie, rectSprite, Color.White);
+                        bath.Draw(textureZombie, rectSprite, zombieColor);
                         break;
 
                 }
