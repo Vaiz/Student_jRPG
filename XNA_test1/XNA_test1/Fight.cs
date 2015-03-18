@@ -411,6 +411,16 @@ namespace XNA_test1
                         buttonLegAttack.Update(time);
                         buttonSpikeAttack.Update(time);
                         buttonHeal.Update(time);
+
+                        if(situation != 0)
+                        {
+                            if (playerBleeding > 0)
+                            {
+                                playerBleeding--;
+                                AddMessageToLog("Студент теряет 5 хп из-за кровотечения.");
+                                currentCharacterIndex.hp -= 5;
+                            }
+                        }
                         break;
 
                     case 1: // Удар ногой
@@ -459,8 +469,9 @@ namespace XNA_test1
                                 currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
 
                                 playerBleeding = 3;
-                                currentMobIndex.mana -= 50;
-                                AddMessageToLog("Зомби нанес студенту кровоточащую рану. Урон: " + damage + " - " + currentCharacterIndex.defense);
+                                currentMobIndex.mana -= 20;
+                                AddMessageToLog("Зомби нанес студенту кровоточащую рану.");
+                                AddMessageToLog("Урон: " + damage + " - " + currentCharacterIndex.defense);
                             }
                             else if(level2
                                 && zombieShield == 0
@@ -476,13 +487,6 @@ namespace XNA_test1
                                 currentCharacterIndex.hp -= damage - currentCharacterIndex.defense;
                                 
                                 AddMessageToLog("Зомби укусил студента. Урон: " + damage + " - " + currentCharacterIndex.defense);
-                            }
-
-                            if(playerBleeding > 0)
-                            {
-                                playerBleeding--;
-                                AddMessageToLog("Студент теряет 5 едениц здоровья из-за кровотечения.");
-                                currentCharacterIndex.hp -= 5;
                             }
 
                             UpdateLabel();

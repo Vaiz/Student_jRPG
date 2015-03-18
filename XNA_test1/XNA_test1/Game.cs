@@ -163,9 +163,12 @@ namespace XNA_test1
             mobIndex.atackMax = 25;
             mobIndex.defense = 5;
 
-            listMaps[0].AddMob(44, 64, 35, textureZombie1, mobIndex);
-            listMaps[0].AddMob(13, 81, 35, textureZombie1, mobIndex);
+            /*listMaps[0].AddMob(44, 64, 35, textureZombie1, mobIndex);
+            listMaps[0].AddMob(13, 81, 35, textureZombie1, mobIndex);*/
             listMaps[0].AddMob(48, 60, 35, textureZombie1, mobIndex);
+
+            characterInfo.AddExperience(70);
+
             /*listMaps[0].AddMob(48, 42, 10, textureZombie1, mobIndex);
             listMaps[0].AddMob(48, 14, 10, textureZombie1, mobIndex);
             listMaps[0].AddMob(11, 53, 10, textureZombie1, mobIndex);
@@ -187,11 +190,11 @@ namespace XNA_test1
 
             listMaps[0].AddPortal(53, 69);
 
-            mobIndex.hp = 100;
-            mobIndex.mana = 240;
+            mobIndex.hp = 150;
+            mobIndex.mana = 400;
             mobIndex.atackMin = 23;
             mobIndex.atackMax = 27;
-            mobIndex.defense = 7;
+            mobIndex.defense = 10;
 
             listMaps[1].AddMob(26, 44, 70, textureZombie1, mobIndex);
             listMaps[1].AddMob(25, 32, 70, textureZombie1, mobIndex);
