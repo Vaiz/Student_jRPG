@@ -6,10 +6,20 @@ using System.Text;
 
 namespace XNA_test1
 {
-    struct Record
+    struct Record : IComparable<Record>
     {
         public string name;
         public int score;
+
+        public int CompareTo(Record other)
+        {
+            // If other is not a valid object reference, this instance is greater.
+            //if (other == null) return 1;
+
+            // The temperature comparison depends on the comparison of 
+            // the underlying Double values. 
+            return other.score.CompareTo(score);
+        }
     };
     class RecordsList
     {

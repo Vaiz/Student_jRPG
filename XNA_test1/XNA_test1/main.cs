@@ -72,7 +72,7 @@ namespace XNA_test1
                 StreamReader sr = File.OpenText("records.txt");
                 Record readRecord;
                 
-                while (records.Count() < 20)
+                while (records.Count() < 10)
                 {
                     readRecord.name = sr.ReadLine();
                     if (readRecord.name == null) 
@@ -81,6 +81,7 @@ namespace XNA_test1
                     readRecord.score = Convert.ToInt32(sr.ReadLine());
                     records.Add(readRecord);
                 }
+                sr.Close();
             }
 
             recordsList = new RecordsList();
@@ -91,6 +92,7 @@ namespace XNA_test1
             // TODO: Add your initialization logic here
             menu = new Menu();
             game = new Game();
+            game.onEnd += OnEnd;
             mapEditor = new MapEditor();
             base.Initialize();
         }
@@ -251,6 +253,27 @@ namespace XNA_test1
         private void ButtonExit_OnClick(object sender, EventArgs e)
         {
             this.Exit();
+        }
+
+        #endregion
+        //==============================================================================================
+        #region Другие функции
+
+        void OnEnd(object sender, EventArgs e)
+        {
+            records.Add(game.GetRecord());
+            records.Sort();
+            while (records.Count > 10)
+                records.Remove(records[10]);
+
+            StreamWriter sw = File.CreateText("records.txt");
+
+            for(int i = 0; i > records.Count; i++)
+            {
+                sw.WriteLine(records[i].name);
+                sw.WriteLine(Convert.ToString(records[i].score));
+            }
+            sw.Close();
         }
 
         #endregion

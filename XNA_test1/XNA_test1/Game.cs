@@ -14,6 +14,8 @@ namespace XNA_test1
 {
     class Game
     {
+        #region Переменные
+
         enum Situation
         {
             ENTER_NAME,
@@ -21,8 +23,7 @@ namespace XNA_test1
             WALK_ON_MAP,
             FIGTH
         };
-        #region Переменные
-
+        
         EventMessage eventMessage;
         CharacterMove player;
         CharacterInfo characterInfo;
@@ -45,6 +46,8 @@ namespace XNA_test1
 
         EnterName enterName;
         int zombieKilled;
+
+        public event EventHandler onEnd;
 
         #endregion
         //==============================================================================================
@@ -238,6 +241,15 @@ namespace XNA_test1
 
             win = false;
             zombieKilled = 0;
+        }
+
+        public EventHandler OnEnd
+        {
+            set 
+            { 
+                onEnd += value;
+                fight.onEnd += value;
+            }
         }
 
         #endregion
@@ -459,8 +471,17 @@ namespace XNA_test1
 
                 case 7:
                     win = true;
+                    onEnd(this, null);
                     break;
             }
+        }
+
+        public Record GetRecord()
+        {
+            Record r = new Record();
+            r.name = enterName.GetName();
+            r.score = zombieKilled;
+            return r;
         }
 
         #endregion

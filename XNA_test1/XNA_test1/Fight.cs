@@ -62,6 +62,8 @@ namespace XNA_test1
         int playerBleeding;
         int zombieShield;
 
+        public event EventHandler onEnd;
+
         #endregion
         //==============================================================================================
         #region Инициализация
