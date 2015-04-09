@@ -92,7 +92,7 @@ namespace XNA_test1
             // TODO: Add your initialization logic here
             menu = new Menu();
             game = new Game();
-            game.onEnd += OnEnd;
+            game.OnEnd = OnEnd;
             mapEditor = new MapEditor();
             base.Initialize();
         }
@@ -268,7 +268,7 @@ namespace XNA_test1
 
             StreamWriter sw = File.CreateText("records.txt");
 
-            for(int i = 0; i > records.Count; i++)
+            for(int i = 0; i < records.Count; i++)
             {
                 sw.WriteLine(records[i].name);
                 sw.WriteLine(Convert.ToString(records[i].score));

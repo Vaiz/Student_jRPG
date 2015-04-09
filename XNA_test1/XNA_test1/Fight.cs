@@ -63,6 +63,7 @@ namespace XNA_test1
         int zombieShield;
 
         public event EventHandler onEnd;
+        bool dead = false;
 
         #endregion
         //==============================================================================================
@@ -81,6 +82,7 @@ namespace XNA_test1
             buttonHeal.MouseClick += ButtonHeal_OnClick;
             timeElapsed = 0;
             win = false;
+            dead = false;
             playerMove = true;
             situation = 0;
 
@@ -399,6 +401,11 @@ namespace XNA_test1
             }
             else if (currentCharacterIndex.hp <= 0 && situation != 3)
             {
+                if(dead == false)
+                {
+                    dead = true;
+                    onEnd(this, null);
+                }
                 if (MediaPlayer.Queue.ActiveSong == null || MediaPlayer.State == MediaState.Stopped)
                 {
                     MediaPlayer.Play(songDead);
