@@ -16,6 +16,7 @@ namespace XNA_test1
     {
         enum Situation
         {
+            ENTER_NAME,
             EVENT_MESSAGE,
             WALK_ON_MAP,
             FIGTH
@@ -42,6 +43,8 @@ namespace XNA_test1
         bool win;
         Label labelWin;
 
+        EnterName enterName;
+
         #endregion
         //==============================================================================================
         #region Инициализация
@@ -50,7 +53,10 @@ namespace XNA_test1
         {
             eventMessage = new EventMessage();
             eventMessage.ButtonOk_OnClick = ButtonEventMessageOk_OnClick;
-            
+
+            enterName = new EnterName();
+            enterName.ButtonOk_OnClick = ButtonEnterNameOk_OnClick;
+
             quest = new string[10];
 
             player = new CharacterMove();
@@ -84,11 +90,15 @@ namespace XNA_test1
             eventMessage.Font = content.Load<SpriteFont>("font\\fallout_font");
             eventMessage.Text = quest[0];
 
+            enterName.Fon = content.Load<Texture2D>("text_fon\\fallout_1920x1080");
+            enterName.Font = content.Load<SpriteFont>("font\\fallout_font"); 
+
             buttonTextures = new Dictionary<VisibleState, Texture2D>();
             buttonTextures.Add(VisibleState.Normal, content.Load<Texture2D>("button\\button3_norm"));
             buttonTextures.Add(VisibleState.Hover, content.Load<Texture2D>("button\\button3_hover"));
             buttonTextures.Add(VisibleState.Pressed, content.Load<Texture2D>("button\\button3_pressed"));
             eventMessage.ButtonTexture = buttonTextures;
+            enterName.ButtonTexture = buttonTextures;
 
             player.Texture = content.Load<Texture2D>("character\\edward_elric_1");
             characterInfo.Texture = content.Load<Texture2D>("text_fon\\paper1_cr");
@@ -126,6 +136,7 @@ namespace XNA_test1
             set 
             {
                 eventMessage.WindowHeigth = value;
+                enterName.WindowHeigth = value;
                 player.WindowHeigth = value;
                 for (int i = 0; i < listMaps.Count; i++)
                     listMaps[i].WindowHeigth = value;
@@ -139,6 +150,7 @@ namespace XNA_test1
             set 
             { 
                 eventMessage.WindowWidth = value;
+                enterName.WindowWidth = value;
                 player.WindowWidth = value;
                 for (int i = 0; i < listMaps.Count; i++)
                     listMaps[i].WindowWidth = value;
@@ -166,6 +178,8 @@ namespace XNA_test1
 
             eventMessage.Text = quest[stage - 1];
             eventMessage.UpdateButtonPosition();
+
+            enterName.UpdateButtonPosition();
 
             Character.CharacterIndex mobIndex;
             mobIndex.hp = 100;
@@ -280,6 +294,10 @@ namespace XNA_test1
 
             switch (situation)
             {
+                case Situation.ENTER_NAME:
+                    enterName.Update(time);
+                    break;
+
                 case Situation.EVENT_MESSAGE:
                     eventMessage.Update(time);
                     MediaPlayer.Stop();
@@ -362,6 +380,10 @@ namespace XNA_test1
         {
             switch(situation)
             {
+                case Situation.ENTER_NAME:
+                    enterName.Draw(bath);
+                    break;
+
                 case Situation.EVENT_MESSAGE:
                     eventMessage.Draw(bath);
                     break;
@@ -387,6 +409,12 @@ namespace XNA_test1
         //==============================================================================================
         #region События кнопок при нажатии
 
+        private void ButtonEnterNameOk_OnClick(object sender, EventArgs e)
+        {
+            if(enterName.GetName().Length > 0)
+                situation = Situation.EVENT_MESSAGE;
+        }
+
         private void ButtonEventMessageOk_OnClick(object sender, EventArgs e)
         {
             situation = Situation.WALK_ON_MAP;
@@ -404,7 +432,7 @@ namespace XNA_test1
             eventMessage.Text = quest[stage - 1];
             eventMessage.UpdateButtonPosition();
 
-            situation = 0;
+            situation = Situation.EVENT_MESSAGE;
 
             switch (stage)
             {
