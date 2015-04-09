@@ -39,6 +39,9 @@ namespace XNA_test1
 
         string[] quest;
 
+        bool win;
+        Label labelWin;
+
         #endregion
         //==============================================================================================
         #region Инициализация
@@ -56,7 +59,13 @@ namespace XNA_test1
             listMaps.Add(new Map("level1.bin", new Vector2(48, 94)));
             listMaps.Add(new Map("level2.bin", new Vector2(35, 43)));
             
-            fight = new Fight();      
+            fight = new Fight();
+
+            labelWin = new Label();
+            labelWin.Color = Color.Red;
+            labelWin.Text = "Вы сдали курсач!!!";
+            labelWin.X = 550;
+            labelWin.Y = 300;
         }
 
         public void LoadContent(ContentManager content)
@@ -108,6 +117,8 @@ namespace XNA_test1
 
             song = content.Load<Song>("music\\Tetris");
             textureZombie1 = content.Load<Texture2D>("character\\zombie2");
+
+            labelWin.Font = content.Load<SpriteFont>("font\\fallout_font");
         }
 
         public int WindowHeigth
@@ -141,7 +152,7 @@ namespace XNA_test1
             player.Init();
             characterInfo.Init();
             listMaps[0].Init("level1.bin", new Vector2(48, 94));
-            listMaps[1].Init("level2.bin", new Vector2(35, 43));
+            listMaps[1].Init("level2.bin", new Vector2(36, 43));
             currentMap = 0;
 
             stage = 1;
@@ -209,6 +220,8 @@ namespace XNA_test1
             listMaps[1].AddManaPotion(35, 45);
 
             fight.Level2Off();
+
+            win = false;            
         }
 
         #endregion
@@ -360,6 +373,8 @@ namespace XNA_test1
                     {
                         characterInfo.Draw(bath);
                     }
+                    if (win)
+                        labelWin.Draw(bath);
                     break;
 
                 case Situation.FIGTH:
@@ -408,6 +423,10 @@ namespace XNA_test1
                 case 5:
                     listMaps[1].OpenMap(29, 19);
                     listMaps[1].OpenMap(29, 20);
+                    break;
+
+                case 7:
+                    win = true;
                     break;
             }
         }

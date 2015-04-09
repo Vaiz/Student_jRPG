@@ -417,8 +417,8 @@ namespace XNA_test1
                             if (playerBleeding > 0)
                             {
                                 playerBleeding--;
-                                AddMessageToLog("Студент теряет 7 хп из-за кровотечения.");
-                                currentCharacterIndex.hp -= 7;
+                                AddMessageToLog("Студент теряет 6 хп из-за кровотечения.");
+                                currentCharacterIndex.hp -= 6;
                             }
                         }
                         break;
