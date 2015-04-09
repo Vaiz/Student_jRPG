@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.IO;
 
 namespace XNA_test1
 {
@@ -29,10 +30,12 @@ namespace XNA_test1
         Vector2 []resolution;
         int resolutionNumber;
         int resolutionCnt;
-        
+
+        List<Record> records;
+        RecordsList recordsList;
+
         #endregion
-        //==============================================================================================
-        
+        //==============================================================================================       
         #region Инициализация
         public main()   // конструктор
         {
@@ -61,6 +64,26 @@ namespace XNA_test1
             resolutionCnt = 4;
 
             Content.RootDirectory = "Content";
+
+            records = new List<Record>();
+
+            if (File.Exists("records.txt"))
+            {
+                StreamReader sr = File.OpenText("records.txt");
+                Record readRecord;
+                
+                while (records.Count() < 20)
+                {
+                    readRecord.name = sr.ReadLine();
+                    if (readRecord.name == null) 
+                        break;
+                    
+                    readRecord.score = Convert.ToInt32(sr.ReadLine());
+                    records.Add(readRecord);
+                }
+            }
+
+            recordsList = new RecordsList();
         }
 
         protected override void Initialize()
@@ -85,6 +108,7 @@ namespace XNA_test1
 
             menu.ButtonContinue_OnClick = ButtonContinue_OnClick;
             menu.ButtonNewGame_OnClick = ButtonNewGame_OnClick;
+            menu.ButtonRecords_OnClick = ButtonRecords_OnClick;
             menu.ButtonMapEditor_OnClick = ButtonMapEditor_OnClick;
             menu.ButtonChangeResolution_OnClick = ButtonChangeResolution_OnClick;
             menu.ButtonFullScreen_OnClick = ButtonFullScreen_OnClick;
@@ -132,6 +156,9 @@ namespace XNA_test1
                 case 3:
                     mapEditor.Update(gameTime);
                     break;
+
+                case 4:
+                    break;
             }
             
             cursorPosition = new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, cursor.Width, cursor.Height);
@@ -161,6 +188,10 @@ namespace XNA_test1
                     mapEditor.Draw(spriteBatch);
                     MediaPlayer.Stop();
                     break;
+
+                case 4:
+                    recordsList.Draw(spriteBatch);
+                    break;
             }
 
 
@@ -184,6 +215,12 @@ namespace XNA_test1
             situation = 2;
             menu.GameStarted = true;
             game.Init();
+        }
+
+        private void ButtonRecords_OnClick(object sender, EventArgs e)
+        {
+            recordsList.SetRecords(records, Content.Load<SpriteFont>("font\\button_font"));
+            situation = 4;
         }
 
         private void ButtonMapEditor_OnClick(object sender, EventArgs e)

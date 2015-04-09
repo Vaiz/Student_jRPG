@@ -44,6 +44,7 @@ namespace XNA_test1
         Label labelWin;
 
         EnterName enterName;
+        int zombieKilled;
 
         #endregion
         //==============================================================================================
@@ -235,7 +236,8 @@ namespace XNA_test1
 
             fight.Level2Off();
 
-            win = false;            
+            win = false;
+            zombieKilled = 0;
         }
 
         #endregion
@@ -369,6 +371,8 @@ namespace XNA_test1
                         {
                             StageInc();
                         }
+
+                        zombieKilled++;
                     }
                     
                     break;

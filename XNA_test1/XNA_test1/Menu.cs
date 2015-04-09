@@ -16,6 +16,7 @@ namespace XNA_test1
         Texture2D textureBackGround;          //фоновое изображения для меню
         Button buttonContinue;
         Button buttonNewGame;
+        Button buttonRecords;
         Button buttonMapEditor;
         Button buttonChangeResolution;
         Button buttonFullScreen;
@@ -36,6 +37,9 @@ namespace XNA_test1
             y += 50;
             
             buttonNewGame =             new Button(new Vector2(x, y), 260, 40, "Новая игра");
+            y += 50;
+
+            buttonRecords =             new Button(new Vector2(x, y), 260, 40, "Рекорды");
             y += 50;
 
             buttonMapEditor =           new Button(new Vector2(x, y), 260, 40, "Редактировать карту");
@@ -59,6 +63,7 @@ namespace XNA_test1
 
             buttonContinue.Font = content.Load<SpriteFont>("font\\button_font");
             buttonNewGame.Font = content.Load<SpriteFont>("font\\button_font");
+            buttonRecords.Font = content.Load<SpriteFont>("font\\button_font");
             buttonMapEditor.Font = content.Load<SpriteFont>("font\\button_font");
             buttonChangeResolution.Font = content.Load<SpriteFont>("font\\button_font");
             buttonFullScreen.Font = content.Load<SpriteFont>("font\\button_font");
@@ -71,6 +76,7 @@ namespace XNA_test1
 
             buttonContinue.Textures = buttonTextures;
             buttonNewGame.Textures = buttonTextures;
+            buttonRecords.Textures = buttonTextures;
             buttonMapEditor.Textures = buttonTextures;
             buttonChangeResolution.Textures = buttonTextures;
             buttonFullScreen.Textures = buttonTextures;
@@ -107,6 +113,7 @@ namespace XNA_test1
         {
             buttonContinue.Update(time);
             buttonNewGame.Update(time);
+            buttonRecords.Update(time);
             buttonMapEditor.Update(time);
             buttonChangeResolution.Update(time);
             buttonFullScreen.Update(time);
@@ -125,6 +132,7 @@ namespace XNA_test1
 
             buttonContinue.Draw(bath);
             buttonNewGame.Draw(bath);
+            buttonRecords.Draw(bath);
             buttonMapEditor.Draw(bath);
             buttonChangeResolution.Draw(bath);
             buttonFullScreen.Draw(bath);
@@ -143,6 +151,11 @@ namespace XNA_test1
         public EventHandler ButtonNewGame_OnClick
         {
             set { buttonNewGame.MouseClick += value; }
+        }
+
+        public EventHandler ButtonRecords_OnClick
+        {
+            set { buttonRecords.MouseClick += value; }
         }
 
         public EventHandler ButtonMapEditor_OnClick
