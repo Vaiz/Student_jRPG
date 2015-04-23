@@ -63,13 +63,14 @@ namespace XNA_test1
         {
             records.Clear();
 
-            int x0 = 100;
-            int x1 = 150, y = 50;
-            int x2 = 400;
+            int x0 = 400;
+            int x1 = 450, y = 250;
+            int x2 = 700;
 
             Label tmpLabel = new Label();
             tmpLabel.Font = font;
             tmpLabel.Text = "Имя";
+            tmpLabel.Color = Color.Aqua;
             tmpLabel.X = x1;
             tmpLabel.Y = y;
 
@@ -78,6 +79,7 @@ namespace XNA_test1
             tmpLabel = new Label();
             tmpLabel.Font = font;
             tmpLabel.Text = "Очки";
+            tmpLabel.Color = Color.Aqua;
             tmpLabel.X = x2;
             tmpLabel.Y = y;
 
@@ -89,6 +91,7 @@ namespace XNA_test1
                 tmpLabel = new Label();
                 tmpLabel.Font = font;
                 tmpLabel.Text = "" + (i + 1);
+                tmpLabel.Color = Color.Aqua;
                 tmpLabel.X = x0;
                 tmpLabel.Y = y;
 
@@ -97,6 +100,7 @@ namespace XNA_test1
                 tmpLabel = new Label();
                 tmpLabel.Font = font;
                 tmpLabel.Text = in_Records[i].name;
+                tmpLabel.Color = Color.Aqua;
                 tmpLabel.X = x1;
                 tmpLabel.Y = y;
 
@@ -105,6 +109,7 @@ namespace XNA_test1
                 tmpLabel = new Label();
                 tmpLabel.Font = font;
                 tmpLabel.Text = Convert.ToString(in_Records[i].score);
+                tmpLabel.Color = Color.Aqua;
                 tmpLabel.X = x2;
                 tmpLabel.Y = y;
 
