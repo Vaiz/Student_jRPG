@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,10 @@ namespace XNA_test1
     {
         #region Переменные
 
+        Texture2D textureBackGround;          //фоновое изображения для меню
         List<Label> records;
+        Rectangle rectFon;  //область экрана для рисования спрайта
+        int windowHeigth;
 
         #endregion
         //==============================================================================================
@@ -36,10 +41,29 @@ namespace XNA_test1
             records = new List<Label>();
         }
 
+        public void LoadContent(ContentManager content)
+        {
+            textureBackGround = content.Load<Texture2D>("background\\records"); //загрузка фонового изображения для меню   
+        }
+
+        public int WindowHeigth
+        {
+            get { return windowHeigth; }
+            set 
+            { 
+                windowHeigth = value;
+
+                float scaleFone;        // отношение высоты экрана к высоте рисунка.
+                scaleFone = (float)windowHeigth / textureBackGround.Height;
+                rectFon = new Rectangle(0, 0, (int)(textureBackGround.Width * scaleFone), windowHeigth);
+            }
+        }
+
         public void SetRecords(List<Record> in_Records, SpriteFont font)
         {
             records.Clear();
 
+            int x0 = 100;
             int x1 = 150, y = 50;
             int x2 = 400;
 
@@ -62,6 +86,14 @@ namespace XNA_test1
 
             for(int i = 0; i < in_Records.Count; i++)
             {
+                tmpLabel = new Label();
+                tmpLabel.Font = font;
+                tmpLabel.Text = "" + (i + 1);
+                tmpLabel.X = x0;
+                tmpLabel.Y = y;
+
+                records.Add(tmpLabel);
+
                 tmpLabel = new Label();
                 tmpLabel.Font = font;
                 tmpLabel.Text = in_Records[i].name;
@@ -87,6 +119,8 @@ namespace XNA_test1
 
         public void Draw(SpriteBatch bath)
         {
+            bath.Draw(textureBackGround, rectFon, Color.White);
+
             for (int i = 0; i < records.Count; i++)
                 records[i].Draw(bath);
         }

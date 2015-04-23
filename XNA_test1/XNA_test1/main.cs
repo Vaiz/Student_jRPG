@@ -122,6 +122,9 @@ namespace XNA_test1
             game.WindowWidth = graphics.PreferredBackBufferWidth;
 
             mapEditor.LoadContent(Content);
+
+            recordsList.LoadContent(Content);
+            recordsList.WindowHeigth = graphics.PreferredBackBufferHeight;
         }
 
         protected override void UnloadContent()
@@ -242,6 +245,8 @@ namespace XNA_test1
 
             game.WindowHeigth = graphics.PreferredBackBufferHeight;
             game.WindowWidth = graphics.PreferredBackBufferWidth;
+
+            recordsList.WindowHeigth = graphics.PreferredBackBufferHeight;
         }
 
         private void ButtonFullScreen_OnClick(object sender, EventArgs e)
